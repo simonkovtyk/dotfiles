@@ -1,6 +1,25 @@
 local options = {
   ensure_installed = {
-    "ts_ls"
+    "ts_ls",
+    "angularls",
+    "astro",
+    "bashls",
+    "clangd",
+    "cssls",
+    "tailwindcss",
+    "emmet_language_server",
+    "html",
+    "jsonls",
+    "eslint",
+    "lua_ls",
+    "rust_analyzer",
+    "marksman",
+    "zls",
+    "pyright",
+    "gopls",
+    "kotlin_language_server",
+    "jdtls",
+    "vuels"
   }
 }
 
