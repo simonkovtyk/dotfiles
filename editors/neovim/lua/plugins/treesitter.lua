@@ -1,21 +1,5 @@
 local options = {
-  ensure_installed = {
-    "typescript",
-    "html",
-    "astro",
-    "bash",
-    "c",
-    "css",
-    "jsdoc",
-    "json",
-    "json5",
-    "lua",
-    "luadoc",
-    "nginx",
-    "rust",
-    "svelte",
-    "zig"
-  },
+  ensure_installed = "all",
   auto_install = true
 }
 

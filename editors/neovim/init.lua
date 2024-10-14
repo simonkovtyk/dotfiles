@@ -5,9 +5,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require "mappings"
-require "settings"
-
 local theme = require "theme"
 local plugin_lualine = require "plugins/lualine"
 local plugin_dashboard = require "plugins/dashboard"
@@ -19,6 +16,8 @@ local plugin_lspconfig = require "plugins/lspconfig"
 local plugin_autopairs = require "plugins/autopairs"
 local plugin_autotag = require "plugins/autotag"
 local plugin_treesitter = require "plugins/treesitter"
+local plugin_cmp = require "plugins/cmp"
+local plugin_lspkind = require "plugins/lspkind"
 
 require("lazy").setup({
   theme,
@@ -31,9 +30,14 @@ require("lazy").setup({
   plugin_lspconfig,
   plugin_autopairs,
   plugin_autotag,
-  plugin_treesitter
+  plugin_treesitter,
+  plugin_cmp,
+  plugin_lspkind
 })
 
 require "lsp/typescript-language-server"
 require "lsp/lua-language-server"
 vim.cmd.colorscheme "catppuccin"
+
+require "mappings"
+require "settings"
