@@ -29,6 +29,20 @@ local options = {
     center = {
       {
         desc = "NeoVim Custom " .. version_info.major .. "." .. version_info.minor .. "." .. version_info.patch,
+      },
+      {
+        icon = " ",
+        desc = "New file",
+        action = "enew",
+        key = "e",
+        key_format = "[%s]"
+      },
+      {
+        icon = " ",
+        desc = "Quit",
+        action = "qa",
+        key = "q",
+        key_format = "[%s]"
       }
     }
   }

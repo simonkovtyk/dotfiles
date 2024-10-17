@@ -1,55 +1,27 @@
-local opts =  function (desc)
-  return {
-    desc = "nvim-tree: " .. desc,
-    buffer = bufnr,
-    noremap = true,
-    silent = true,
-    nowait = true
-  }
-end
-
-local on_attach = function(bufnr)
-  vim.api.nvim_buf_set_name(bufnr, "Explorer")
-
-  local api = require "nvim-tree.api"
-
-  vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
-  -- api.config.mappings.default_on_attach()
-end
-
 local options = {
-  sort = {
-    sorter = "case_sensitive"
+  window = {
+    position = "right"
   },
-  view = {
-    width = 30,
-    side = "right"
+  modified = {
+    symbol = "[+]",
+    highlight = "NeoTreeModified",
   },
-  renderer = {
-    group_empty = true
-  },
-  update_focused_file = {
-    enable = true
-  },
-  on_attach = on_attach
+  filesystem = {
+    filtered_items = {
+      visible = true,
+      hide_dotfiles = false,
+      hide_gitignored = false
+    }
+  }
 }
 
-local open_at_start = function()
-  local tree = require "nvim-tree.view"
-
-  if tree.is_visible() then
-    return
-  end
-
-  require("nvim-tree.api").tree.toggle({ focus = false })
-end
-
-vim.api.nvim_create_autocmd({ "BufRead" }, { callback = open_at_start })
-
 return {
-  "nvim-tree/nvim-tree.lua",
+  "nvim-neo-tree/neo-tree.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim"
   },
+  branch = "v3.x",
   opts = options
 }

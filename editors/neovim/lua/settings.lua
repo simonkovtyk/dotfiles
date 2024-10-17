@@ -4,8 +4,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 vim.cmd("set number")
-vim.o.list = true
-vim.o.listchars="eol: ,trail:-,tab:--,nbsp:␣"
+vim.o.list = false
 vim.opt.termguicolors = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -19,15 +18,13 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 3
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+vim.o.fillchars = "eob:~"
 vim.cmd("set relativenumber")
-
-vim.api.nvim_set_option("clipboard","unnamedplus")
 
 vim.diagnostic.config({
   virtual_text = false,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true
+  underline = true
 })
+
+vim.api.nvim_set_option("clipboard","unnamedplus")
 

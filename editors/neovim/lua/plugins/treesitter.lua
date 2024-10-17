@@ -3,7 +3,20 @@ local options = {
   auto_install = true
 }
 
+local configs = {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false
+  }
+}
+
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = options
+  config = function()
+    local plugin = require "nvim-treesitter"
+    local config = require "nvim-treesitter.configs"
+
+    plugin.setup(options)
+    config.setup(configs)
+  end
 }
