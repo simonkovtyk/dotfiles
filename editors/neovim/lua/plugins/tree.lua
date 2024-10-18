@@ -1,6 +1,9 @@
 local options = {
   window = {
-    position = "right"
+    position = "right",
+    popup = {
+      border = "single"
+    }
   },
   modified = {
     symbol = "[+]",
@@ -19,7 +22,6 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim"
   },
   branch = "v3.x",

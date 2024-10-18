@@ -5,6 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local plugin_icons = require "plugins/icons"
 local plugin_lualine = require "plugins/lualine"
 local plugin_dashboard = require "plugins/dashboard"
 local plugin_bufferline = require "plugins/bufferline"
@@ -18,27 +19,35 @@ local plugin_treesitter = require "plugins/treesitter"
 local plugin_cmp = require "plugins/cmp"
 local plugin_lspkind = require "plugins/lspkind"
 local plugin_indent_blankline = require "plugins/indent-blankline"
+local plugin_gitsigns = require "plugins/gitsigns"
+local plugin_telescope = require "plugins/telescope"
+local plugin_luasnip = require "plugins/luasnip"
 local theme = require "theme"
 
 require("lazy").setup({
+  plugin_icons,
   plugin_lualine,
   plugin_dashboard,
   plugin_bufferline,
   plugin_tree,
   plugin_mason,
   plugin_mason_lspconfig,
+  plugin_cmp,
   plugin_lspconfig,
   plugin_autopairs,
   plugin_autotag,
   plugin_treesitter,
-  plugin_cmp,
   plugin_lspkind,
   plugin_indent_blankline,
+  plugin_gitsigns,
+  plugin_telescope,
+  plugin_luasnip,
   theme
 })
 
-require "lsp/typescript-language-server"
-require "lsp/lua-language-server"
+require "lsp/typescript"
+require "lsp/lua"
+require "lsp/html"
 
 require "mappings"
 require "settings"

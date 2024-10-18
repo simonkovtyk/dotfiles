@@ -51,10 +51,5 @@ local options = {
 return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
-  opts = options,
-  dependencies = {
-    {
-      "nvim-tree/nvim-web-devicons"
-    }
-  }
+  opts = options
 }
