@@ -1,0 +1,32 @@
+classic: false
+
+blocks:
+  - permission
+  - user
+  - group
+  - size
+  - date
+  - name
+
+color:
+  when: never
+  theme: default
+
+icons:
+  when: always
+  theme: fancy
+  separator: "  "
+
+sorting:
+  dir-grouping: first
+  column: name
+
+layout: grid
+
+size: bytes
+
+header: true
+
+indicators: true
+
+total-size: true
