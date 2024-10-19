@@ -1,1 +1,4 @@
 --theme="Catppuccin Mocha"
+--tabs=2
+--style="numbers,changes,header"
+
