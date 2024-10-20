@@ -1,4 +1,5 @@
 local options = {
+  flavour = "mocha",
   no_italic = true,
   no_bold = true,
   no_underline = true,
@@ -26,13 +27,13 @@ local options = {
       },
       underlines = {
         errors = {
-          "underline"
+          "undercurl"
         },
         hints = {
           "undercurl"
         },
         warnings = {
-          "underline"
+          "undercurl"
         },
         information = {
           "undercurl"

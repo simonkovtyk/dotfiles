@@ -1,5 +1,4 @@
 local options = {
-
 }
 
 return {

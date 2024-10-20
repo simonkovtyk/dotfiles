@@ -1,7 +1,7 @@
 local lspconfig = require "lspconfig"
 local cmp_lsp = require "cmp_nvim_lsp"
 
-local lsp = lspconfig["ts_ls"]
+local lsp = lspconfig["tailwindcss"]
 
 local on_attach = function(client, bufnr)
   local lsp_mappings = require "lsp-mappings"
@@ -13,7 +13,7 @@ lsp.setup({
   on_attach = on_attach,
   capabilities = cmp_lsp.default_capabilities(),
   cmd = {
-    "typescript-language-server",
+    "tailwindcss-language-server",
     "--stdio"
   }
 })

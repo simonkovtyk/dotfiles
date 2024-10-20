@@ -1,7 +1,6 @@
 local options = function()
   local cmp = require "cmp"
   local lspkind = require "lspkind"
-  local devicons = require "nvim-web-devicons"
 
   return {
     mapping = cmp.mapping.preset.insert({
@@ -12,11 +11,13 @@ local options = function()
       ["<CR>"] = cmp.mapping.confirm({ select = true })
     }),
     snippet = {
+      scrollbar = false,
       expand = function(args)
         vim.snippet.expand(args.body)
       end
     },
-    window = {
+    performance = {
+      max_view_entries = 10
     },
     sources = cmp.config.sources({
         {
