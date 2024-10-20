@@ -11,9 +11,5 @@ end
 
 lsp.setup({
   on_attach = on_attach,
-  capabilities = cmp_lsp.default_capabilities(),
-  cmd = {
-    "vscode-eslint-language-server",
-    "--stdio"
-  }
+  capabilities = cmp_lsp.default_capabilities()
 })

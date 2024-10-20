@@ -13,7 +13,9 @@ local options = function()
     snippet = {
       scrollbar = false,
       expand = function(args)
-        vim.snippet.expand(args.body)
+        local luasnip = require "luasnip"
+
+        luasnip.lsp_expand(args.body)
       end
     },
     performance = {
@@ -28,15 +30,11 @@ local options = function()
         }
       }, {
         {
-        name = "buffer"
+          name = "buffer"
         }
       }
     ),
     formatting = {
-      --[[format = function(entry, vim_item)
-        vim_item.kind = string.format('%s %s', devicons.get_icon(vim_item.kind), vim_item.kind)
-        return vim_item
-      end]]--
       format = lspkind.cmp_format({
         mode = "symbol",
         maxwidth = 50,

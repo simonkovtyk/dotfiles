@@ -11,9 +11,6 @@ end
 
 lsp.setup({
   on_attach = on_attach,
-  capabilities = cmp_lsp.default_capabilities(),
-  cmd = {
-    "clangd",
-    "--stdio"
-  }
+  capabilities = cmp_lsp.default_capabilities()
 })
+
