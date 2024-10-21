@@ -36,7 +36,7 @@ local options = function()
     ),
     formatting = {
       format = lspkind.cmp_format({
-        mode = "symbol",
+        mode = "text",
         maxwidth = 50,
         ellipsis_char = '...',
         show_labelDetails = true,
@@ -44,6 +44,12 @@ local options = function()
           return vim_item
         end
       })
+    },
+    window = {
+      completion = {
+      },
+      documentation = {
+      }
     }
   }
 end

@@ -1,6 +1,17 @@
 local options = {
   filetypes = {
-    "*"
+    "*",
+    "!neo-tree",
+    "!dashboard",
+    "!TelescopePrompt",
+    "!neo-tree-popup"
+  },
+  buftypes = {
+    "*",
+    "!terminal",
+    "!quickfix",
+    "!prompt",
+    "!popup"
   },
   user_default_options = {
     RGB = true,
