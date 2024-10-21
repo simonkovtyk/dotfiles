@@ -1,8 +1,10 @@
 local options = {
   indent = {
-    char = "│"
+    char = "│",
+    smart_indent_cap = false
   },
   scope = {
+    enabled = true,
     show_start = false,
     show_end = false
   },
