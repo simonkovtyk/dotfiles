@@ -1,3 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+keymap("n", "<leader>w", "<cmd>Neotree<CR>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>s", "<cmd>Telescope live_grep<CR>", opts)
+
