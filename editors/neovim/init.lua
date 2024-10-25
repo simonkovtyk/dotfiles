@@ -27,6 +27,7 @@ local plugin_telescope = require "plugins/telescope"
 local plugin_luasnip = require "plugins/luasnip"
 local plugin_hipatterns = require "plugins/hipatterns"
 local plugin_colorizer = require "plugins/colorizer"
+local plugin_diffview = require "plugins/diffview"
 local theme = require "theme"
 
 require("lazy").setup({
@@ -49,7 +50,8 @@ require("lazy").setup({
   plugin_telescope,
   plugin_luasnip,
   plugin_hipatterns,
-  plugin_colorizer
+  plugin_colorizer,
+  plugin_diffview
 })
 
 require "lsp/angular"
