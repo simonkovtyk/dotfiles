@@ -10,8 +10,10 @@ local options = {
     dashboard = true,
     mason = true,
     indent_blankline = {
-      enabled = false,
-      --colored_indent_levels = true
+      enabled = false
+    },
+    diffview = {
+      enabled = true
     },
     telescope = {
       enabled = true
