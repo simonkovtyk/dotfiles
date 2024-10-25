@@ -8,10 +8,6 @@ local options = {
       position = "right",
       width = 40
     }
-  },
-  signs = {
-    fold_closed = "",
-    fold_open = ""
   }
 }
 
