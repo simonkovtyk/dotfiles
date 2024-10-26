@@ -1,0 +1,18 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = Simon
+	email = privat@kovtyk.com
+	signingkey = # removed due to security reasons
+[safe]
+	directory = *
+[credential]
+	helper = store
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
