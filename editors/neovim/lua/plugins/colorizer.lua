@@ -1,17 +1,15 @@
 local options = {
   filetypes = {
-    "*",
-    "!neo-tree",
-    "!dashboard",
-    "!TelescopePrompt",
-    "!neo-tree-popup"
-  },
-  buftypes = {
-    "*",
-    "!terminal",
-    "!quickfix",
-    "!prompt",
-    "!popup"
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "less",
+    "typescript",
+    "javascript",
+    "lua",
+    "rust",
+    "go"
   },
   user_default_options = {
     RGB = true,
@@ -32,7 +30,7 @@ local options = {
       }
     }
   }
-} 
+}
 
 return {
   "NvChad/nvim-colorizer.lua",
