@@ -82,17 +82,17 @@ M.keys = {
   },
   {
     key = "Tab",
-    mods = "ALT",
+    mods = "CTRL",
     action = wezterm.action.ActivateTabRelative(1)
   },
   {
     key = "Tab",
-    mods = "ALT|SHIFT",
+    mods = "CTRL|SHIFT",
     action = wezterm.action.ActivateTabRelative(-1)
   }
 }
 
-for i = 1, 9 do
+for i = 0, 9 do
   table.insert(
     M.keys,
     {
