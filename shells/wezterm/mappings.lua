@@ -2,22 +2,29 @@ local wezterm = require "wezterm"
 
 local M = {}
 
+M.disable_default_key_bindings = true
+M.disable_default_mouse_bindings = true
 M.keys = {
+  {
+    key = "C",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.CopyTo "Clipboard"
+  },
 	{
 		key = "V",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action.PasteFrom "Clipboard"
 	},
   {
-    key = "v",
+    key = "s",
     mods = "ALT",
     action = wezterm.action.SplitHorizontal {
       domain = "CurrentPaneDomain"
     }
   },
   {
-    key = "h",
-    mods = "ALT",
+    key = "S",
+    mods = "ALT|SHIFT",
     action = wezterm.action.SplitVertical {
       domain = "CurrentPaneDomain"
     }
@@ -30,19 +37,70 @@ M.keys = {
     }
   },
   {
-    key = "t",
-    mods = "ALT",
+    key = "Q",
+    mods = "ALT|SHIFT",
     action = wezterm.action.CloseCurrentTab {
       confirm = true
     }
   },
   {
-    key = "s",
+    key = "w",
     mods = "ALT",
     action = wezterm.action.PaneSelect {
       alphabet = "1234567890"
     }
+  },
+  {
+    key = "n",
+    mods = "ALT",
+    action = wezterm.action.SpawnWindow
+  },
+  {
+    key = "t",
+    mods = "ALT",
+    action = wezterm.action.SpawnTab "CurrentPaneDomain"
+  },
+  {
+    key = "UpArrow",
+    mods = "ALT",
+    action = wezterm.action.AdjustPaneSize { "Up", 2 }
+  },
+  {
+    key = "RightArrow",
+    mods = "ALT",
+    action = wezterm.action.AdjustPaneSize { "Right", 2 }
+  },
+  {
+    key = "DownArrow",
+    mods = "ALT",
+    action = wezterm.action.AdjustPaneSize { "Down", 2 }
+  },
+  {
+    key = "LeftArrow",
+    mods = "ALT",
+    action = wezterm.action.AdjustPaneSize { "Left", 2 }
+  },
+  {
+    key = "Tab",
+    mods = "ALT",
+    action = wezterm.action.ActivateTabRelative(1)
+  },
+  {
+    key = "Tab",
+    mods = "ALT|SHIFT",
+    action = wezterm.action.ActivateTabRelative(-1)
   }
 }
+
+for i = 1, 9 do
+  table.insert(
+    M.keys,
+    {
+      key = tostring(i),
+      mods = "ALT",
+      action = wezterm.action.ActivateTab(i)
+    }
+  )
+end
 
 return M
