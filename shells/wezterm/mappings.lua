@@ -89,6 +89,13 @@ M.keys = {
     key = "Tab",
     mods = "CTRL|SHIFT",
     action = wezterm.action.ActivateTabRelative(-1)
+  },
+  {
+    key = "l",
+    mods = "ALT",
+    action = wezterm.action.ShowLauncherArgs {
+      flags = "LAUNCH_MENU_ITEMS"
+    }
   }
 }
 
