@@ -19,7 +19,8 @@ local options = {
     "gopls",
     "kotlin_language_server",
     "jdtls",
-    "vuels"
+    "vuels",
+    "groovyls"
   }
 }
 
