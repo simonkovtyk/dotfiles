@@ -14,7 +14,7 @@ logo = logo .. string.rep("\n", 2)
 
 local version_info = vim.version()
 
-logo = logo .. "NeoVim " .. version_info.major .. "." .. version_info.minor .. "." .. version_info.patch .. " Custom IDE"
+logo = logo .. "NeoVim  " .. version_info.major .. "." .. version_info.minor .. "." .. version_info.patch .. " Custom IDE"
 
 logo = string.rep("\n", 14) .. logo .. string.rep("\n", 3)
 logo = vim.split(logo, "\n")
@@ -32,7 +32,7 @@ local options = {
     header = logo,
     center = {
       {
-        desc = "Project",
+        desc = "Project" .. string.rep(" ", 50),
         desc_hl = "DashboardFooter"
       },
       {
@@ -45,7 +45,7 @@ local options = {
       {
         icon = " ",
         desc = "Explore files",
-        action = "Neotree",
+        action = "Neotree current",
         key = "w",
         key_format = "[%s]"
       },
@@ -64,7 +64,7 @@ local options = {
         key_format = "[%s]"
       },
       {
-        desc = "More options",
+        desc = "Settings",
         desc_hl = "DashboardFooter"
       },
       {
@@ -87,6 +87,20 @@ local options = {
         action = "checkhealth",
         key = "h",
         key_format = "[%s]"
+      },
+      {
+        desc = "Others",
+        desc_hl = "DashboardFooter"
+      },
+      {
+        icon = " ",
+        desc = "View GitHub",
+        action = "!firefox -new-tab https://github.com/simonkovtyk",
+        key = "g",
+        key_format = "[%s]"
+      },
+      {
+        desc = string.rep(" ", 21) .. "󰄾 private only 󰄽"
       }
     }
   }

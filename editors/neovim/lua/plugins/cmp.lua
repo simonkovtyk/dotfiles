@@ -31,6 +31,9 @@ local options = function()
       }, {
         {
           name = "buffer"
+        },
+        {
+          name = "cmdline"
         }
       }
     ),
