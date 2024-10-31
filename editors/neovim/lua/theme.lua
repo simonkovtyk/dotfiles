@@ -18,6 +18,9 @@ local options = {
     telescope = {
       enabled = true
     },
+    window_picker = {
+      enabled = true
+    },
     native_lsp = {
       enabled = true,
       virtual_text = {
