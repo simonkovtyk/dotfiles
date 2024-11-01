@@ -19,6 +19,22 @@ M.launch_menu = {
 		}
   },
 	{
+		label = "CMD (privileged)",
+		args = {
+      "eledo",
+			"cmd.exe",
+			"/K"
+		}
+	},
+	{
+		label = "PowerShell (privileged)",
+		args = {
+      "eledo",
+			"powershell.exe",
+			"-NoLogo"
+		}
+	},
+  {
 		label = "CMD",
 		args = {
 			"cmd.exe",
