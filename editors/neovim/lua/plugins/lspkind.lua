@@ -1,4 +1,5 @@
 local options = {
+  mode = "symbol_text",
   symbol_map = {
     Text = "󰉿",
     Method = "󰆧",

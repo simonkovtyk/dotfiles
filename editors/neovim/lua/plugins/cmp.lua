@@ -8,7 +8,7 @@ local options = function()
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.abort(),
-      ["<CR>"] = cmp.mapping.confirm({ select = true })
+      ["<CR>"] = cmp.mapping.confirm({ select = false })
     }),
     snippet = {
       scrollbar = false,
@@ -39,20 +39,13 @@ local options = function()
     ),
     formatting = {
       format = lspkind.cmp_format({
-        mode = "text",
         maxwidth = 50,
-        ellipsis_char = '...',
+        ellipsis_char = "...",
         show_labelDetails = true,
         before = function (entry, vim_item)
           return vim_item
         end
       })
-    },
-    window = {
-      completion = {
-      },
-      documentation = {
-      }
     }
   }
 end
