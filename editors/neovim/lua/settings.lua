@@ -1,4 +1,4 @@
-vim.o.title = true
+vim.o.title = false
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
