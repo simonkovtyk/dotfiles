@@ -29,6 +29,8 @@ local plugin_hipatterns = require "plugins/hipatterns"
 local plugin_colorizer = require "plugins/colorizer"
 local plugin_diffview = require "plugins/diffview"
 local plugin_window_picker = require "plugins/window-picker"
+local plugin_navic = require "plugins/navic"
+local plugin_incline = require "plugins/incline"
 local theme = require "theme"
 
 require("lazy").setup({
@@ -53,7 +55,9 @@ require("lazy").setup({
   plugin_hipatterns,
   plugin_colorizer,
   plugin_window_picker,
-  plugin_diffview
+  plugin_diffview,
+  plugin_navic,
+  plugin_incline
 })
 
 require "lsp/angular"
@@ -80,3 +84,4 @@ require "lsp/zig"
 
 vim.cmd.colorscheme "catppuccin"
 vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#414355" })
+

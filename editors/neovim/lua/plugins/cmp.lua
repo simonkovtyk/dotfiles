@@ -18,8 +18,19 @@ local options = function()
         luasnip.lsp_expand(args.body)
       end
     },
+    window = {
+      
+    },
+    view = {
+      entries = {
+        follow_cursor = false
+      },
+      docs = {
+        auto_open = true
+      }
+    },
     performance = {
-      max_view_entries = 10
+      max_view_entries = 20
     },
     sources = cmp.config.sources({
         {

@@ -1,15 +1,8 @@
 local lspconfig = require "lspconfig"
-local cmp_lsp = require "cmp_nvim_lsp"
-
 local lsp = lspconfig["vuels"]
-
-local on_attach = function(client, bufnr)
-  local lsp_mappings = require "lsp-mappings"
-
-  lsp_mappings(client, bufnr)
-end
+local lsp_settings = require "lsp"
 
 lsp.setup({
-  on_attach = on_attach,
-  capabilities = cmp_lsp.default_capabilities()
+  on_attach = lsp_settings.on_attach,
+  capabilities = lsp_settings.capabilities
 })
