@@ -47,7 +47,23 @@ M.launch_menu = {
 			"powershell.exe",
 			"-NoLogo"
 		}
-	}
+	},
+  {
+    label = "SSH: private",
+    args = {
+      "wezterm",
+      "ssh",
+      "private"
+    }
+  },
+  {
+    label = "SSH: ogs-notebook",
+    args = {
+      "wezterm",
+      "ssh",
+      "ogs-notebook"
+    }
+  }
 }
 
 return M
