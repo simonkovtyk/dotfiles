@@ -63,6 +63,14 @@ M.launch_menu = {
       "ssh",
       "ogs-notebook"
     }
+  },
+  {
+    label = "SSH: home",
+    args = {
+      "wezterm",
+      "ssh",
+      "home"
+    }
   }
 }
 
