@@ -24,7 +24,9 @@ vim.o.mouse = ""
 
 vim.diagnostic.config({
   virtual_text = false,
-  update_in_insert = true
+  update_in_insert = true,
+  severity_sort = true,
+  float = true
 })
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")

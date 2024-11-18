@@ -39,21 +39,21 @@ local options = {
         icon = " ",
         desc = "New file",
         action = "enew",
-        key = "e",
+        key = "n",
         key_format = "[%s]"
       },
       {
         icon = " ",
         desc = "Explore files",
         action = "Neotree current",
-        key = "w",
+        key = "e",
         key_format = "[%s]"
       },
       {
         icon = " ",
         desc = "Search files",
         action = "Telescope",
-        key = "f",
+        key = "t",
         key_format = "[%s]"
       },
       {
@@ -71,14 +71,14 @@ local options = {
         icon = " ",
         desc = "LSPs",
         action = "Mason",
-        key = "l",
+        key = "m",
         key_format = "[%s]"
       },
       {
         icon = "󰐱 ",
         desc = "Plugins",
         action = "Lazy",
-        key = "p",
+        key = "l",
         key_format = "[%s]"
       },
       {
