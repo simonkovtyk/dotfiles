@@ -4,7 +4,9 @@ local M = {}
 
 M.disable_default_key_bindings = true
 M.disable_default_mouse_bindings = true
+M.mouse_wheel_scrolls_tabs = false
 M.keys = {
+  -- Normal Mode
   {
     key = "C",
     mods = "CTRL|SHIFT",
@@ -96,6 +98,12 @@ M.keys = {
     action = wezterm.action.ShowLauncherArgs {
       flags = "LAUNCH_MENU_ITEMS"
     }
+  },
+  -- Copy Mode
+  {
+    key = "x",
+    mods = "ALT",
+    action = wezterm.action.ActivateCopyMode
   }
 }
 

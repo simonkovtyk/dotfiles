@@ -4,6 +4,10 @@ local options = {
   no_bold = true,
   no_underline = true,
   integrations = {
+    barbar = true,
+    barbecue = {
+      dim_context = true
+    },
     cmp = true,
     neotree = true,
     treesitter = true,
@@ -23,13 +27,6 @@ local options = {
     },
     native_lsp = {
       enabled = true,
-      virtual_text = {
-        errors = {},
-        hints = {},
-        warnings = {},
-        information = {},
-        ok = {}
-      },
       underlines = {
         errors = {
           "undercurl"

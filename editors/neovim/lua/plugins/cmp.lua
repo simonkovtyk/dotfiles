@@ -18,9 +18,6 @@ local options = function()
         luasnip.lsp_expand(args.body)
       end
     },
-    window = {
-      
-    },
     view = {
       entries = {
         follow_cursor = false
