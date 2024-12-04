@@ -21,6 +21,8 @@ vim.o.relativenumber = true
 vim.o.signcolumn = "yes:1"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.mouse = ""
+vim.o.fileformat = "unix"
+vim.o.clipboard = "unnamedplus"
 
 vim.diagnostic.config({
   virtual_text = false,
@@ -29,4 +31,3 @@ vim.diagnostic.config({
   float = true
 })
 
-vim.api.nvim_set_option("clipboard", "unnamedplus")
