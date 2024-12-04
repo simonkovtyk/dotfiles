@@ -20,7 +20,8 @@ local options = {
     "kotlin_language_server",
     "jdtls",
     "vuels",
-    "groovyls"
+    "groovyls",
+    "stylelint_lsp"
   }
 }
 

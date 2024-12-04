@@ -91,6 +91,7 @@ require "lsp/tailwind"
 require "lsp/typescript"
 require "lsp/vue"
 require "lsp/zig"
+require "lsp/stylelint"
 
 vim.cmd.colorscheme "catppuccin"
 vim.cmd.highlight("IndentLine guifg=#313244")
