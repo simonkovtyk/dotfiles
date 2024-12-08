@@ -1,4 +1,3 @@
-local navic = require "nvim-navic"
 local cmp_lsp = require "cmp_nvim_lsp"
 
 local on_attach = function(client, bufnr)
@@ -7,10 +6,6 @@ local on_attach = function(client, bufnr)
     noremap = true,
     silent = true
   }
-
-  if client.supports_method("textDocument/documentSymbol") then
-    navic.attach(client, bufnr)
-  end
 
   keymap(bufnr, "v", "<leader>la", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", options)
   keymap(bufnr, "n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>", options)

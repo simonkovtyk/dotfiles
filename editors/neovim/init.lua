@@ -8,10 +8,10 @@ vim.opt.rtp:prepend(lazypath)
 require "mappings"
 require "settings"
 
+local plugin_plenary = require "plugins/plenary";
 local plugin_icons = require "plugins/icons"
 local plugin_lualine = require "plugins/lualine"
 local plugin_dashboard = require "plugins/dashboard"
--- local plugin_bufferline = require "plugins/bufferline"
 local plugin_barbar = require "plugins/barbar"
 local plugin_tree = require "plugins/tree"
 local plugin_mason = require "plugins/mason"
@@ -22,12 +22,11 @@ local plugin_autotag = require "plugins/autotag"
 local plugin_treesitter = require "plugins/treesitter"
 local plugin_cmp = require "plugins/cmp"
 local plugin_lspkind = require "plugins/lspkind"
--- local plugin_indent_blankline = require "plugins/indent-blankline"
 local plugin_indentmini = require "plugins/indentmini"
 local plugin_gitsigns = require "plugins/gitsigns"
 local plugin_telescope = require "plugins/telescope"
 local plugin_luasnip = require "plugins/luasnip"
-local plugin_hipatterns = require "plugins/hipatterns"
+-- local plugin_hipatterns = require "plugins/hipatterns"
 local plugin_colorizer = require "plugins/colorizer"
 local plugin_diffview = require "plugins/diffview"
 local plugin_window_picker = require "plugins/window-picker"
@@ -35,15 +34,15 @@ local plugin_navic = require "plugins/navic"
 local plugin_barbecue = require "plugins/barbecue"
 local plugin_scrollbar = require "plugins/scrollbar"
 local plugin_dressing = require "plugins/dressing"
--- local plugin_incline = require "plugins/incline"
+local plugin_todo = require "plugins/todo"
 local theme = require "theme"
 
 require("lazy").setup({
   theme,
+  plugin_plenary,
   plugin_icons,
   plugin_lualine,
   plugin_dashboard,
-  -- plugin_bufferline,
   plugin_tree,
   plugin_mason,
   plugin_mason_lspconfig,
@@ -53,12 +52,11 @@ require("lazy").setup({
   plugin_autotag,
   plugin_treesitter,
   plugin_lspkind,
-  -- plugin_indent_blankline,
   plugin_indentmini,
   plugin_gitsigns,
   plugin_telescope,
   plugin_luasnip,
-  plugin_hipatterns,
+  -- plugin_hipatterns,
   plugin_colorizer,
   plugin_window_picker,
   plugin_diffview,
@@ -66,8 +64,8 @@ require("lazy").setup({
   plugin_navic,
   plugin_barbecue,
   plugin_scrollbar,
-  plugin_dressing
-  -- plugin_incline
+  plugin_dressing,
+  plugin_todo
 })
 
 require "lsp/angular"
