@@ -6,13 +6,19 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = Simon
-	email = privat@kovtyk.com
-	signingkey = # removed due to security reasons
+	email = simon@kovtyk.com
+	signingkey = 209C090BDEC066F4
 [safe]
-	directory = *
+	directory = /root/projects
 [credential]
 	helper = store
 [commit]
-	gpgsign = true
+	gpgSign = true
 [pull]
 	rebase = false
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+[tag]
+	gpgSign = true
