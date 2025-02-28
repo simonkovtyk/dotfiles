@@ -1,4 +1,5 @@
 local options = {
+  enable_cursor_hijack = true,
   window = {
     position = "right",
     popup = {
@@ -6,20 +7,11 @@ local options = {
     }
   },
   filesystem = {
+    hide_dotfiles = false,
+    hide_gitignored = false,
     filtered_items = {
-      visible = true,
       hide_dotfiles = false,
       hide_gitignored = false
-    },
-    follow_current_file = {
-      enabled = true,
-      leave_dirs_open = true
-    }
-  },
-  buffers = {
-    follow_current_file = {
-      enabled = true,
-      leave_dirs_open = true
     }
   }
 }
