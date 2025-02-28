@@ -3,17 +3,17 @@ local M = {}
 M.default_prog = {
 	"wsl.exe",
 	"-d",
-	"Debian",
+	"Arch",
   "--cd",
   "~"
 }
 M.launch_menu = {
 	{
-    label = "WSL Debian",
+    label = "Arch",
     args = {
 			"wsl.exe",
 			"-d",
-			"Debian",
+			"Arch",
       "--cd",
       "~"
 		}
