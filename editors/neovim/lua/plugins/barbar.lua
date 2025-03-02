@@ -1,5 +1,5 @@
 local options = {
-  animation = true,
+  animation = false,
   tabpages = true,
   clickable = false,
   focus_on_close = "previous",
@@ -13,5 +13,6 @@ local options = {
 
 return {
   "romgrk/barbar.nvim",
-  opts = options
+  opts = options,
+  event = "BufReadPost"
 }

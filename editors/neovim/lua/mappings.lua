@@ -48,14 +48,6 @@ keymap("n", "<leader>el", "<cmd>Neotree right<CR>", options)
 keymap("n", "<leader>ej", "<cmd>Neotree down<CR>", options)
 keymap("n", "<leader>eh", "<cmd>Neotree left<CR>", options)
 
--- Diffview
-keymap("n", "<leader>do", "<cmd>DiffviewOpen<CR>", options)
-keymap("n", "<leader>dc", "<cmd>DiffviewClose<CR>", options)
-keymap("n", "<leader>df", "<cmd>DiffviewFocusFiles<CR>", options)
-keymap("n", "<leader>dh", "<cmd>DiffviewFileHistory<CR>", options)
-keymap("n", "<leader>dt", "<cmd>DiffviewToggleFiles<CR>", options)
-keymap("n", "<leader>dr", "<cmd>DiffviewRefresh<CR>", options)
-
 -- Gitsigns
 keymap("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", options)
 keymap("n", "<leader>gt", "<cmd>Gitsigns toggle_current_line_blame<CR>", options)

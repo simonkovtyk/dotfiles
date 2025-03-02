@@ -9,5 +9,6 @@ local options = {
 
 return {
   "echasnovski/mini.hipatterns",
-  opts = options
+  opts = options,
+  event = "BufReadPost"
 }

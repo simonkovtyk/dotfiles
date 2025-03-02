@@ -9,5 +9,7 @@ return {
     local snipmate_engine = require("luasnip.loaders.from_snipmate")
 
     snipmate_engine.lazy_load();
-  end
+  end,
+  event = "InsertEnter"
 }
+

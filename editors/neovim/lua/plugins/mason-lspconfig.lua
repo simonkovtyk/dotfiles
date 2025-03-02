@@ -27,5 +27,6 @@ local options = {
 
 return {
   "williamboman/mason-lspconfig.nvim",
-  opts = options
+  opts = options,
+  lazy = true
 }

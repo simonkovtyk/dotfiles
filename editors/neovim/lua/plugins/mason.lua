@@ -1,8 +1,5 @@
-local options = {
-  
-}
-
 return {
   "williamboman/mason.nvim",
-  opts = options
+  config = true,
+  cmd = { "Mason", "MasonUpdate", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" }
 }

@@ -1,6 +1,5 @@
-local options = {}
-
 return {
   "nvimdev/indentmini.nvim",
-  opts = options
+  config = true,
+  event = "BufReadPost"
 }

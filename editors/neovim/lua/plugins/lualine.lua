@@ -60,5 +60,6 @@ local options = {
 
 return {
   "nvim-lualine/lualine.nvim",
-  opts = options
+  opts = options,
+  event = "BufReadPost"
 }

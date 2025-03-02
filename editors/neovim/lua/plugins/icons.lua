@@ -4,5 +4,6 @@ local options = {
 
 return {
   "nvim-tree/nvim-web-devicons",
-  opts = options
+  opts = options,
+  lazy = true
 }

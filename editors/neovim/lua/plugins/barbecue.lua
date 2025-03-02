@@ -6,5 +6,6 @@ local options = {
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
-  opts = options
+  opts = options,
+  event = "BufReadPost"
 }

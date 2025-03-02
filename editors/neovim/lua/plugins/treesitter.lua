@@ -18,5 +18,6 @@ return {
 
     plugin.setup(options)
     config.setup(configs)
-  end
+  end,
+  lazy = true
 }

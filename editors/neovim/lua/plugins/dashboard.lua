@@ -108,6 +108,5 @@ local options = {
 
 return {
   "nvimdev/dashboard-nvim",
-  event = "VimEnter",
   opts = options
 }

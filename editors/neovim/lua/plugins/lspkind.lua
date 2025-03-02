@@ -31,5 +31,6 @@ local options = {
 
 return {
   "onsails/lspkind.nvim",
+  lazy = true,
   opts = options
 }

@@ -2,5 +2,6 @@ local options = {}
 
 return {
   "SmiteshP/nvim-navic",
-  opts = options
+  opts = options,
+  lazy = true
 }

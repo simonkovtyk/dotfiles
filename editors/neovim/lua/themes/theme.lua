@@ -55,5 +55,12 @@ return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
-  opts = options
+  opts = options,
+  config = function()
+    vim.cmd.colorscheme "catppuccin"
+
+    vim.cmd.highlight("IndentLine guifg=#313244")
+    vim.cmd.highlight("IndentLineCurrent guifg=#585b70")
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#45475a" })
+  end
 }

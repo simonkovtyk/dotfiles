@@ -34,5 +34,6 @@ local options = {
 
 return {
   "NvChad/nvim-colorizer.lua",
-  opts = options
+  opts = options,
+  event = "BufReadPost"
 }

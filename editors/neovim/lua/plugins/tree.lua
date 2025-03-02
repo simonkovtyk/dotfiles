@@ -23,5 +23,6 @@ return {
     "MunifTanjim/nui.nvim"
   },
   branch = "v3.x",
-  opts = options
+  opts = options,
+  cmd = { "Neotree" }
 }
