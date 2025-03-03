@@ -1,3 +1,5 @@
+set fish_greeting
+
 if not set -q FISH_INIT
   set -x FISH_INIT 1
 
