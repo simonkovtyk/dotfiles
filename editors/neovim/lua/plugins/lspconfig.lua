@@ -45,7 +45,6 @@ return {
       local lspconfig = require "lspconfig"
 
       for _, value in ipairs(matching_lsps) do
-        print(value)
         local is_lsp_active = lsp_settings.is_lsp_active()
 
         if is_lsp_active then

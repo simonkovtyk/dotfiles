@@ -21,7 +21,6 @@ require("lazy").setup({
     }
   },
   defaults = {
-    -- lazy = true,
     version = false
   },
   performance = {
@@ -34,7 +33,6 @@ require("lazy").setup({
     colorscheme = { "catppuccin" }
   },
   rtp = {
-    -- disable some rtp plugins
     disabled_plugins = {
       "gzip",
       "matchit",
@@ -55,25 +53,3 @@ require("lazy").setup({
   }
 })
 
--- require "lsp/angular"
--- require "lsp/astro"
--- require "lsp/bash"
--- require "lsp/c"
--- require "lsp/css"
--- require "lsp/emmet"
--- require "lsp/eslint"
--- require "lsp/go"
--- require "lsp/groovy"
--- require "lsp/html"
--- require "lsp/java"
--- require "lsp/json"
--- require "lsp/kotlin"
--- require "lsp/lua"
--- require "lsp/markdown"
--- require "lsp/python"
--- require "lsp/rust"
--- require "lsp/tailwind"
--- require "lsp/typescript"
--- require "lsp/vue"
--- require "lsp/zig"
--- require "lsp/stylelint"
