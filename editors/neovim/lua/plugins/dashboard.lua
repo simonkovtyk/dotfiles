@@ -108,5 +108,8 @@ local options = {
 
 return {
   "nvimdev/dashboard-nvim",
-  opts = options
+  opts = options,
+  cond = function()
+    return vim.fn.argc() == 0
+  end
 }

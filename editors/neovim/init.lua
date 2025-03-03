@@ -34,25 +34,25 @@ require("lazy").setup({
     colorscheme = { "catppuccin" }
   },
   rtp = {
-			-- disable some rtp plugins
-			disabled_plugins = {
-				"gzip",
-				"matchit",
-				"matchparen",
-				"netrwPlugin",
-				"rplugin",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"zipPlugin",
-			},
-		},
-    change_detection = {
-      enabled = false
+    -- disable some rtp plugins
+    disabled_plugins = {
+      "gzip",
+      "matchit",
+      "matchparen",
+      "netrwPlugin",
+      "rplugin",
+      "tarPlugin",
+      "tohtml",
+      "tutor",
+      "zipPlugin",
     },
-    readme = {
-      enabled = false
-    }
+  },
+  change_detection = {
+    enabled = false
+  },
+  readme = {
+    enabled = false
+  }
 })
 
 -- require "lsp/angular"

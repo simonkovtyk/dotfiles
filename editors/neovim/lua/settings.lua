@@ -23,11 +23,3 @@ vim.o.completeopt = "menu,menuone,noselect"
 vim.o.mouse = ""
 vim.o.fileformats = "unix"
 vim.o.clipboard = "unnamedplus"
-
-vim.diagnostic.config({
-  virtual_text = false,
-  update_in_insert = true,
-  severity_sort = true,
-  float = true
-})
-

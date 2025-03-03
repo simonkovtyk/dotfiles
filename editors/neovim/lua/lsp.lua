@@ -1,5 +1,3 @@
-local cmp_lsp = require "cmp_nvim_lsp"
-
 local on_attach = function(client, bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   local options = {
@@ -24,9 +22,33 @@ local on_attach = function(client, bufnr)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", options)
 end
 
+local cmp_lsp = require "cmp_nvim_lsp"
 local capabilities = cmp_lsp.default_capabilities()
+
+local is_lsp_active = function(name)
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
+    for _, client in ipairs(clients) do
+      if client.name == name then
+        return true
+    end
+  end
+
+  return false
+end
+
+local filetypes_with_lsp_mappings = {
+  typescript = {
+    "ts_ls"
+  },
+  lua = {
+    "lua_ls"
+  }
+}
 
 return {
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  is_lsp_active = is_lsp_active,
+  filetypes_with_lsp_mappings = filetypes_with_lsp_mappings
 }
