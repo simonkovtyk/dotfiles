@@ -19,5 +19,21 @@ return {
     plugin.setup(options)
     config.setup(configs)
   end,
-  lazy = true
+  event = "BufReadPost",
+  cmd = {
+    "TSInstall",
+    "TSInstallSync",
+    "TSInstallInfo",
+    "TSUpdate",
+    "TSUpdateSync",
+    "TSUninstall",
+    "TSBufEnable",
+    "TSBufDisable",
+    "TSBufToggle",
+    "TSEnable",
+    "TSDisable",
+    "TSModuleInfo",
+    "TSEditQuery",
+    "TSEditQueryUserAfter"
+  }
 }
