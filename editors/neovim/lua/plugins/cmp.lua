@@ -27,7 +27,9 @@ local options = function()
       }
     },
     performance = {
-      max_view_entries = 20
+      max_view_entries = 20,
+      debounce = 200,
+      throttle = 200
     },
     sources = cmp.config.sources({
         {
