@@ -38,11 +38,69 @@ local is_lsp_active = function(name)
 end
 
 local filetypes_with_lsp_mappings = {
+  javascript = {
+    "ts_ls",
+    "eslint"
+  },
   typescript = {
-    "ts_ls"
+    "ts_ls",
+    "angularls",
+    "eslint"
+  },
+  html = {
+    "angularls",
+    "emmet_language_server",
+    "eslint",
+    "html"
+  },
+  css = {
+    "cssls",
+    "stylelint_lsp"
+  },
+  scss = {
+    "eslint",
+    "stylelint_lsp"
+  },
+  json = {
+    "eslint",
+    "jsonls"
+  },
+  markdown = {
+    "eslint",
+    "marksman"
   },
   lua = {
     "lua_ls"
+  },
+  bash = {
+    "bashls"
+  },
+  c = {
+    "clangd"
+  },
+  cpp = {
+    "clangd"
+  },
+  go = {
+    "gopls"
+  },
+  groovy = {
+    "groovyls"
+  },
+  java = {
+    "jdtls"
+  },
+  kotlin = {
+    "kotlin_lanuage_server"
+  },
+  python = {
+    "pyright"
+  },
+  rust = {
+    "rust_analyzer"
+  },
+  zig = {
+    "zls"
   }
 }
 
