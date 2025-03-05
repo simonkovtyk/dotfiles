@@ -25,7 +25,6 @@ vim.o.fileformats = "unix"
 vim.o.clipboard = "unnamedplus"
 vim.o.ruler = false
 vim.o.showcmd = false
--- vim.o.cmdheight = 0
 vim.g.loaded_perl_provider = false
 vim.g.loaded_ruby_provider = false
 vim.g.loaded_node_provider = false

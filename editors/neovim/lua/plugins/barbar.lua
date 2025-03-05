@@ -7,8 +7,14 @@ local options = {
   minimum_padding = 1,
   icons = {
     buffer_index = true,
-    button = ""
-  }
+    button = "",
+    separator_at_end = false,
+    pinned = {
+      button = "󰐃",
+      filename = true
+    }
+  },
+  letters = "1234567890qwertzuiopasdfghjklyxcvbnm"
 }
 
 return {

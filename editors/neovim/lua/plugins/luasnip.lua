@@ -1,15 +1,29 @@
 return {
   "L3MON4D3/LuaSnip",
   version = "v2.*",
+  lazy = true,
   config = function()
-    local luasnip = require("luasnip")
+    local group_id = vim.api.nvim_create_augroup("LuaSnip Attach Group", {
+      clear = true
+    })
 
-    luasnip.setup();
+    local utils = require("utils")
+    local disallowed_filetypes = { "TelescopePrompt" }
 
-    local snipmate_engine = require("luasnip.loaders.from_snipmate")
+    vim.api.nvim_create_autocmd("InsertEnter", {
+      group = group_id,
+      callback = function ()
+        local includes_disallowed_filetypes = utils.array_includes(disallowed_filetypes, vim.bo.filetype)
 
-    snipmate_engine.lazy_load();
+        if includes_disallowed_filetypes then
+          return
+        end
+
+        require("luasnip").setup()
+        require("luasnip.loaders.from_snipmate").lazy_load();
+        vim.api.nvim_del_augroup_by_id(group_id)
+      end
+    })
   end,
-  event = "InsertEnter"
 }
 

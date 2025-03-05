@@ -77,7 +77,6 @@ return {
       end
 
       require("lualine").setup(options)
-      -- require("lazy").load({ plugins = { "lualine.nvim" } })
       vim.api.nvim_del_augroup_by_id(group_id)
     end
 
