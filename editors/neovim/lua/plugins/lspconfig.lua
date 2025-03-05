@@ -45,10 +45,10 @@ return {
       local lspconfig = require "lspconfig"
 
       for _, value in ipairs(matching_lsps) do
-        local is_lsp_active = lsp_settings.is_lsp_active()
+        local is_lsp_active = lsp_settings.is_lsp_active(value)
 
         if is_lsp_active then
-          goto continue 
+          goto continue
         end
 
         local found_lsp = lspconfig[value]
@@ -65,10 +65,10 @@ return {
     init_lsp()
 
     vim.api.nvim_create_autocmd("BufReadPost", {
-      desc = "LSP attach",
-      callback = function(opts)
+      desc = "LSP Attach",
+      callback = function()
         init_lsp()
       end
     })
   end
-} 
+}

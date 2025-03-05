@@ -1,4 +1,4 @@
-vim.loader.enable()
+-- vim.loader.enable()
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -9,7 +9,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require "mappings"
 require "settings"
-require "bypass"
 
 require("lazy").setup({
   spec = {

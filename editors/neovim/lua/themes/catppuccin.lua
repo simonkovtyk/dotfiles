@@ -54,8 +54,8 @@ local options = {
 return {
   "catppuccin/nvim",
   priority = 1000,
-  opts = options,
   config = function()
+    require("catppuccin").setup(options)
     vim.cmd.colorscheme "catppuccin"
 
     vim.cmd.highlight("IndentLine guifg=#313244")

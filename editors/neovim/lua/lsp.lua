@@ -26,11 +26,16 @@ local cmp_lsp = require "cmp_nvim_lsp"
 local capabilities = cmp_lsp.default_capabilities()
 
 local is_lsp_active = function(name)
+  if name == nil then
+    return false
+  end
+
   local bufnr = vim.api.nvim_get_current_buf()
   local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
-    for _, client in ipairs(clients) do
-      if client.name == name then
-        return true
+
+  for _, client in ipairs(clients) do
+    if client.name == name then
+      return true
     end
   end
 
