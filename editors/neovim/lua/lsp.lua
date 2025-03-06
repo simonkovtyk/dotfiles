@@ -42,6 +42,35 @@ local is_lsp_active = function(name)
   return false
 end
 
+local angularls_config = {
+  cmd = {
+    "ngserver",
+    "--stdio",
+    "--tsProbeLocations",
+    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
+    "--ngProbeLocations",
+    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules"
+  },
+  on_new_config = function (new_config, new_root_dir)
+    new_config.cmd = {
+      "ngserver",
+      "--stdio",
+      "--tsProbeLocations",
+      vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
+      "--ngProbeLocations",
+      vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules"
+    }
+  end
+}
+
+local get_lsp_config = function (lsp_name)
+  if lsp_name == "angularls" then
+    return angularls_config
+  end
+
+  return {}
+end
+
 local filetypes_with_lsp_mappings = {
   javascript = {
     "ts_ls",
@@ -113,5 +142,6 @@ return {
   on_attach = on_attach,
   capabilities = capabilities,
   is_lsp_active = is_lsp_active,
+  get_lsp_config = get_lsp_config,
   filetypes_with_lsp_mappings = filetypes_with_lsp_mappings
 }

@@ -48,10 +48,17 @@ return {
 
         local found_lsp = lspconfig[value]
 
-        found_lsp.setup({
+        local lsp_config = lsp_settings.get_lsp_config(value)
+        local default_lsp_config = {
           on_attach = lsp_settings.on_attach,
           capabilities = lsp_settings.capabilities
-        })
+        }
+
+        local utils = require("utils")
+
+        local merged_lsp_config = utils.table_flat_merge(default_lsp_config, lsp_config)
+
+        found_lsp.setup(merged_lsp_config)
 
         ::continue::
       end
