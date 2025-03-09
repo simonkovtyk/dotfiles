@@ -85,12 +85,7 @@ return {
       vim.api.nvim_del_augroup_by_id(group_id)
     end
 
-    vim.api.nvim_create_autocmd("BufReadPost", {
-      group = group_id,
-      callback = load_plugin
-    })
-
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd({ "BufReadPost", "FileType" }, {
       group = group_id,
       callback = load_plugin
     })
