@@ -1,57 +1,62 @@
+local last_keys = ""
+
 local options = {
+  options = {
+    theme = "catppuccin",
+    section_separators = { left = "", right = "" },
+    component_separators = "",
+    refresh = {
+      statusline = 100,
+      tabline = 200,
+      winbar = 200,
+    }
+  },
   sections = {
     lualine_a = {
       {
         "mode",
-        separator = {
-          left = "",
-          right = ""
+        padding = {
+          left = 2,
+          right = 1
         }
       }
     },
     lualine_b = {
       {
         "filetype",
-        color = {
-          fg = "ffffff",
-          bg = "181825"
-        },
-        colored = false
+        colored = false,
+        padding = {
+          left = 2,
+          right = 1
+        }
+      },
+      {
+        "branch",
+        icon = "",
+        padding = 1
       }
     },
     lualine_c = {
-      {
-        "branch",
-        color = {
-          fg = "ffffff",
-          bg = "181825"
-        }
-      }
+      "%="
     },
     lualine_x = {
-      {
-        "location",
-        color = {
-          fg = "ffffff",
-          bg = "181825"
-        }
-      }
     },
     lualine_y = {
       {
         "encoding",
-        color = {
-          fg = "ffffff",
-          bg = "181825"
-        }
+        padding = 1
+      },
+      {
+        "filesize",
+        padding = 1
       }
     },
     lualine_z = {
       {
-        "filesize",
-        color = {
-          fg = "ffffff",
-          bg = "181825"
+        "location",
+        padding = {
+          left = 1,
+          right = 2
         }
       }
     }

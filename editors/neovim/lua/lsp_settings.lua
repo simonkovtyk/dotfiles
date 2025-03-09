@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 local on_attach = function(client, bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   local options = {
@@ -138,10 +140,13 @@ local filetypes_with_lsp_mappings = {
   }
 }
 
+local filetypes = utils.array_from_table_keys(filetypes_with_lsp_mappings)
+
 return {
   on_attach = on_attach,
   capabilities = capabilities,
   is_lsp_active = is_lsp_active,
   get_lsp_config = get_lsp_config,
-  filetypes_with_lsp_mappings = filetypes_with_lsp_mappings
+  filetypes_with_lsp_mappings = filetypes_with_lsp_mappings,
+  filetypes = filetypes
 }

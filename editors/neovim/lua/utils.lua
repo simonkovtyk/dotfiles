@@ -1,5 +1,5 @@
-local function array_includes(table, item)
-  for _, value in ipairs(table) do
+local function array_includes(_table, item)
+  for _, value in ipairs(_table) do
     if value == item then
       return true
     end
@@ -8,28 +8,38 @@ local function array_includes(table, item)
   return false
 end
 
-local function table_flat_merge(table_a, table_b)
-  for key, value in pairs(table_b) do
-    table_a[key] = value
+local function table_flat_merge(_table_a, _table_b)
+  for key, value in pairs(_table_b) do
+    _table_a[key] = value
   end
 
-  return table_a
+  return _table_a
 end
 
-local function table_deep_merge(t1, t2)
-  for k, v in pairs(t2) do
-    if (type(v) == "table") and (type(t1[k] or false) == "table") then
-      table_merge(t1[k], t2[k])
+local function table_deep_merge(_table_a, _table_b)
+  for k, v in pairs(_table_b) do
+    if (type(v) == "table") and (type(_table_a[k] or false) == "table") then
+      table_deep_merge(_table_a[k], _table_b[k])
     else
-      t1[k] = v
+      _table_a[k] = v
     end
   end
-  return t1
+  return _table_a
 end
 
+local function array_from_table_keys(_table)
+  local keys = {}
+
+  for key, _ in pairs(_table) do
+    table.insert(keys, key)
+  end
+
+  return keys
+end
 
 return {
   array_includes = array_includes,
   table_deep_merge = table_deep_merge,
-  table_flat_merge = table_flat_merge
+  table_flat_merge = table_flat_merge,
+  array_from_table_keys = array_from_table_keys
 }

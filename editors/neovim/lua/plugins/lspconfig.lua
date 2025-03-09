@@ -1,25 +1,8 @@
+local lsp_settings = require("lsp_settings")
+
 return {
   "neovim/nvim-lspconfig",
-  ft = {
-    "javascript",
-    "typescript",
-    "html",
-    "css",
-    "scss",
-    "json",
-    "markdown",
-    "lua",
-    "bash",
-    "c",
-    "cpp",
-    "go",
-    "groovy",
-    "java",
-    "kotlin",
-    "python",
-    "rust",
-    "zig"
-  },
+  ft = lsp_settings.filetypes,
   config = function()
     vim.diagnostic.config({
       virtual_text = false,
@@ -29,7 +12,6 @@ return {
     })
 
     local init_lsp = function()
-      local lsp_settings = require "lsp"
       local current_buffer_filetype = vim.bo.filetype
       local matching_lsps = lsp_settings.filetypes_with_lsp_mappings[current_buffer_filetype];
 
