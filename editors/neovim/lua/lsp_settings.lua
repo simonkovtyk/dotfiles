@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   local options = {
     noremap = true,
@@ -22,9 +22,6 @@ local on_attach = function(client, bufnr)
   keymap(bufnr, "n", "<leader>lo", "<cmd>lua vim.diagnostic.goto_next()<CR>", options)
   keymap(bufnr, "n", "<leader>lp", "<cmd>lua vim.diagnostic.goto_previous()<CR>", options)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", options)
-end
-
-local function get_client_capabilities()
 end
 
 local is_lsp_active = function(name)

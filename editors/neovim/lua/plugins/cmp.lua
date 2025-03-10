@@ -17,8 +17,6 @@ local options = function(cmp)
       local buf_row = vim.api.nvim_buf_line_count(0)
       local row, col = table.unpack(vim.api.nvim_win_get_cursor(0))
 
-      print("Buffer Row: " .. buf_row .. ", Row: " .. row)
-
       if row == buf_row then
         return
       end
