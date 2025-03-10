@@ -24,8 +24,8 @@ local on_attach = function(client, bufnr)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", options)
 end
 
-local cmp_lsp = require "cmp_nvim_lsp"
-local capabilities = cmp_lsp.default_capabilities()
+local function get_client_capabilities()
+end
 
 local is_lsp_active = function(name)
   if name == nil then
@@ -144,7 +144,7 @@ local filetypes = utils.array_from_table_keys(filetypes_with_lsp_mappings)
 
 return {
   on_attach = on_attach,
-  capabilities = capabilities,
+  get_client_capabilities = get_client_capabilities,
   is_lsp_active = is_lsp_active,
   get_lsp_config = get_lsp_config,
   filetypes_with_lsp_mappings = filetypes_with_lsp_mappings,

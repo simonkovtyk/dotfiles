@@ -31,9 +31,10 @@ return {
         local found_lsp = lspconfig[value]
 
         local lsp_config = lsp_settings.get_lsp_config(value)
+        local cmp_lsp = require "cmp_nvim_lsp"
         local default_lsp_config = {
           on_attach = lsp_settings.on_attach,
-          capabilities = lsp_settings.capabilities
+          capabilities = cmp_lsp.default_capabilities()
         }
 
         local utils = require("utils")
