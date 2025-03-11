@@ -40,7 +40,8 @@ return {
 
         local default_lsp_config = {
           on_attach = lsp_settings.on_attach,
-          capabilities = capabilities
+          capabilities = capabilities,
+          detached = false
         }
 
         local merged_lsp_config = default_lsp_config

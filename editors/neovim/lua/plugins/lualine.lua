@@ -79,7 +79,7 @@ return {
         return
       end
 
-      require("lualine").setup(options)
+      require "lualine".setup(options)
       vim.api.nvim_del_augroup_by_id(group_id)
     end
 
