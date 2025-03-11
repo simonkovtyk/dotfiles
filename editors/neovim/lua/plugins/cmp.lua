@@ -4,13 +4,16 @@ local options = function(cmp)
   local utils = require "utils"
 
   local keymap = vim.api.nvim_set_keymap
+  local default_select_behavior = "select"
 
   -- After lazy loading nvim-cmp, mappings of this plugin are still remaining uninitialized, so I need to handle them manually.
 
   keymap("i", "<Down>", "", utils.table_flat_merge(mappings_settings.options, {
     callback = function ()
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.select_next_item({
+          behavior = default_select_behavior
+        })
         return
       end
 
@@ -28,7 +31,9 @@ local options = function(cmp)
   keymap("i", "<Up>", "", utils.table_flat_merge(mappings_settings.options, {
     callback = function ()
       if cmp.visible() then
-        cmp.select_prev_item()
+        cmp.select_prev_item({
+          behavior = default_select_behavior
+        })
         return
       end
 
@@ -42,14 +47,25 @@ local options = function(cmp)
     end
   }))
 
+  keymap("i", "<CR>", "", utils.table_flat_merge(mappings_settings.options, {
+    callback = function ()
+      if cmp.visible() then
+        local has_selected_entry = cmp.get_selected_index() ~= nil
+        print(has_selected_entry)
+
+        if has_selected_entry then
+          cmp.confirm({ select = false })
+          return
+        end
+      end
+
+      local keys = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
+      vim.api.nvim_feedkeys(keys, "n", true)
+    end
+  }))
+
   return {
-    mapping = {
-      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
-      ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.abort(),
-      ["<CR>"] = cmp.mapping.confirm({ select = false })
-    },
+    mapping = {},
     snippet = {
       scrollbar = false,
       expand = function(args)
