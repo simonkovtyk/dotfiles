@@ -1,26 +1,8 @@
+local lsp_settings = require("lsp_settings")
+
 return {
   "neovim/nvim-lspconfig",
-  ft = {
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "css",
-    "scss",
-    "json",
-    "markdown",
-    "lua",
-    "bash",
-    "c",
-    "cpp",
-    "go",
-    "groovy",
-    "java",
-    "kotlin",
-    "python",
-    "rust",
-    "zig"
-  },
+  ft = lsp_settings.filetypes,
   config = function()
     vim.diagnostic.config({
       virtual_text = false,
@@ -30,7 +12,6 @@ return {
     })
 
     local init_lsp = function()
-      local lsp_settings = require "lsp"
       local current_buffer_filetype = vim.bo.filetype
       local matching_lsps = lsp_settings.filetypes_with_lsp_mappings[current_buffer_filetype];
 
@@ -50,9 +31,10 @@ return {
         local found_lsp = lspconfig[value]
 
         local lsp_config = lsp_settings.get_lsp_config(value)
+        local cmp_lsp = require "cmp_nvim_lsp"
         local default_lsp_config = {
           on_attach = lsp_settings.on_attach,
-          capabilities = lsp_settings.capabilities
+          capabilities = cmp_lsp.default_capabilities()
         }
 
         local utils = require("utils")

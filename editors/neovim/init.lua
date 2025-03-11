@@ -40,7 +40,7 @@ require("lazy").setup({
       "tohtml",
       "tutor",
       "zipPlugin",
-    },
+    }
   },
   change_detection = {
     enabled = false

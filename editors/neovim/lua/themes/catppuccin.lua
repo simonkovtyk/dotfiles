@@ -16,13 +16,7 @@ local options = {
     indent_blankline = {
       enabled = false
     },
-    diffview = {
-      enabled = true
-    },
     telescope = {
-      enabled = true
-    },
-    window_picker = {
       enabled = true
     },
     native_lsp = {
