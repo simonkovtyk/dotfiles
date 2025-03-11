@@ -3,6 +3,7 @@ return {
   ft = {
     "javascript",
     "typescript",
+    "typescriptreact",
     "html",
     "css",
     "scss",

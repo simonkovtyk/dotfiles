@@ -81,6 +81,10 @@ local filetypes_with_lsp_mappings = {
     "angularls",
     "eslint"
   },
+  typescriptreact = {
+    "ts_ls",
+    "eslint"
+  },
   html = {
     "angularls",
     "emmet_language_server",
