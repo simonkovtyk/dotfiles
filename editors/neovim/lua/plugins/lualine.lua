@@ -1,5 +1,3 @@
-local last_keys = ""
-
 local options = {
   options = {
     theme = "catppuccin",

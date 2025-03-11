@@ -41,34 +41,10 @@ local is_lsp_active = function(name)
   return false
 end
 
-local angularls_config = {
-  cmd = {
-    "ngserver",
-    "--stdio",
-    "--tsProbeLocations",
-    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
-    "--ngProbeLocations",
-    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules"
-  },
-  on_new_config = function (new_config, new_root_dir)
-    new_config.cmd = {
-      "ngserver",
-      "--stdio",
-      "--tsProbeLocations",
-      vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
-      "--ngProbeLocations",
-      vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules"
-    }
-  end
-}
-
-local get_lsp_config = function (lsp_name)
-  if lsp_name == "angularls" then
-    return angularls_config
-  end
-
-  return {}
-end
+-- Maybe I need this function some day to pass custom params to some specific lsp.
+-- local get_lsp_config = function (lsp_name)
+--  return {}
+-- end
 
 local filetypes_with_lsp_mappings = {
   javascript = {
@@ -92,10 +68,13 @@ local filetypes_with_lsp_mappings = {
   },
   css = {
     "cssls",
+    "css_variables",
     "eslint",
     "stylelint_lsp"
   },
   scss = {
+    "cssls",
+    "css_variables",
     "eslint",
     "stylelint_lsp"
   },
@@ -145,9 +124,9 @@ local filetypes_with_lsp_mappings = {
 local filetypes = utils.array_from_table_keys(filetypes_with_lsp_mappings)
 
 return {
+  -- get_lsp_config = get_lsp_config,
   on_attach = on_attach,
   is_lsp_active = is_lsp_active,
-  get_lsp_config = get_lsp_config,
   filetypes_with_lsp_mappings = filetypes_with_lsp_mappings,
   filetypes = filetypes
 }

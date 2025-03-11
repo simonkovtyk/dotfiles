@@ -3,6 +3,9 @@ local lsp_settings = require("lsp_settings")
 return {
   "neovim/nvim-lspconfig",
   ft = lsp_settings.filetypes,
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim"
+  },
   config = function()
     vim.diagnostic.config({
       virtual_text = false,
@@ -30,16 +33,17 @@ return {
 
         local found_lsp = lspconfig[value]
 
-        local lsp_config = lsp_settings.get_lsp_config(value)
         local cmp_lsp = require "cmp_nvim_lsp"
+
+        local capabilities = cmp_lsp.default_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+
         local default_lsp_config = {
           on_attach = lsp_settings.on_attach,
-          capabilities = cmp_lsp.default_capabilities()
+          capabilities = capabilities
         }
 
-        local utils = require("utils")
-
-        local merged_lsp_config = utils.table_flat_merge(default_lsp_config, lsp_config)
+        local merged_lsp_config = default_lsp_config
 
         found_lsp.setup(merged_lsp_config)
 
