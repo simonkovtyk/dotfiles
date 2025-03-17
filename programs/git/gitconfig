@@ -22,3 +22,5 @@
 	editor = nvim
 [tag]
 	gpgSign = true
+[init]
+	defaultBranch = main
