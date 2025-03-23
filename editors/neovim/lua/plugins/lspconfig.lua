@@ -54,7 +54,7 @@ return {
 
     init_lsp()
 
-    vim.api.nvim_create_autocmd("BufReadPost", {
+    vim.api.nvim_create_autocmd("BufEnter", {
       desc = "LSP Attach",
       callback = function()
         init_lsp()
