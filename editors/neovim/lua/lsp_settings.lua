@@ -58,7 +58,8 @@ local filetypes_with_lsp_mappings = {
   },
   typescriptreact = {
     "ts_ls",
-    "eslint"
+    "eslint",
+    "tailwindcss"
   },
   html = {
     "angularls",
