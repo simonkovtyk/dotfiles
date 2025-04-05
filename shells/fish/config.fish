@@ -17,6 +17,6 @@ if not set -q FISH_INIT
   alias vi="nvim"
 
   echo
-  neofetch
+  fastfetch
 end
 
