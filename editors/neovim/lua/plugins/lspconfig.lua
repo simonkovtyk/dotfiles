@@ -1,8 +1,6 @@
-local lsp_settings = require("lsp_settings")
 
 return {
   "neovim/nvim-lspconfig",
-  ft = lsp_settings.filetypes,
   dependencies = {
     "williamboman/mason-lspconfig.nvim"
   },
@@ -14,51 +12,16 @@ return {
       float = true
     })
 
-    local init_lsp = function()
-      local current_buffer_filetype = vim.bo.filetype
-      local matching_lsps = lsp_settings.filetypes_with_lsp_mappings[current_buffer_filetype];
+    local lsp_settings = require("lsp_settings")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      if matching_lsps == nil then
-        return
-      end
-
-      local lspconfig = require "lspconfig"
-
-      for _, value in ipairs(matching_lsps) do
-        local is_lsp_active = lsp_settings.is_lsp_active(value)
-
-        if is_lsp_active then
-          goto continue
-        end
-
-        local found_lsp = lspconfig[value]
-
-        local cmp_lsp = require "cmp_nvim_lsp"
-
-        local capabilities = cmp_lsp.default_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-        local default_lsp_config = {
-          on_attach = lsp_settings.on_attach,
-          capabilities = capabilities,
-          detached = false
-        }
-
-        local merged_lsp_config = default_lsp_config
-
-        found_lsp.setup(merged_lsp_config)
-
-        ::continue::
-      end
-    end
-
-    init_lsp()
-
-    vim.api.nvim_create_autocmd("BufEnter", {
-      desc = "LSP Attach",
-      callback = function()
-        init_lsp()
-      end
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+      on_attach = lsp_settings.on_attach
     })
+
+    for _, value in ipairs(lsp_settings.lsps) do
+      vim.lsp.enable(value)
+    end
   end
 }

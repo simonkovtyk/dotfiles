@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local on_attach = function(_, bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   local options = {
@@ -24,6 +22,26 @@ local on_attach = function(_, bufnr)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", options)
 end
 
+local lsps = {
+  "ts_ls", "eslint", "ts_ls", "angularls",
+  "eslint", "ts_ls", "eslint", "tailwindcss",
+  "angularls", "emmet_language_server", "eslint", "html",
+  "cssls", "css_variables", "eslint", "stylelint_lsp",
+  "cssls", "css_variables", "eslint", "stylelint_lsp",
+  "eslint", "jsonls", "eslint", "marksman",
+  "lua_ls", "bashls", "clangd", "clangd",
+  "gopls", "groovyls", "jdtls", "kotlin_lanuage_server",
+  "pyright", "rust_analyzer", "zls"
+}
+
+--[[
+local utils = require("utils")
+
+Maybe I need this function some day to pass custom params to some specific lsp.
+local get_lsp_config = function (lsp_name)
+  return {}
+end
+
 local is_lsp_active = function(name)
   if name == nil then
     return false
@@ -40,11 +58,6 @@ local is_lsp_active = function(name)
 
   return false
 end
-
--- Maybe I need this function some day to pass custom params to some specific lsp.
--- local get_lsp_config = function (lsp_name)
---  return {}
--- end
 
 local filetypes_with_lsp_mappings = {
   javascript = {
@@ -123,11 +136,15 @@ local filetypes_with_lsp_mappings = {
 }
 
 local filetypes = utils.array_from_table_keys(filetypes_with_lsp_mappings)
+]]--
 
 return {
-  -- get_lsp_config = get_lsp_config,
+  --[[
+    get_lsp_config = get_lsp_config,
+    is_lsp_active = is_lsp_active,
+    filetypes_with_lsp_mappings = filetypes_with_lsp_mappings,
+    filetypes = filetypes
+  ]]--
   on_attach = on_attach,
-  is_lsp_active = is_lsp_active,
-  filetypes_with_lsp_mappings = filetypes_with_lsp_mappings,
-  filetypes = filetypes
+  lsps = lsps
 }
