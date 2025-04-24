@@ -1,5 +1,4 @@
 local on_attach = function(_, bufnr)
-  print("On Attach");
   local keymap = vim.api.nvim_buf_set_keymap
   local options = {
     noremap = true,
