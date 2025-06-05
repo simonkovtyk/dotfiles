@@ -9,8 +9,7 @@ blocks:
   - name
 
 color:
-  when: never
-  theme: default
+  theme: custom
 
 icons:
   when: always
