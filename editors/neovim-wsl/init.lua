@@ -20,7 +20,6 @@ require("lazy").setup({
   defaults = {
     version = false
   },
-  concurrency = 20,
   performance = {
     cache = {
       enabled = true
@@ -44,8 +43,7 @@ require("lazy").setup({
     }
   },
   change_detection = {
-    enabled = false,
-    notify = false
+    enabled = false
   },
   readme = {
     enabled = false

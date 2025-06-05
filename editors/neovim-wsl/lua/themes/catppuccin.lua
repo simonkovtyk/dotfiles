@@ -1,10 +1,8 @@
-local opts = {
+local options = {
   flavour = "mocha",
   no_italic = true,
   no_bold = true,
   no_underline = true,
-  transparent_background = true,
-  show_end_of_buffer = true,
   integrations = {
     barbar = true,
     barbecue = {
@@ -44,23 +42,18 @@ local opts = {
         background = false
       }
     }
-  },
-  custom_highlights = function(colors)
-    return {
-      IndentLine = { fg = colors.surface0 },
-      IndentLineCurrent = { fg = colors.surface2 },
-      CursorLine = {
-        bg = "NONE"
-      }
-    }
-  end
+  }
 }
 
 return {
   "catppuccin/nvim",
   priority = 1000,
-  config = function ()
-    require("catppuccin").setup(opts)
+  config = function()
+    require("catppuccin").setup(options)
     vim.cmd.colorscheme "catppuccin"
+
+    vim.cmd.highlight("IndentLine guifg=#313244")
+    vim.cmd.highlight("IndentLineCurrent guifg=#585b70")
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#45475a" })
   end
 }

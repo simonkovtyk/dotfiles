@@ -23,12 +23,13 @@ local on_attach = function(_, bufnr)
 end
 
 local lsps = {
-  "ts_ls", "angularls",
-  "eslint", "tailwindcss",
-  "emmet_language_server", "html",
-  "cssls", "css_variables", "stylelint_lsp",
-  "jsonls", "marksman",
-  "lua_ls", "bashls", "clangd",
+  "ts_ls", "eslint", "ts_ls", "angularls",
+  "eslint", "ts_ls", "eslint", "tailwindcss",
+  "angularls", "emmet_language_server", "eslint", "html",
+  "cssls", "css_variables", "eslint", "stylelint_lsp",
+  "cssls", "css_variables", "eslint", "stylelint_lsp",
+  "eslint", "jsonls", "eslint", "marksman",
+  "lua_ls", "bashls", "clangd", "clangd",
   "gopls", "groovyls", "jdtls", "kotlin_lanuage_server",
   "pyright", "rust_analyzer", "zls", "bufls"
 }
