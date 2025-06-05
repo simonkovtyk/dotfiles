@@ -27,5 +27,8 @@ M.window_padding = {
   top = 0,
   bottom = 0
 }
+M.set_environment_variables = {
+  fish_init_starship = "true"
+}
 
 return M

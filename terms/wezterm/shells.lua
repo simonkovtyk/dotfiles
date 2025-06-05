@@ -7,7 +7,7 @@ M.launch_menu = {
   {
     label = "Arch Linux",
     args = {
-       "/usr/bin/fish"
+      "/usr/bin/fish"
     }
   },
   {

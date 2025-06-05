@@ -9,6 +9,10 @@ if status is-interactive
 
 	alias vi="nvim"
 
+  if test "$fish_init_starship" = "true"
+    starship init fish | source
+  end
+
 	echo
 	fastfetch
 	echo
