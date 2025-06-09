@@ -11,9 +11,18 @@ if status is-interactive
 
   if test "$fish_init_starship" = "true"
     starship init fish | source
+    alias ls="lsd"
   end
 
 	echo
 	fastfetch
 	echo
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/simonkov/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
