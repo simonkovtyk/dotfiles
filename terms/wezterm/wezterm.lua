@@ -5,7 +5,6 @@ local mappings = require "mappings"
 local settings = require "settings"
 local typography = require "typography"
 local shells = require "shells"
-require "listeners"
 
 local config = wezterm.config_builder()
 

@@ -3,8 +3,6 @@ local wezterm = require "wezterm"
 local M = {}
 
 M.disable_default_key_bindings = true
-M.disable_default_mouse_bindings = true
-M.mouse_wheel_scrolls_tabs = false
 M.keys = {
   -- Normal Mode
   {
