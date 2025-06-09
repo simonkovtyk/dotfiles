@@ -1,5 +1,6 @@
 local M = {}
 
+M.default_cwd = "~"
 M.default_prog = {
   "/usr/bin/fish"
 }
