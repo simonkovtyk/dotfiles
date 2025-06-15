@@ -9,12 +9,12 @@ blocks:
   - name
 
 color:
-  theme: custom
+  when: never
 
 icons:
   when: always
   theme: fancy
-  separator: "  "
+  separator: " "
 
 sorting:
   dir-grouping: first
@@ -22,7 +22,7 @@ sorting:
 
 layout: grid
 
-size: bytes
+size: default
 
 header: true
 
