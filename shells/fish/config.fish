@@ -7,11 +7,11 @@ if status is-interactive
 	  set -gx TERMINFO ~/.terminfo
 	end
 
+  zoxide init fish | source
 	alias vi="nvim"
   alias la="lsd"
 
   if test "$TERMINAL_EMULATION" = "true"
-    zoxide init fish | source
     starship init fish | source
     fastfetch
   end
