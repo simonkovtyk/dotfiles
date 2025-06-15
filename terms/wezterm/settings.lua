@@ -28,7 +28,7 @@ M.window_padding = {
   bottom = 16
 }
 M.set_environment_variables = {
-  terminal_emulation = "true"
+  TERMINAL_EMULATION = "true"
 }
 
 return M

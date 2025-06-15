@@ -10,7 +10,7 @@ if status is-interactive
 	alias vi="nvim"
   alias la="lsd"
 
-  if test "$terminal_emulation" = "true"
+  if test "$TERMINAL_EMULATION" = "true"
     zoxide init fish | source
     starship init fish | source
     fastfetch
