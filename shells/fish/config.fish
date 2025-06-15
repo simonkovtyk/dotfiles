@@ -8,21 +8,13 @@ if status is-interactive
 	end
 
 	alias vi="nvim"
+  alias la="lsd"
 
-  if test "$fish_init_starship" = "true"
+  if test "$terminal_emulation" = "true"
+    zoxide init fish | source
     starship init fish | source
-    alias ls="lsd"
+    fastfetch
   end
 
-	echo
-	fastfetch
-	echo
 end
-
-# pnpm
-set -gx PNPM_HOME "/home/simonkov/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
 

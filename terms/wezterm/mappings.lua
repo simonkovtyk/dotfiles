@@ -7,19 +7,14 @@ M.keys = {
   -- Normal Mode
   {
     key = "C",
-    mods = "CTRL|SHIFT",
+    mods = "CTRL",
     action = wezterm.action.CopyTo "Clipboard"
   },
 	{
 		key = "V",
-		mods = "CTRL|SHIFT",
+		mods = "CTRL",
 		action = wezterm.action.PasteFrom "Clipboard"
 	},
-  {
-    key = "h",
-    mods = "ALT",
-    action = wezterm.action.Hide
-  },
   {
     key = "y",
     mods = "ALT",
@@ -43,20 +38,15 @@ M.keys = {
     key = "q",
     mods = "ALT",
     action = wezterm.action.CloseCurrentPane {
-      confirm = true
+      confirm = false
     }
   },
   {
     key = "q",
     mods = "CTRL",
     action = wezterm.action.CloseCurrentTab {
-      confirm = true
+      confirm = false
     }
-  },
-  {
-    key = "q",
-    mods = "CTRL|ALT",
-    action = wezterm.action.QuitApplication
   },
   {
     key = "w",

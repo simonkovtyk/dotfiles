@@ -10,7 +10,7 @@ M.cursor_blink_rate = 0
 M.cursor_thickness = "0.15cell"
 M.adjust_window_size_when_changing_font_size = false
 M.term = "xterm-256color"
-M.automatically_reload_config = false
+M.automatically_reload_config = true
 M.show_new_tab_button_in_tab_bar = false
 M.use_fancy_tab_bar = false
 M.integrated_title_button_style = "Gnome"
@@ -22,13 +22,13 @@ M.window_frame = {
 M.tab_bar_at_bottom = true
 M.enable_wayland = false
 M.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0
+  left = 16,
+  right = 16,
+  top = 16,
+  bottom = 16
 }
 M.set_environment_variables = {
-  fish_init_starship = "true"
+  terminal_emulation = "true"
 }
 
 return M
