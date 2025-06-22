@@ -10,7 +10,9 @@ if status is-interactive
 
   zoxide init fish | source
 	alias vi="nvim"
-  alias la="lsd"
+  alias ls="lsd -A"
+  alias la="lsd -l"
+  alias lt="lsd --tree"
 
   if test "$TERMINAL_EMULATION" = "true"
     starship init fish | source
