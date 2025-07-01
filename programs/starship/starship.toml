@@ -31,6 +31,16 @@ format = '([\($branch\)](fg:purple) )'
 
 [git_status]
 format = '([\[$all_status\]](fg:purple) )'
+conflicted = ''
+ahead = '⇡'
+behind = '⇣'
+diverged = '⇕'
+untracked = '?'
+stashed = '$'
+modified = '!'
+staged = '+'
+renamed = '»'
+deleted = ''
 
 [character]
 format = '[~>](fg:purple) '
