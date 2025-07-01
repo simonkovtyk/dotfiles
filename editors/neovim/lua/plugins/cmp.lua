@@ -1,6 +1,6 @@
-local options = function()
+local cmp_options = function()
   local cmp = require "cmp"
-  local lspkind = require "lspkind"
+  local utils = require "utils"
 
   return {
     mapping = {
@@ -24,10 +24,27 @@ local options = function()
         auto_open = true
       }
     },
+    window = {
+      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" })
+    },
     performance = {
       max_view_entries = 20,
       debounce = 200,
       throttle = 200
+    },
+    formatting = {
+      fields = { "abbr", "kind" },
+      format = function (_, item)
+        --[[ if item.menu ~= nil then
+          item.menu = utils.ellipsis(item.menu, 20);
+        end]]--
+
+        item.abbr = utils.ellipsis(item.abbr, 20);
+        item.kind = "[" .. item.kind .. "]";
+
+        return item;
+      end
     },
     sources = cmp.config.sources({
         {
@@ -44,16 +61,68 @@ local options = function()
           name = "cmdline"
         }
       }
-    ),
+    )
+  }
+end
+
+local cmp_cmdline_command_options = function ()
+  local cmp = require "cmp";
+  local utils = require "utils"
+
+  return {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = "path" },
+      {
+        name = "cmdline",
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      },
+    },
     formatting = {
-      format = lspkind.cmp_format({
-        maxwidth = 50,
-        ellipsis_char = "…",
-        show_labelDetails = true,
-        before = function (_, vim_item)
-          return vim_item
-        end
-      })
+      fields = { "abbr" },
+      format = function (_, item)
+        --[[ if item.menu ~= nil then
+          item.menu = utils.ellipsis(item.menu, 20);
+        end]]--
+
+        item.abbr = utils.ellipsis(item.abbr, 20);
+        -- item.kind = "[" .. item.kind .. "]";
+
+        return item;
+      end
+    },
+    window = {
+      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" }),
+    }
+  }
+end
+
+local cmp_cmdline_search_options = function ()
+  local cmp = require "cmp";
+  local utils = require "utils"
+
+  return {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = "buffer" },
+    },
+    formatting = {
+      fields = { "abbr" },
+      format = function (_, item)
+        --[[ if item.menu ~= nil then
+          item.menu = utils.ellipsis(item.menu, 20);
+        end]]--
+
+        item.abbr = utils.ellipsis(item.abbr, 20);
+        -- item.kind = "[" .. item.kind .. "]";
+
+        return item;
+      end
+    },
+    window = {
+      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" }),
     }
   }
 end
@@ -64,10 +133,16 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip"
   },
-  event = "InsertEnter",
-  opts = options,
+  config = function ()
+    local cmp = require "cmp";
+
+    cmp.setup(cmp_options());
+    cmp.setup.cmdline(":", cmp_cmdline_command_options());
+    cmp.setup.cmdline("/", cmp_cmdline_search_options());
+  end,
   cond = function ()
     local utils = require("utils")
     local disallowed_filetypes = { "TelescopePrompt" }

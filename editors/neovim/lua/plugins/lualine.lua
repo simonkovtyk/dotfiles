@@ -1,7 +1,7 @@
 local options = {
   options = {
-    theme = "catppuccin",
-    section_separators = { left = "", right = "" },
+    theme = "dark-orchid",
+    section_separators = { left = "", right = "" },
     component_separators = "",
     refresh = {
       statusline = 100,
@@ -13,10 +13,7 @@ local options = {
     lualine_a = {
       {
         "mode",
-        padding = {
-          left = 2,
-          right = 1
-        }
+        padding = 0
       }
     },
     lualine_b = {
@@ -24,38 +21,39 @@ local options = {
         "filetype",
         colored = false,
         padding = {
-          left = 2,
-          right = 1
+          left = 2
         }
       },
       {
         "branch",
         icon = "",
-        padding = 1
+        padding = {
+          left = 2
+        }
       }
     },
     lualine_c = {
-      "%="
     },
     lualine_x = {
     },
     lualine_y = {
       {
         "encoding",
-        padding = 1
+        padding = {
+          right = 2
+        }
       },
       {
         "filesize",
-        padding = 1
+        padding = {
+          right = 1
+        }
       }
     },
     lualine_z = {
       {
         "location",
-        padding = {
-          left = 1,
-          right = 2
-        }
+        padding = 0
       }
     }
   }

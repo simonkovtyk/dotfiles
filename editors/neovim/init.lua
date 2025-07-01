@@ -9,6 +9,9 @@ require "mappings"
 require "settings"
 
 require("lazy").setup({
+  ui = {
+    border = "rounded"
+  },
   spec = {
     {
       import = "plugins"
@@ -28,7 +31,7 @@ require("lazy").setup({
     reset_packpath = true
   },
   install = {
-    colorscheme = { "catppuccin" }
+    colorscheme = { "dark-orchid" }
   },
   rtp = {
     disabled_plugins = {

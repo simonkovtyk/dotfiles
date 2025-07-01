@@ -12,10 +12,15 @@ local options = {
     pinned = {
       button = "󰐃",
       filename = true
+    },
+    filetype = {
+      custom_colors = true
     }
   },
   letters = "1234567890qwertzuiopasdfghjklyxcvbnm"
 }
+
+vim.g.barbar_auto_setup = false
 
 return {
   "romgrk/barbar.nvim",

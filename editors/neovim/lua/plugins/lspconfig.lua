@@ -3,6 +3,7 @@ return {
   dependencies = {
     "williamboman/mason-lspconfig.nvim"
   },
+  event = "BufReadPost",
   config = function()
     vim.diagnostic.config({
       virtual_text = false,

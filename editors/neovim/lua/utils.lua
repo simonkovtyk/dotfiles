@@ -43,10 +43,28 @@ local function array_from_table_keys(_table)
   return keys
 end
 
+local function ellipsis(value, length)
+  local value_length = string.len(value);
+  local real_length = length - 1;
+
+  if value_length <= real_length then
+    return value;
+  end
+
+  local special_chars = { " ", "…" }
+
+  while special_chars[string.sub(value, real_length, real_length)] ~= nil do
+    real_length = real_length - 1;
+  end
+
+  return string.sub(value, 1, real_length) .. "…";
+end
+
 return {
   get_nvim_semver = get_nvim_semver,
   array_includes = array_includes,
   table_deep_merge = table_deep_merge,
   table_flat_merge = table_flat_merge,
-  array_from_table_keys = array_from_table_keys
+  array_from_table_keys = array_from_table_keys,
+  ellipsis = ellipsis
 }

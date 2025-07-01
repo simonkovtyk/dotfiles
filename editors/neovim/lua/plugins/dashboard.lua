@@ -14,9 +14,9 @@ logo = logo .. string.rep("\n", 2)
 
 local version_info = vim.version()
 
-logo = logo .. " " .. version_info.major .. "." .. version_info.minor .. "." .. version_info.patch .. " Custom IDE"
+logo = logo .. version_info.major .. "." .. version_info.minor .. "." .. version_info.patch
 
-logo = string.rep("\n", 12) .. logo .. string.rep("\n", 3)
+logo = logo .. string.rep("\n", 2)
 logo = vim.split(logo, "\n")
 
 local options = {
@@ -29,6 +29,7 @@ local options = {
     winbar = true
   },
   config = {
+    vertical_center = true,
     header = logo,
     center = {
       {
@@ -95,12 +96,9 @@ local options = {
       {
         icon = " ",
         desc = "View GitHub",
-        action = "!firefox -new-tab https://github.com/simonkovtyk",
+        action = "silent exec '!firefox -new-tab https://github.com/simonkovtyk > /dev/null 2>&1'",
         key = "g",
         key_format = "[%s]"
-      },
-      {
-        desc = string.rep(" ", 21) .. "󰄾 private only 󰄽"
       }
     }
   }
