@@ -37,7 +37,7 @@ local options = {
 }
 
 return {
-  dir = "~/projects/private/dark-orchid-neovim",
+  "dark-orchid/neovim",
   priority = 1000,
   lazy = false,
   config = function ()
