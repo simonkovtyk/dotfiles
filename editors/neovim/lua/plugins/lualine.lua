@@ -12,48 +12,81 @@ local options = {
   sections = {
     lualine_a = {
       {
-        "mode",
+        function ()
+          return " │"
+        end,
+        separator = { left = "", right = "" },
         padding = 0
       }
     },
     lualine_b = {
       {
-        "filetype",
-        colored = false,
-        padding = {
-          left = 2
-        }
-      },
-      {
-        "branch",
-        icon = "",
-        padding = {
-          left = 2
-        }
+        "mode",
+        separator = { left = "", right = "" },
+        padding = 1
       }
     },
     lualine_c = {
+      {
+        "filetype",
+        separator = { left = "", right = "" },
+        colored = false,
+        padding = {
+          left = 3,
+          right = 2
+        },
+        icon_only = true
+      },
+      {
+        "branch",
+        icon = "",
+        padding = 0,
+        fmt = function (value)
+          if value == nil or value == "" then
+            return ""
+          end
+
+          return "   " .. value
+        end
+      }
     },
     lualine_x = {
+      {
+        "filesize",
+        icon = "",
+        padding = 0,
+        fmt = function (value)
+          if value == nil or value == "" then
+            return ""
+          end
+
+          return string.upper(value) .. "  "
+        end
+      }
     },
     lualine_y = {
       {
         "encoding",
-        padding = {
-          right = 2
-        }
-      },
-      {
-        "filesize",
-        padding = {
-          right = 1
-        }
+        icon = "",
+        padding = 3,
+        fmt = function (value)
+          if value == nil or value == "" then
+            return ""
+          end
+
+          return string.upper(value)
+        end
       }
     },
     lualine_z = {
       {
         "location",
-        padding = 0
+        icon = "󰦨",
+        padding = 0,
+        separator = { left = "", right = "" },
+        fmt = function (value)
+          return "│ " .. value;
+        end
       }
     }
   }

@@ -69,7 +69,7 @@ local options = {
         desc_hl = "DashboardFooter"
       },
       {
-        icon = " ",
+        icon = "󰦩 ",
         desc = "LSPs",
         action = "Mason",
         key = "m",
