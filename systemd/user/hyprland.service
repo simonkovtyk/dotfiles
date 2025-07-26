@@ -1,0 +1,10 @@
+[Unit]
+Description=Hyprland Autostart
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/Hyprland
+Restart=no
+
+[Install]
+WantedBy=default.target
