@@ -1,0 +1,44 @@
+{
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon} {volume}%  {format_source}",
+    "format-bluetooth-muted": "  {icon} {format_source}",
+    "format-muted": "  {volume}%",
+    "format-source": "  {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 12
+  },
+  "clock": {
+    "format": "{:%H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  }
+}
