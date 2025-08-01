@@ -11,11 +11,15 @@ window#waybar {
 }
 
 .modules-left,
+.modules-right {
+  background: rgba(24, 24, 27, .8);
+  /* background: black; */
+}
+
+.modules-left,
 .modules-center,
 .modules-right
 {
-  background: rgba(24, 24, 27, .8);
-  /* background: black; */
   margin: 6px 8px;
   padding: 2px 0;
   border-radius: 12px;
