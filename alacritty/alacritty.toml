@@ -1,14 +1,20 @@
 [general]
 live_config_reload = true
+import = [
+  "~/.config/alacritty/dark-orchid.toml"
+]
+ipc_socket = false
 
 [env]
 TERMINAL_EMULATION = "true"
+# TERM = "xterm-256color"
 
 [window]
 padding = { x = 8, y = 8 }
 decorations = "Buttonless"
 opacity = 0.8
-blur = false
+blur = true
+dynamic_title = true
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
@@ -18,6 +24,12 @@ unfocused_hollow = false
 [mouse]
 hide_when_typing = true
 
-[colors.primary]
-background = "#000000"
-foreground = "#ffffff"
+[font]
+normal = { family = "Blex Mono Nerd Font" }
+size = 13
+builtin_box_drawing = false
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control", action = "SpawnNewInstance" }
+]
