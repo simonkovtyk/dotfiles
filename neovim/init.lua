@@ -1,3 +1,13 @@
+vim.loader.enable()
+vim.filetype.add({
+  extension = {
+    mdx = "mdx"
+  },
+  pattern = {
+    [ ".*%.mdx" ] = "mdx"
+  }
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -7,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require "mappings"
 require "settings"
+-- require "filetypes"
 
 require("lazy").setup({
   ui = {

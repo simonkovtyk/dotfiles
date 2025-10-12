@@ -6,34 +6,37 @@
       "keys": "#c799ff",
       "title": "#7300ff",
       "separator": "#c799ff"
-    }
+    },
+    "constants": [
+      "\u001b[48;2;115;0;255m", // purple-500 bg
+      "\u001b[38;2;115;0;255m", // purple-500 fg
+      "\u001b[0m" // reset
+    ]
   },
   "logo": {
+    "source": "/home/simonkov/Pictures/icons/arch-linux-purple-1600x1600.png",
+    "width": 32,
     "color": {
       "1": "#7300ff",
       "2": "#7300ff"
     },
     "padding": {
       "top": 0,
-      "left": 1
+      "left": 0
     }
   },
   "modules": [
     "break",
-    "break",
-    "break",
     {
       "type": "title",
       "color": {
-        "host": "#c799ff",
-        "at": "#ffffff",
-        "user": "#c799ff"
-      }
+        "at": "#000000",
+        "user": "#000000",
+        "host": "#000000"
+      },
+      "format": "{$2}{$3}{$1}{user-name-colored}{$1}{at-symbol-colored}{$1}{host-name-colored}{$3}{$2}{$3}"
     },
-    {
-      "type": "uptime",
-      "key": "uptime  "
-    },
+    "break",
     {
       "type": "cpu",
       "key": "cpu     "

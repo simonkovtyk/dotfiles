@@ -32,35 +32,51 @@ local options = {
         separator = { left = "", right = "" },
         colored = false,
         padding = {
-          left = 3,
-          right = 2
+          left = 3
         },
-        icon_only = true
-      },
-      {
-        "branch",
-        icon = "",
-        padding = 0,
+        icon_only = true,
         fmt = function (value)
           if value == nil or value == "" then
             return ""
           end
 
-          return "   " .. value
+          return value .. "  "
+        end
+      },
+      {
+        "branch",
+        icon = "",
+        padding = {
+          left = 3
+        },
+        fmt = function (value)
+          if value == nil or value == "" then
+            return ""
+          end
+
+          return value
         end
       }
     },
     lualine_x = {
       {
+        "tabnine",
+        padding = {
+          right = 3
+        }
+      },
+      {
         "filesize",
         icon = "",
-        padding = 0,
+        padding = {
+          right = 3
+        },
         fmt = function (value)
           if value == nil or value == "" then
             return ""
           end
 
-          return string.upper(value) .. "  "
+          return string.upper(value)
         end
       }
     },
@@ -68,7 +84,9 @@ local options = {
       {
         "encoding",
         icon = "",
-        padding = 3,
+        padding = {
+          right = 3
+        },
         fmt = function (value)
           if value == nil or value == "" then
             return ""

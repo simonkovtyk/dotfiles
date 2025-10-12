@@ -56,6 +56,9 @@ local options = {
   filesystem = {
     hide_dotfiles = false,
     hide_gitignored = false,
+    follow_current_file = {
+      enabled = true
+    },
     filtered_items = {
       hide_dotfiles = false,
       hide_gitignored = false

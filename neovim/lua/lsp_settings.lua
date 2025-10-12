@@ -30,7 +30,8 @@ local lsps = {
   "jsonls", "marksman",
   "lua_ls", "bashls", "clangd",
   "gopls", "groovyls", "jdtls", "kotlin_lanuage_server",
-  "pyright", "rust_analyzer", "zls", "bufls"
+  "pyright", "rust_analyzer", "zls", "bufls",
+  "mdx_analyzer"
 }
 
 --[[

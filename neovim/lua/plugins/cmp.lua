@@ -1,12 +1,30 @@
 local cmp_options = function()
   local cmp = require "cmp"
-  local utils = require "utils"
+  --local utils = require "utils"
 
   return {
     mapping = {
-      ["<CR>"] = cmp.mapping.confirm({ select = false }),
-      ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-      ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+      ["<C-Space>"] = cmp.mapping(
+        function (fallback)
+          if not cmp.visible() then
+            fallback()
+            return
+          end
+
+          local entry = cmp.get_selected_entry()
+
+          if not entry then
+            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          end
+
+          cmp.confirm()
+        end
+      ),
+      ["<C-Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+      ["<C-Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+      ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-e>"] = cmp.mapping.abort(),
     },
     snippet = {
       scrollbar = false,
@@ -29,7 +47,7 @@ local cmp_options = function()
       completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" })
     },
     performance = {
-      max_view_entries = 20,
+      max_view_entries = 32,
       debounce = 200,
       throttle = 200
     },
@@ -40,7 +58,7 @@ local cmp_options = function()
           item.menu = utils.ellipsis(item.menu, 20);
         end]]--
 
-        item.abbr = utils.ellipsis(item.abbr, 20);
+        --item.abbr = utils.ellipsis(item.abbr, 20);
         item.kind = "[" .. item.kind .. "]";
 
         return item;
@@ -52,6 +70,9 @@ local cmp_options = function()
         },
         {
           name = "luasnip"
+        },
+        {
+          name = "cmp_tabnine"
         }
       }, {
         {
@@ -61,7 +82,10 @@ local cmp_options = function()
           name = "cmdline"
         }
       }
-    )
+    ),
+    experimental = {
+      ghost_text = true
+    }
   }
 end
 
@@ -87,8 +111,8 @@ local cmp_cmdline_command_options = function ()
           item.menu = utils.ellipsis(item.menu, 20);
         end]]--
 
-        item.abbr = utils.ellipsis(item.abbr, 20);
-        -- item.kind = "[" .. item.kind .. "]";
+        --item.abbr = utils.ellipsis(item.abbr, 20);
+        item.kind = "[" .. item.kind .. "]";
 
         return item;
       end
@@ -115,8 +139,8 @@ local cmp_cmdline_search_options = function ()
           item.menu = utils.ellipsis(item.menu, 20);
         end]]--
 
-        item.abbr = utils.ellipsis(item.abbr, 20);
-        -- item.kind = "[" .. item.kind .. "]";
+        --item.abbr = utils.ellipsis(item.abbr, 20);
+        item.kind = "[" .. item.kind .. "]";
 
         return item;
       end

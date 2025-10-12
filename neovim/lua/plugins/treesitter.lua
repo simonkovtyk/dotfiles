@@ -18,6 +18,7 @@ return {
 
     plugin.setup(options)
     config.setup(configs)
+    vim.treesitter.language.register("markdown", "mdx")
   end,
   event = "BufReadPost",
   cmd = {
