@@ -1,3 +1,30 @@
+vim.diagnostic.config({
+  virtual_text = true,
+  update_in_insert = true,
+  severity_sort = true,
+  float = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
+      [vim.diagnostic.severity.HINT] = "",
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticErrorNum",
+      [vim.diagnostic.severity.WARN] = "DiagnosticWarnNum",
+      [vim.diagnostic.severity.INFO] = "DiagnosticInfoNum",
+      [vim.diagnostic.severity.HINT] = "DiagnosticHintNum",
+    },
+    linehl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticErrorLine",
+      [vim.diagnostic.severity.WARN] = "DiagnosticWarnLine",
+      [vim.diagnostic.severity.INFO] = "DiagnosticInfoLine",
+      [vim.diagnostic.severity.HINT] = "DiagnosticHintLine",
+    }
+  }
+})
+
 vim.o.title = false
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -24,6 +51,8 @@ vim.o.mouse = ""
 vim.o.fileformats = "unix"
 vim.o.clipboard = "unnamedplus"
 vim.o.ruler = false
+vim.o.ignorecase = true
+vim.o.inccommand = "split"
 vim.o.showcmd = true
 vim.o.showmode = false
 -- vim.o.cmdheight = 0
