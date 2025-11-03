@@ -10,12 +10,10 @@ return {
     }
   },
   config = function()
-    local lsp_settings = require("lsp_settings")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     vim.lsp.config("*", {
       capabilities = capabilities,
-      on_attach = lsp_settings.on_attach
     })
   end
 }

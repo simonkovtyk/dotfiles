@@ -8,6 +8,22 @@ local options = {
 
 local keymap = vim.api.nvim_set_keymap
 
+  keymap("v", "<leader>la", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", options)
+  keymap("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>", options)
+  keymap("n", "<leader>lz", "<cmd>lua vim.lsp.buf.declaration()<CR>", options)
+  keymap("n", "<leader>lh", "<cmd>lua vim.lsp.buf.hover()<CR>", options)
+  keymap("n", "<leader>ln", "<cmd>lua vim.lsp.buf.rename()<CR>", options)
+  keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", options)
+  keymap("n", "<leader>li", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
+  keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.references()<CR>", options)
+  keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", options)
+  keymap("n", "<leader>lt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", options)
+  keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", options)
+  keymap("n", "<leader>le", "<cmd>lua vim.diagnostic.open_float()<CR>", options)
+  keymap("n", "<leader>lo", "<cmd>lua vim.diagnostic.goto_next()<CR>", options)
+  keymap("n", "<leader>lp", "<cmd>lua vim.diagnostic.goto_previous()<CR>", options)
+  keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", options)
+
 --[[ Preserve cursor position after yank
 keymap("v", "y", "y`>", options);
 
