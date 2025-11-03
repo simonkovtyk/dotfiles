@@ -1,19 +1,21 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim"
+    {
+      "williamboman/mason-lspconfig.nvim",
+      lazy = true,
+      opts = {
+        automatic_enable = true
+      }
+    }
   },
-  event = "BufReadPost",
   config = function()
     local lsp_settings = require("lsp_settings")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    for _, value in ipairs(lsp_settings.lsps) do
-      vim.lsp.config(value, {
-        capabilities = capabilities,
-        on_attach = lsp_settings.on_attach
-      })
-      vim.lsp.enable(value)
-    end
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+      on_attach = lsp_settings.on_attach
+    })
   end
 }
