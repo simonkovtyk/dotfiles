@@ -11,6 +11,7 @@
   ],
   "modules-right": [
     "tray",
+    "custom/notification",
     "pulseaudio",
     "clock"
   ],

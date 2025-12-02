@@ -19,10 +19,8 @@ return {
 }
 ]]--
 
-local options = {}
-
 return {
-  "tzachar/cmp-tabnine",
-  build = "./install.sh",
-  opts = options
+  --"tzachar/cmp-tabnine",
+  --build = "./install.sh",
+  --opts = options
 }

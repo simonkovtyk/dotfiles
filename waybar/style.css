@@ -12,7 +12,7 @@ window#waybar {
 
 .modules-left,
 .modules-right {
-  background: rgba(24, 24, 27, .8);
+  background: rgba(24, 24, 27, 0.8);
   /* background: black; */
 }
 
@@ -53,6 +53,14 @@ window#waybar {
   outline: none;
 }
 
+#custom-notification {
+  margin-left: 16px;
+}
+
 #pulseaudio {
-  margin: 0 16px;
+  margin-left: 16px;
+}
+
+#clock {
+  margin-left: 16px;
 }

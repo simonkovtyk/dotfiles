@@ -31,5 +31,5 @@ builtin_box_drawing = false
 
 [keyboard]
 bindings = [
-  { key = "Return", mods = "Control", action = "SpawnNewInstance" }
+  { key = "Return", mods = "Alt", action = "SpawnNewInstance" }
 ]

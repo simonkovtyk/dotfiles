@@ -1,0 +1,44 @@
+fps = 60
+mouse = false
+tab = "playback"
+char_set = "dark_orchid"
+theme = "dark_orchid"
+
+[themes.dark_orchid]
+default_device = { fg = "#d4d4d8" }
+default_stream = { fg = "#d4d4d8" }
+config_device = { fg = "#d4d4d8" }
+config_profile = { fg = "#d4d4d8" }
+selector = { fg = "#7300ff" }
+list_more = { fg = "#3f3f46" }
+volume = { fg = "#d4d4d8" }
+volume_empty = { fg = "#d4d4d8" }
+volume_filled = { fg = "#7300ff" }
+tab = { fg = "#d4d4d8" }
+tab_selected = { fg = "#7300ff" }
+tab_marker = { fg = "#7300ff" }
+meter_inactive = { fg = "#3f3f46" }
+meter_active = { fg = "#16a34a" }
+meter_overload = { fg = "#dc2626" }
+meter_center_inactive = { fg = "#dc2626" }
+meter_center_active = { fg = "#16a34a" }
+dropdown_icon = { fg = "#d4d4d8" }
+dropdown_border = { fg = "#27272a" }
+dropdown_item = { fg = "#d4d4d8" }
+dropdown_selected = { fg = "#000000", bg = "#7300ff" }
+dropdown_more = { fg = "#3f3f46" }
+help_border = { fg = "#27272a" }
+help_item = { fg = "#d4d4d8" }
+help_more = { fg = "#3f3f46" }
+
+[char_sets.dark_orchid]
+inherit = "default"
+dropdown_border = "Rounded"
+help_border = "Rounded"
+dropdown_selector = " "
+volume_empty = "─"
+tab_marker_left = " "
+tab_marker_right = " "
+selector_top = " "
+selector_middle = "󰅂"
+selector_bottom = " "

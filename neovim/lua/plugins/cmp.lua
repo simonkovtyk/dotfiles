@@ -1,13 +1,14 @@
 local cmp_options = function()
-  local cmp = require "cmp"
   --local utils = require "utils"
+  local cmp = require "cmp"
   local compare = require('cmp.config.compare')
 
   return {
     sorting = {
       priority_weight = 2,
       comparators = {
-        require('cmp_tabnine.compare'),
+        --require('cmp_tabnine.compare'),
+        require("copilot_cmp.comparators").prioritize,
         compare.offset,
         compare.exact,
         compare.score,
@@ -87,8 +88,11 @@ local cmp_options = function()
           name = "luasnip"
         },
         {
-          name = "cmp_tabnine"
+          name = "copilot"
         }
+        --[[{
+          name = "cmp_tabnine"
+        }]]--
       }, {
         {
           name = "buffer"
@@ -106,7 +110,7 @@ end
 
 local cmp_cmdline_command_options = function ()
   local cmp = require "cmp";
-  local utils = require "utils"
+  --local utils = require "utils"
 
   return {
     mapping = cmp.mapping.preset.cmdline(),

@@ -14,8 +14,6 @@
     ]
   },
   "logo": {
-    "source": "/home/simonkov/Pictures/icons/arch-linux-purple-1600x1600.png",
-    "width": 32,
     "color": {
       "1": "#7300ff",
       "2": "#7300ff"
