@@ -1,0 +1,72 @@
+/* General */
+* {
+  font-family: BlexMono Nerd Font;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #d4d4d8;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 6px 8px 0 8px;
+  padding: 0;
+}
+
+#custom-arch,
+#tray,
+#custom-notification,
+#wireplumber,
+#mpris,
+#window,
+#privacy,
+#battery,
+#clock {
+  min-width: 16px;
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(39, 39, 42, 0.8);
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 64px;
+}
+
+/* Left */
+#custom-arch {
+  background: #7300ff;
+  border: 1px solid #7300ff;
+  color: #000000;
+  padding: 2px 14px 2px 10px;
+  font-size: 24px;
+}
+
+/* Center */
+
+/* Right */
+#tray menu {
+  background: rgba(24, 24, 27, .8);
+  border: unset;
+  outline: none;
+}
+
+#custom-notification {
+  padding: 2px 14px 2px 10px;
+}
+
+#window,
+#tray,
+#custom-notification,
+#wireplumber,
+#privacy,
+#battery,
+#clock {
+  margin-left: 8px;
+}
