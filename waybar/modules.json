@@ -14,7 +14,51 @@
       "default": ""
     }
   },
-  "pulseaudio": {
+  "hyprland/window": {
+    "format": " {}"
+  },
+  "mpris": {
+    "format": "{status_icon} {title} - {artist}",
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    }
+  },
+  "privacy": {
+    "icon-spacing": 12,
+    "icon-size": 14,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava"
+      },
+      {
+        "type": "screenshare",
+        "name": "obs"
+      }
+    ]
+  },
+  "wireplumber": {
     "format": "{icon}  {volume}%",
     "format-bluetooth": "{icon} {volume}%  {format_source}",
     "format-bluetooth-muted": "  {icon} {format_source}",
@@ -57,8 +101,6 @@
     "escape": true
   },
   "clock": {
-    "format": "{:%H:%M} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format": " {:%H:%M}"
   }
 }

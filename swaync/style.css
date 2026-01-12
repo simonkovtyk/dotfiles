@@ -1,0 +1,168 @@
+:root {
+  --dark-orchid-purple-500: #7300ff;
+  --dark-orchid-zinc-300: #d4d4d8;
+  --dark-orchid-zinc-800: #27272a;
+  --dark-orchid-zinc-800-80: rgba(39, 39, 42, 0.8);
+  --dark-orchid-zinc-900: #18181b;
+  --dark-orchid-zinc-900-80: rgba(24, 24, 27, 0.8);
+  --dark-orchid-black: #000000;
+}
+
+* {
+  font-family: system-ui;
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+}
+
+.close-button, .image-button {
+  background-color: transparent;
+  border-radius: 50%;
+  min-width: 28px;
+  min-height: 28px;
+  transition: background-color 0.15s ease;
+}
+
+.close-button:hover, .image-button:hover {
+  background-color: var(--dark-orchid-purple-500);
+}
+
+.close-button image, .image-button image {
+  color: var(--dark-orchid-zinc-300);
+}
+
+.close-button:hover image, .image-button:hover image {
+  color: var(--dark-orchid-black);
+}
+
+.control-center {
+  background-color: var(--dark-orchid-zinc-900-80);
+  border: 1px solid var(--dark-orchid-zinc-800-80);
+  border-radius: 16px;
+  padding: 12px;
+  min-width: 372px;
+}
+
+.control-center .widget-title {
+  margin-bottom: 16px;
+}
+
+.control-center .widget-title label {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.control-center .widget-notifications .control-center-list-placeholder label {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.control-center .widget-notifications .control-center-list-placeholder image {
+  color: var(--dark-orchid-zinc-300);
+}
+
+.control-center-list {
+  background-color: transparent;
+}
+
+.control-center .notification-row {
+  margin-top: 8px;
+}
+
+.control-center .notification-background {
+  border: 1px solid var(--dark-orchid-zinc-800-80);
+  background-color: var(--dark-orchid-zinc-900-80);
+  border-radius: 12px;
+  padding: 12px;
+  transition: background-color 0.15s ease;
+}
+
+.control-center .notification-row:hover .notification-background {
+  background-color: var(--dark-orchid-zinc-900-80);
+}
+
+.control-center .notification .summary {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.control-center .notification .body {
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.control-center .notification .time {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--dark-orchid-zinc-300);
+  margin-right: 38px;
+}
+
+.control-center .notification image {
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  margin-right: 12px;
+  border-radius: 8px;
+}
+
+.control-center .notification-group .notification-group-close-button .close-button {
+  margin-top: 24px;
+  margin-right: 12px;
+}
+
+.floating-notifications .notification-row {
+  margin-bottom: 12px;
+}
+
+.floating-notifications .notification-background {
+  background-color: var(--dark-orchid-zinc-900-80);
+  border: 1px solid var(--dark-orchid-zinc-800-80);
+  border-radius: 12px;
+  padding: 12px;
+  margin-right: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.floating-notifications .notification-background:first-child {
+  margin-top: 8px;
+}
+
+.floating-notifications .notification-row:hover .notification-background {
+  background-color: var(--dark-orchid-zinc-800-80);
+}
+
+.floating-notifications .notification .summary {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.floating-notifications .notification .body {
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+}
+
+.floating-notifications .notification .time {
+  font-size: 14px;
+  color: var(--dark-orchid-zinc-300);
+  margin-left: 10px;
+}
+
+.floating-notifications .notification image {
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  margin-right: 12px;
+  border-radius: 8px;
+}
