@@ -1,6 +1,6 @@
 local cmp_options = function()
   --local utils = require "utils"
-  local cmp = require "cmp"
+  local cmp = require("cmp")
   local compare = require('cmp.config.compare')
 
   return {
@@ -59,8 +59,8 @@ local cmp_options = function()
       }
     },
     window = {
-      documentation = cmp.config.window.bordered(),
-      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" })
+      documentation = cmp.config.window.bordered({ border = "rounded" }),
+      completion = cmp.config.window.bordered({ border = "rounded", winhighlight = "CursorLine:PmenuSel" })
     },
     performance = {
       max_view_entries = 32,
@@ -110,7 +110,6 @@ end
 
 local cmp_cmdline_command_options = function ()
   local cmp = require "cmp";
-  --local utils = require "utils"
 
   return {
     mapping = cmp.mapping.preset.cmdline(),
@@ -137,14 +136,13 @@ local cmp_cmdline_command_options = function ()
       end
     },
     window = {
-      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" }),
+      completion = cmp.config.window.bordered({ border = "rounded", winhighlight = "CursorLine:PmenuSel" }),
     }
   }
 end
 
 local cmp_cmdline_search_options = function ()
   local cmp = require "cmp";
-  local utils = require "utils"
 
   return {
     mapping = cmp.mapping.preset.cmdline(),
@@ -165,7 +163,7 @@ local cmp_cmdline_search_options = function ()
       end
     },
     window = {
-      completion = cmp.config.window.bordered({ winhighlight = "CursorLine:PmenuSel" }),
+      completion = cmp.config.window.bordered({ border = "rounded", winhighlight = "CursorLine:PmenuSel" }),
     }
   }
 end

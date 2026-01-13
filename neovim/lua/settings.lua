@@ -2,7 +2,12 @@ vim.diagnostic.config({
   virtual_text = true,
   update_in_insert = true,
   severity_sort = true,
-  float = true,
+  float = {
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = ""
+  },
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",
