@@ -1,0 +1,24 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 46,
+  "spacing": 0,
+  "modules-left": [
+    "custom/arch",
+    "hyprland/window"
+  ],
+  "modules-center": [
+  ],
+  "modules-right": [
+    "mpris",
+    "privacy",
+    "tray",
+    "custom/notification",
+    "wireplumber",
+    "battery",
+    "clock"
+  ],
+  "include": [
+		"~/.config/waybar/modules.json"
+	]
+}
