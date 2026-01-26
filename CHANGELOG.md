@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/simonkovtyk/dotfiles/compare/v1.0.0...v1.1.0) (2026-01-13)
+
+
+### Features
+
+* **waybar:** add notebook config ([5ea062d](https://github.com/simonkovtyk/dotfiles/commit/5ea062df20a432ac55ceb75df3411baeb9db879a))
+
+
+### Bug Fixes
+
+* **neovim:** add cmp borders ([15ae764](https://github.com/simonkovtyk/dotfiles/commit/15ae764bbcdc9624aae6950b252f6cc35576732d))
+
 ## 1.0.0 (2026-01-12)
 
 
