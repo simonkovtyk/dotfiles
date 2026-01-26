@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/simonkovtyk/dotfiles/compare/v1.1.0...v1.1.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* **neovim:** enforce proper module resolution ([f01c4f7](https://github.com/simonkovtyk/dotfiles/commit/f01c4f743e203bf7dffb3c09fbf62fd45ae2d805))
+
 ## [1.1.0](https://github.com/simonkovtyk/dotfiles/compare/v1.0.0...v1.1.0) (2026-01-13)
 
 
