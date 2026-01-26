@@ -38,10 +38,11 @@ local options = {
 
 return {
   "dark-orchid/neovim",
+  main = "dark-orchid",
   priority = 1000,
   lazy = false,
-  config = function ()
-    require("dark-orchid").setup(options);
-    vim.cmd.colorscheme("dark-orchid");
+  opts = options,
+  init = function()
+    vim.cmd.colorscheme("dark-orchid")
   end
 }
