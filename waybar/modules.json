@@ -4,18 +4,22 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
+    "active-only": true,
     "disable-scroll": true,
-    "all-outputs": true,
+    "all-outputs": false,
     "warp-on-scroll": false,
-    "format": "{name}",
+    "persistent-only": true,
+    "format": "{icon}",
     "format-icons": {
       "urgent": "",
-      "active": "",
+      "active": "",
       "default": ""
     }
   },
   "hyprland/window": {
-    "format": " {}"
+    "format": "{}",
+    "max-length": 48,
+    "separate-outputs": true
   },
   "mpris": {
     "format": "{status_icon} {title} - {artist}",

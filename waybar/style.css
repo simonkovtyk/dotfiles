@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: unset;
   color: #d4d4d8;
 }
 
@@ -18,8 +18,16 @@ label {
 .modules-left,
 .modules-center,
 .modules-right {
-  margin: 6px 8px 0 8px;
+  margin-top: 12px;
   padding: 0;
+}
+
+.modules-left {
+  margin-left: 64px;
+}
+
+.modules-right {
+  margin-right: 64px;
 }
 
 #custom-arch,
@@ -47,6 +55,40 @@ label {
   font-size: 24px;
 }
 
+#workspaces {
+  background: rgba(24, 24, 27, 0.8);
+  margin: 0;
+  border-radius: 64px;
+}
+
+#workspaces .workspace-label {
+  font-size: 8px;
+}
+
+#workspaces button:not(.active) .workspace-label {
+  color: #d4d4d8;
+}
+
+#workspaces button.active .workspace-label {
+  color: #000000;
+}
+
+#workspaces button {
+  background-color: unset;
+  border-radius: 100%;
+  border: unset;
+}
+
+#workspaces button:hover {
+  background-color: rgba(199, 153, 255, 0.8);
+}
+
+#workspaces button.active {
+  font-size: 8px;
+  background: #7300ff;
+  border-radius: 100%;
+}
+
 /* Center */
 
 /* Right */
@@ -60,6 +102,7 @@ label {
   padding: 2px 14px 2px 10px;
 }
 
+#workspaces,
 #window,
 #tray,
 #custom-notification,

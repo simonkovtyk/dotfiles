@@ -1,13 +1,14 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 46,
+  "height": 50,
   "spacing": 0,
   "modules-left": [
     "custom/arch",
     "hyprland/window"
   ],
   "modules-center": [
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "mpris",
