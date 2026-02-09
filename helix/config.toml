@@ -1,0 +1,41 @@
+theme = "dark_orchid"
+
+[editor]
+mouse = false
+middle-click-paste = false
+shell = [ "/usr/bin/fish" ]
+line-number = "relative"
+#cursorline = true
+auto-completion = true
+path-completion = true
+auto-format = false
+bufferline = "multiple"
+insert-final-newline = true
+popup-border = "all"
+clipboard-provider = "wayland"
+default-yank-register = "+"
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[editor.lsp]
+enable = true
+auto-signature-help = false
+display-messages = false

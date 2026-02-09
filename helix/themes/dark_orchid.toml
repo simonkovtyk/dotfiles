@@ -1,0 +1,35 @@
+inherits = "default"
+
+"ui.cursor" = { fg = "zinc_900", bg = "zinc_300" }
+"ui.cursor.normal" = { fg = "zinc_900", bg = "zinc_300" }
+"ui.cursor.insert" = { fg = "zinc_900", bg = "zinc_300" }
+"ui.cursor.select" = { fg = "zinc_900", bg = "zinc_300" }
+"ui.cursor.match" = { fg = "zinc_900", bg = "zinc_300" }
+"ui.background" = {}
+"ui.text"= "zinc_300"
+"ui.background.separator" = {}
+"ui.statusline" = {}
+"ui.popup" = {}
+"ui.menu" = {}
+"ui.linenr" = { fg = "zinc_700" }
+"ui.linenr.selected" = { fg = "zinc_500" }
+"ui.bufferline" = {}
+"ui.bufferline.background" = {}
+"ui.bufferline.active" = { bg = "purple_500", fg = "black", modifiers = ["italic"] }
+"warning" = { fg = "yellow_600" }
+"error" = { fg = "red_600" }
+
+[palette]
+black = "#000000"
+purple_500 = "#7300ff"
+yellow_600 = "#ca8a04"
+red_600 = "#dc2626"
+zinc_200 = "#e4e4e7"
+zinc_300 = "#d4d4d8"
+zinc_400 = "#a1a1aa"
+zinc_500 = "#71717a"
+zinc_600 = "#52525b"
+zinc_700 = "#3f3f46"
+zinc_800 = "#27272a"
+zinc_900 = "#18181b"
+zinc_950 = "#09090b"

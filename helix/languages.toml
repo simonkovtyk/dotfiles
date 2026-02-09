@@ -1,0 +1,46 @@
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.check]
+command = "check"
+
+[language-server.rust-analyzer.config]
+procMacro.enable = true
+checkOnSave = false
+diagnostics.experimental.enable = false
+cargo.features = "all"
+cargo.buildScripts.enable = false
+
+[[language]]
+name = "rust"
+file-types = ["rs"]
+language-servers = ["rust-analyzer"]
+roots = [
+  "Cargo.toml",
+  "Cargo.lock"
+]
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.angular-ls]
+command = "ngserver"
+args = [
+  "--ngProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--tsProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--stdio",
+  # If this for some reason doesn't work, try replacing ${NODE_MODULES_GLOBAL} with the absolute paths, e.g. output of `npm root -g`
+]
+file-types = ["ts", "tsx", "mts", "cts", "html"]
+
+[[language]]
+name = "typescript"
+file-types = ["ts", "tsx", "mts", "cts", "js", "jsx", "mjs", "cjs"]
+language-servers = ["typescript-language-server", "angular-ls"]
+
+[language-server.css]
+command = "vscode-css-language-server"
+args = ["--stdio"]
