@@ -5,19 +5,11 @@ palette = 'custom'
 add_newline = true
 
 format = """
-$os \
 $directory\
 $git_branch\
 $git_status\
 $character\
 """
-
-[os]
-format = '[$symbol ](fg:purple)'
-disabled = false
-
-[os.symbols]
-Arch = ''
 
 [directory]
 format = '[$path](fg:purple) '
