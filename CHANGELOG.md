@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/simonkovtyk/dotfiles/compare/v1.1.1...v1.1.2) (2026-02-01)
+
+
+### Bug Fixes
+
+* **hyprland:** use aerc with env ([e2fdf4e](https://github.com/simonkovtyk/dotfiles/commit/e2fdf4e4e0ce5dc31a5d9369653cd331bf93a239))
+
 ## [1.1.1](https://github.com/simonkovtyk/dotfiles/compare/v1.1.0...v1.1.1) (2026-01-26)
 
 
