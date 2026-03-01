@@ -8,15 +8,15 @@ local cmp_options = function()
       priority_weight = 2,
       comparators = {
         --require('cmp_tabnine.compare'),
-        require("copilot_cmp.comparators").prioritize,
+        --require("copilot_cmp.comparators").prioritize,
         compare.offset,
         compare.exact,
         compare.score,
         compare.recently_used,
         compare.kind,
         compare.sort_text,
-        compare.length,
-        compare.order
+        --compare.length,
+        --compare.order
       }
     },
     mapping = {

@@ -9,8 +9,13 @@ line-number = "relative"
 auto-completion = true
 path-completion = true
 auto-format = false
+preview-completion-insert = true
+completion-trigger-len = 1
+undercurl = true
 bufferline = "multiple"
 insert-final-newline = true
+trim-final-newlines = true
+trim-trailing-whitespace = true
 popup-border = "all"
 clipboard-provider = "wayland"
 default-yank-register = "+"
@@ -23,6 +28,9 @@ cursor-line = "warning"
 render = true
 character = "▏"
 skip-levels = 1
+
+[editor.smart-tab]
+enable = false
 
 [editor.statusline]
 left = ["mode", "spinner"]
