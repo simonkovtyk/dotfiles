@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/simonkovtyk/dotfiles/compare/v1.1.2...v1.2.0) (2026-03-29)
+
+
+### Features
+
+* **fastfetch:** reduce stdout ([1125845](https://github.com/simonkovtyk/dotfiles/commit/1125845fcfb811f79352004c87472f33e676483a))
+* **helix:** add ([2a375ad](https://github.com/simonkovtyk/dotfiles/commit/2a375ad3316de277e8277958150df499376c8904))
+* **neovim:** add clangd and oxlint lsp support ([b06e445](https://github.com/simonkovtyk/dotfiles/commit/b06e4458153b8e8999cf02faae6f6c37bd2bbfc8))
+* **startship:** remove os logo ([c0ab0b9](https://github.com/simonkovtyk/dotfiles/commit/c0ab0b955152d3383b43c82630a3c063290a8b21))
+* various additions ([65c7232](https://github.com/simonkovtyk/dotfiles/commit/65c7232221161f003e67b927aef7c92ba2e3efaa))
+* various updates ([5cd5c60](https://github.com/simonkovtyk/dotfiles/commit/5cd5c603185009539928f5bd65c280c445478987))
+
 ## [1.1.2](https://github.com/simonkovtyk/dotfiles/compare/v1.1.1...v1.1.2) (2026-02-01)
 
 
