@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/simonkovtyk/dotfiles/compare/v1.2.0...v1.2.1) (2026-03-29)
+
+
+### Bug Fixes
+
+* **hypr:** make togglesplit dispatch function again ([2e79393](https://github.com/simonkovtyk/dotfiles/commit/2e79393ea53e36368e89fed58a706407197360e4))
+
 ## [1.2.0](https://github.com/simonkovtyk/dotfiles/compare/v1.1.2...v1.2.0) (2026-03-29)
 
 
