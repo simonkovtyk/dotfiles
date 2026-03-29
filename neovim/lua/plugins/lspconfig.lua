@@ -21,9 +21,11 @@ return {
     local rust_analyzer = require("lsp.rust_analyzer")
     local typescript_language_server = require("lsp.typescript-language-server")
     local vtsls = require("lsp.vtsls")
+    local clangd = require("lsp.clangd")
+    local oxlint = require("lsp.oxlint")
 
     typescript_language_server.config()
 
-    vim.lsp.enable({ css_variables.name, cssls.name, rust_analyzer.name, vtsls.name })
+    vim.lsp.enable({ css_variables.name, cssls.name, rust_analyzer.name, vtsls.name, clangd.name, oxlint.name })
   end
 }
