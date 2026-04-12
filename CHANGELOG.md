@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/simonkovtyk/dotfiles/compare/v1.2.1...v1.3.0) (2026-04-12)
+
+
+### Features
+
+* **helix:** add lsps and improve config ([67beab3](https://github.com/simonkovtyk/dotfiles/commit/67beab3c164876a4e7bfb4898cbe4f054ae91f48))
+* **helix:** improve language setup ([552b82a](https://github.com/simonkovtyk/dotfiles/commit/552b82abd6e14dacc67ef294811ff65d95322b58))
+
 ## [1.2.1](https://github.com/simonkovtyk/dotfiles/compare/v1.2.0...v1.2.1) (2026-03-29)
 
 
