@@ -6,10 +6,11 @@ middle-click-paste = false
 shell = [ "/usr/bin/fish" ]
 line-number = "relative"
 #cursorline = true
+color-modes = true
 auto-completion = true
 path-completion = true
 auto-format = false
-preview-completion-insert = true
+preview-completion-insert = false
 completion-trigger-len = 1
 undercurl = true
 bufferline = "multiple"
@@ -32,11 +33,14 @@ skip-levels = 1
 [editor.smart-tab]
 enable = false
 
+[editor.soft-wrap]
+enable = true
+
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "separator", "spinner", "separator", "diagnostics"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
+right = ["position", "separator", "selections", "separator", "file-line-ending", "separator", "file-type", "separator", "version-control"]
+separator = "  "
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -45,5 +49,5 @@ workspace-diagnostics = ["warning", "error"]
 
 [editor.lsp]
 enable = true
-auto-signature-help = false
+auto-signature-help = true
 display-messages = false

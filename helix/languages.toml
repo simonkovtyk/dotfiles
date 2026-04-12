@@ -1,136 +1,224 @@
-[language-server.rust-analyzer]
+[language-server.rust]
 command = "rust-analyzer"
 
-[language-server.rust-analyzer.check]
+[language-server.rust.check]
 command = "check"
 
-[language-server.rust-analyzer.config]
+[language-server.rust.config]
 procMacro.enable = true
-checkOnSave = false
-diagnostics.experimental.enable = false
+checkOnSave = true
 cargo.features = "all"
 cargo.buildScripts.enable = false
 
-[[language]]
-name = "rust"
-file-types = ["rs"]
-language-servers = ["rust-analyzer"]
-roots = ["Cargo.toml", "Cargo.lock"]
+[language-server.go]
+command = "gopls"
+
+[language-server.latex]
+command = "texlab"
+
+[language-server.ansible]
+command = "ansible-language-server"
+args = ["--stdio"]
+
+[language-server.ansible.config]
+ansible = { path = "ansible" }
+python = { interpreterPath = "python" }
+executionEnvironment = { enabled = false }
+validation = { enabled = true, lint = { enabled = true } }
+
+[language-server.lua]
+command = "lua-language-server"
+
+[language-server.markdown]
+command = "marksman"
+args = ["server"]
+
+[language-server.python]
+command = "ty"
+args = ["server"]
+
+[language-server.svelte]
+command = "svelteserver"
+args = ["--stdio"]
+
+[language-server.systemd]
+command = "systemd-lsp"
 
 [language-server.eslint]
 command = "vscode-eslint-language-server"
 args = ["--stdio"]
+required-root-patterns = ["eslint.config.js", "eslint.config.mjs", "eslint.config.cjs", "eslint.config.ts", "eslint.config.mts", "eslint.config.cts"]
 
-[language-server.typescript-language-server]
+[language-server.vue]
+command = "vls"
+
+[language-server.yaml]
+command = "yaml-language-server"
+args = ["--stdio"]
+
+[language-server.yaml.config]
+redhat = { telemetry = { enabled = false } }
+
+[language-server.typescript]
 command = "typescript-language-server"
 args = ["--stdio"]
 
-[language-server.typescript-language-server.config]
+[language-server.typescript.config]
 hostInfo = "helix"
 
-[language-server.typescript-language-server.config.preferences]
+[language-server.typescript.config.preferences]
 quotePreference = "double"
 jsxAttributeCompletionStyle = "none"
 
-#[language-server.angular-ls]
-#command = "ngserver"
-#args = [
-#  "--ngProbeLocations",
-#  "${$NODE_MODULES_GLOBAL}",
-#  "--tsProbeLocations",
-#  "${$NODE_MODULES_GLOBAL}",
-#  "--stdio",
-#  # If this for some reason doesn't work, try replacing ${NODE_MODULES_GLOBAL} with the absolute paths, e.g. output of `npm root -g`
-#]
+[language-server.oxlint]
+command = "oxlint"
+args = ["--lsp"]
 
-#[language-server.tsgo]
-#command = "tsgo"
-#args = [
-#  "--lsp",
-#  "--stdio"
-#]
+[language-server.oxfmt]
+command = "oxfmt"
+args = ["--lsp"]
 
-#[language-server.tsgo.config.typescript]
-#updateImportsOnFileMove.enabled = "always"
-#suggest.completeFunctionCalls = true
-#tsserver.enableTracing = true
-#inlayHints.parameterNames.enabled = "all"
-#inlayHints.parameterTypes.enabled = false
-#inlayHints.variableTypes.enabled = false
-#inlayHints.propertyDeclarationTypes.enabled = false
-#inlayHints.functionLikeReturnTypes = false
-#inlayHints.enumMemberValues.enabled = false
-#format.enable = false
-#format.semicolons = "remove"
-#preferences.importModuleSpecifier = "non-relative"
-#preferences.importModuleSpecifierEnding = "auto"
-#tsserver.experimental.enableProjectDiagnostics = true
+[language-server.angular]
+command = "ngserver"
+args = [
+  "--ngProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--tsProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--stdio"
+]
+required-root-patterns = ["angular.json"]
 
-[[language]]
-name = "typescript"
-file-types = ["ts", "mts", "cts", "js", "mjs", "cjs"]
-formatter = { command = "oxfmt" }
-language-servers = ["typescript-language-server"]
+[language-server.tailwind]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+required-root-pattern = ["tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs", "tailwind.config.ts", "postcss.config.js", "postcss.config.cjs", "postcss.config.mjs", "postcss.config.ts"]
 
-[[language]]
-name = "tsx"
-file-types = ["tsx", "jsx", "mtsx", "ctsx", "mjsx", "cjsx"]
-formatter = { command = "oxfmt" }
-language-servers = ["typescript-language-server"]
+[language-server.tailwind.settings.tailwindCSS]
+classFunctions = ["cva", "cx"]
+validate = true
+classAttributes = ["class", "className", "class:list", "classList", "ngClass"]
 
 [language-server.css]
 command = "vscode-css-language-server"
 args = ["--stdio"]
 
-[[language]]
-name = "css"
-file-types = ["css", "scss", "less", "sass"]
-formatter = { command = "oxfmt" }
-language-servers = ["css"]
-
 [language-server.html]
 command = "vscode-html-language-server"
 args = ["--stdio"]
-
-[language-server.tailwindcss]
-command = "tailwindcss-language-server"
-args = ["--stdio"]
-
-[language-server.tailwindcss.settings.tailwindCSS]
-classFunctions = ["cva", "cx"]
-
-[[language]]
-name = "html"
-file-types = ["html", "htm"]
-formatter = { command = "oxfmt" }
-language-servers = ["html", "tailwindcss", "angular-ls"]
 
 [language-server.json]
 command = "vscode-json-language-server"
 args = ["--stdio"]
 
 [[language]]
-name = "json"
-file-types = ["json", "jsonc", "json5"]
-formatter = { command = "oxfmt" }
-language-servers = ["json"]
+name = "rust"
+file-types = ["rs"]
+language-servers = ["rust"]
+roots = ["Cargo.toml", "Cargo.lock"]
 
 [[language]]
-name = "scss"
-file-types = ["scss", "sass"]
-formatter = { command = "oxfmt" }
+name = "go"
+file-types = ["go", "gomod", "gowork", "gotmpl"]
+language-servers = ["go"]
+roots = ["go.work", "go.mod"]
 
 [[language]]
-name = "yaml"
-file-types = ["yaml", "yml"]
-formatter = { command = "oxfmt" }
+name = "lua"
+file-types = ["lua"]
+language-servers = ["lua"]
 
 [[language]]
 name = "markdown"
 file-types = ["md", "mdx"]
-formatter = { command = "oxfmt" }
+language-servers = ["markdown"]
+
+[[language]]
+name = "ansible"
+scope = "source.yaml"
+file-types = ["yaml.ansible"]
+language-servers = ["ansible"]
+
+[[language]]
+name = "python"
+file-types = ["py"]
+language-servers = ["python"]
+
+[[language]]
+name = "svelte"
+file-types = ["svelte"]
+language-servers = ["svelte"]
+roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
+
+[[language]]
+name = "systemd"
+file-types = ["service", "socket", "timer", "mount", "automount", "swap", "target", "path", "slice", "scope", "device", "container", "volume", "network", "kube", "pod", "build", "image"]
+language-servers = ["systemd"]
+
+[[language]]
+name = "vue"
+file-types = ["vue"]
+language-servers = ["vue"]
+roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "vue.config.ts"]
+auto-format = true
+
+[[language]]
+name = "typescript"
+file-types = ["ts", "mts", "cts", "js", "mjs", "cjs"]
+language-servers = ["typescript", "oxlint", "oxfmt"]
+roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
+auto-format = true
+
+[[language]]
+name = "tsx"
+file-types = ["tsx", "jsx", "mtsx", "ctsx", "mjsx", "cjsx"]
+language-servers = ["typescript", "oxlint", "oxfmt", "tailwind"]
+roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
+auto-format = true
+
+[[language]]
+name = "latex"
+file-types = ["tex", "plaintex", "bib"]
+language-servers = ["latex"]
+
+[[language]]
+name = "css"
+file-types = ["css", "scss", "less", "sass"]
+language-servers = ["css", "oxfmt"]
+auto-format = true
+
+[[language]]
+name = "html"
+file-types = ["html", "htm"]
+language-servers = ["html", "tailwind", "angular", "oxfmt"]
+auto-format = true
+
+[[language]]
+name = "json"
+file-types = ["json", "jsonc", "json5"]
+language-servers = ["json", "oxfmt"]
+auto-format = true
+
+[[language]]
+name = "scss"
+file-types = ["scss", "sass"]
+language-servers = ["oxfmt"]
+auto-format = true
+
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+language-servers = ["yaml", "oxfmt"]
+auto-format = true
+
+[[language]]
+name = "markdown"
+file-types = ["md", "mdx"]
+language-servers = ["oxfmt"]
+auto-format = true
 
 [[language]]
 name = "toml"
 file-types = ["toml"]
-formatter = { command = "oxfmt" }
+language-servers = ["oxfmt"]
+auto-format = true
