@@ -63,8 +63,8 @@
     ]
   },
   "wireplumber": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon} {volume}%  {format_source}",
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}%  {format_source}",
     "format-bluetooth-muted": "  {icon} {format_source}",
     "format-muted": "  {volume}%",
     "format-source": "  {volume}%",
@@ -78,7 +78,7 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "alacritty -e wiremix"
+    "on-click": "kitty -e wiremix"
   },
   "tray": {
     "icon-size": 16,
@@ -105,6 +105,6 @@
     "escape": true
   },
   "clock": {
-    "format": " {:%H:%M}"
+    "format": "{:%H:%M}"
   }
 }

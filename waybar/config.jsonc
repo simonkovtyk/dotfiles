@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 50,
-  "spacing": 0,
+  "height": 52,
+  "spacing": 12,
   "modules-left": [
     "custom/arch",
     "hyprland/window"
@@ -11,7 +11,6 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "mpris",
     "privacy",
     "tray",
     "custom/notification",

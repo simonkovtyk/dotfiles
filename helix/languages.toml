@@ -1,3 +1,11 @@
+[language-server.copilot]
+command = "copilot-language-server"
+args = ["--stdio"]
+
+[language-server.copilot.config]
+editorInfo = { name = "Helix", version = "25.01" }
+editorPluginInfo = { name = "helix-copilot", version = "0.1.0" }
+
 [language-server.rust]
 command = "rust-analyzer"
 
@@ -69,6 +77,10 @@ hostInfo = "helix"
 [language-server.typescript.config.preferences]
 quotePreference = "double"
 jsxAttributeCompletionStyle = "none"
+
+[language-server.typescript-go]
+command = "tsgo"
+args = ["--lsp", "--stdio"]
 
 [language-server.oxlint]
 command = "oxlint"

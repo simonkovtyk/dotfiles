@@ -1,0 +1,19 @@
+terminal_launcher = ""
+list_executables_in_path = false
+match_mode = "fuzzy"
+ranking_mode = "frecency"
+pinned_order = "ranking"
+disable_mouse = true
+
+pin_icon = "📌"
+
+highlight_color = "#d4d4d8"
+pin_color = "#7300ff"
+main_border_color = "#3f3f46"
+apps_border_color = "#3f3f46"
+input_border_color = "#3f3f46"
+main_text_color = "#d4d4d8"
+apps_text_color = "#d4d4d8"
+input_text_color = "#d4d4d8"
+fancy_mode = false
+title_panel_height_percent = 0

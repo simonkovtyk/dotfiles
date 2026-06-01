@@ -1,17 +1,17 @@
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = Simon
 	email = simon@kovtyk.com
 	signingkey = 209C090BDEC066F4
 [safe]
-	directory = /root/projects
+	directory = /home/simonkov
 [credential]
-	helper = store
+	helper = libsecret
 [commit]
 	gpgSign = true
 [pull]
@@ -19,7 +19,7 @@
 [push]
 	autoSetupRemote = true
 [core]
-	editor = nvim
+	editor = helix
 [tag]
 	gpgSign = true
 [init]
