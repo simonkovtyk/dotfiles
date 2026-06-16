@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/simonkovtyk/dotfiles/compare/v1.3.0...v1.4.0) (2026-06-16)
+
+
+### Features
+
+* add wallpapers ([8e08f62](https://github.com/simonkovtyk/dotfiles/commit/8e08f627ffb726417776893829e75383a4d92f89))
+* **neovim:** remove completion plugin ([4fa016e](https://github.com/simonkovtyk/dotfiles/commit/4fa016e2b88b8865d7970ce6bc34ec7aaca67508))
+
 ## [1.3.0](https://github.com/simonkovtyk/dotfiles/compare/v1.2.1...v1.3.0) (2026-06-01)
 
 
