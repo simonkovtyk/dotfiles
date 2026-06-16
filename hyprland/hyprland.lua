@@ -19,18 +19,6 @@ hl.monitor({
   position = "-2560x0",
   scale = "auto"
 })
-hl.monitor({
-  output = "DP-3",
-  mode = "1920x1080@60",
-  position = "2560x0",
-  scale = "auto"
-})
-hl.monitor({
-  output = "HDMI-A-1",
-  mode = "1920x1080@60",
-  position = "0x-1080",
-  scale = "auto"
-})
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("dbus-update-activation-environment --all")
@@ -242,12 +230,12 @@ hl.animation({
 })
 
 local mainMod = "SUPER"
-
+local editor = "helix"
 local terminal = "kitty"
 local fileManager = terminal .. " -e yazi"
 local browser = "thorium-browser"
 local menu = "rofi -show drun"
-local email = terminal .. " -e aerc"
+local email = "EDITOR=" .. editor .. " " .. terminal .. " -e aerc"
 local soundMixer = terminal .. " -e wiremix"
 local music = terminal .. " -e spotify_player"
 
