@@ -1,42 +1,32 @@
-'$schema' = 'https://starship.rs/config-schema.json'
-
-palette = 'custom'
-
 add_newline = true
+continuation_prompt = "[▸▹ ](dimmed white)"
 
-format = """
-$directory\
-$git_branch\
-$git_status\
-$character\
-"""
+format = """$character"""
 
-[directory]
-format = '[$path](fg:purple) '
-truncate_to_repo = true
-truncation_length = 6
-read_only = ''
-read_only_style = ''
+right_format = """$directory$cmd_duration"""
 
-[git_branch]
-format = '([\($branch\)](fg:purple) )'
+palette = "dark-orchid"
 
-[git_status]
-format = '([\[$all_status\]](fg:purple) )'
-conflicted = ''
-ahead = '⇡'
-behind = '⇣'
-diverged = '⇕'
-untracked = '?'
-stashed = '$'
-modified = '!'
-staged = '+'
-renamed = '»'
-deleted = ''
+[fill]
+symbol = ' '
 
 [character]
-format = '[~>](fg:purple) '
+format = "$symbol "
+success_symbol = ""
+error_symbol = ""
 
-[palettes.custom]
-purple = '#7300ff'
-white = '#ffffff'
+[directory]
+format = "[$path]($style)"
+style = "zinc_500"
+truncation_length = 2
+read_only = " ◈"
+use_os_path_sep = true
+
+[cmd_duration]
+format = " [took $duration]($style)"
+style = "zinc_500"
+
+[palettes.dark-orchid]
+zinc_300 = "#d4d4d8"
+zinc_700 = "#3f3f46"
+zinc_500 = "#71717a"

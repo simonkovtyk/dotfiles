@@ -25,6 +25,7 @@ if status is-interactive
   alias lt="lsd --tree"
   alias hx="helix"
   alias kssh="kitty +kitten ssh"
+  alias vi="nvim"
 
   if test "$TERMINAL_EMULATION" = "true"
     starship init fish | source
