@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/simonkovtyk/dotfiles/compare/v1.4.0...v1.5.0) (2026-06-23)
+
+
+### Features
+
+* **neovim:** upgrade treesitter ([5b07e6d](https://github.com/simonkovtyk/dotfiles/commit/5b07e6d0adfbe529a5abc7bc52042c9682a76ac3))
+* update starship & fish configs ([aab6775](https://github.com/simonkovtyk/dotfiles/commit/aab67754c6ef44a3be99ab5e6b12b8ae1d5849fa))
+
 ## [1.4.0](https://github.com/simonkovtyk/dotfiles/compare/v1.3.0...v1.4.0) (2026-06-16)
 
 
