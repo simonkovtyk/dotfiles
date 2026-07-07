@@ -1,9 +1,5 @@
-local options = {
-  color_icons = false
-}
+local icons = require("nvim-web-devicons");
 
-return {
-  "nvim-tree/nvim-web-devicons",
-  opts = options,
-  lazy = true
-}
+icons.setup({
+  color_icons = false
+})

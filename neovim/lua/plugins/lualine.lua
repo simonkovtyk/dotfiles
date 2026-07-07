@@ -1,4 +1,6 @@
-local options = {
+local lualine = require("lualine")
+
+lualine.setup({
   options = {
     theme = "dark-orchid",
     section_separators = { left = "", right = "" },
@@ -108,33 +110,4 @@ local options = {
       }
     }
   }
-}
-
-return {
-  "nvim-lualine/lualine.nvim",
-  lazy = true,
-  init = function ()
-    local group_id = vim.api.nvim_create_augroup("Lualine Attach Group", {
-      clear = true
-    })
-
-    local utils = require("utils")
-    local disallowed_filetypes = { "dashboard", "lazy", "lazy_backdrop", "mason", "mason_backdrop" }
-
-    local load_plugin = function ()
-      local includes_disallowed_filetype = utils.array_includes(disallowed_filetypes, vim.bo.filetype)
-
-      if includes_disallowed_filetype then
-        return
-      end
-
-      require "lualine".setup(options)
-      vim.api.nvim_del_augroup_by_id(group_id)
-    end
-
-    vim.api.nvim_create_autocmd({ "BufReadPost", "FileType" }, {
-      group = group_id,
-      callback = load_plugin
-    })
-  end
-}
+})

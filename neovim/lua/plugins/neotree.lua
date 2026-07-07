@@ -1,4 +1,6 @@
-local options = {
+local neotree = require("neo-tree")
+
+neotree.setup({
   enable_cursor_hijack = false, -- TODO(simonkov): change to true
   popup_border_style = "",
   use_popups_for_input = false,
@@ -64,11 +66,4 @@ local options = {
       hide_gitignored = false
     }
   }
-}
-
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  opts = options,
-  cmd = "Neotree"
-}
+})

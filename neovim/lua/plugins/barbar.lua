@@ -1,3 +1,5 @@
+local barbar = require("barbar")
+
 local default_visiblity = {
   separator = {
     left = "",
@@ -9,37 +11,34 @@ local default_visiblity = {
   }
 }
 
-return {
-  "romgrk/barbar.nvim",
-  opts = {
-    animation = false,
-    clickable = false,
-    icons = {
-      separator_at_end = false,
-      alternate = default_visiblity,
-      current = default_visiblity,
-      inactive = {
-        separator = {
-          left = "",
-          right = " "
-        },
-        button = "",
-        filetype = {
-          custom_colors = true
-        }
+barbar.setup({
+  animation = false,
+  clickable = false,
+  icons = {
+    separator_at_end = false,
+    alternate = default_visiblity,
+    current = default_visiblity,
+    inactive = {
+      separator = {
+        left = "",
+        right = " "
       },
-      visible = {
-        separator = {
-          left = "",
-          right = " "
-        },
-        button = "",
-        filetype = {
-          custom_colors = true
-        }
+      button = "",
+      filetype = {
+        custom_colors = true
       }
     },
-    maximum_padding = 1,
-    minimum_padding = 1
-  }
-}
+    visible = {
+      separator = {
+        left = "",
+        right = " "
+      },
+      button = "",
+      filetype = {
+        custom_colors = true
+      }
+    }
+  },
+  maximum_padding = 1,
+  minimum_padding = 1
+})

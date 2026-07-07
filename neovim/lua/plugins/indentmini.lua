@@ -1,5 +1,3 @@
-return {
-  "nvimdev/indentmini.nvim",
-  config = true,
-  event = "BufReadPost"
-}
+local indentmini = require("indentmini")
+
+indentmini.setup()

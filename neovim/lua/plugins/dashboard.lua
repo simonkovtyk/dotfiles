@@ -19,7 +19,9 @@ logo = logo .. version_info.major .. "." .. version_info.minor .. "." .. version
 logo = logo .. string.rep("\n", 2)
 logo = vim.split(logo, "\n")
 
-local options = {
+local dashboard = require("dashboard")
+
+dashboard.setup({
   theme = "doom",
   disable_move = true,
   shortcut_type = "letter",
@@ -32,10 +34,6 @@ local options = {
     vertical_center = true,
     header = logo,
     center = {
-      {
-        desc = "Project" .. string.rep(" ", 50),
-        desc_hl = "DashboardFooter"
-      },
       {
         icon = " ",
         desc = "New file",
@@ -65,33 +63,11 @@ local options = {
         key_format = "[%s]"
       },
       {
-        desc = "Settings",
-        desc_hl = "DashboardFooter"
-      },
-      {
-        icon = "󰦩 ",
-        desc = "LSPs",
-        action = "Mason",
-        key = "m",
-        key_format = "[%s]"
-      },
-      {
-        icon = "󰐱 ",
-        desc = "Plugins",
-        action = "Lazy",
-        key = "l",
-        key_format = "[%s]"
-      },
-      {
         icon = "󱝀 ",
         desc = "Check health",
         action = "checkhealth",
         key = "h",
         key_format = "[%s]"
-      },
-      {
-        desc = "Others",
-        desc_hl = "DashboardFooter"
       },
       {
         icon = " ",
@@ -102,12 +78,4 @@ local options = {
       }
     }
   }
-}
-
-return {
-  "nvimdev/dashboard-nvim",
-  opts = options,
-  cond = function()
-    return vim.fn.argc() == 0
-  end
-}
+})

@@ -1,4 +1,6 @@
-local options = {
+local dark_orchid = require("dark-orchid")
+
+dark_orchid.setup({
   integrations = {
     barbar = {
       enabled = true
@@ -34,15 +36,6 @@ local options = {
       enabled = true
     }
   }
-}
+})
 
-return {
-  dir = "/home/simonkov/Projects/dark-orchid/neovim",
-  main = "dark-orchid",
-  priority = 1000,
-  lazy = false,
-  opts = options,
-  init = function()
-    vim.cmd.colorscheme("dark-orchid")
-  end
-}
+dark_orchid.load()

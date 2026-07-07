@@ -1,4 +1,6 @@
-local options = {
+local image = require("image");
+
+image.setup({
   backend = "kitty",
   integrations = {
     markdown = {
@@ -18,9 +20,4 @@ local options = {
     }
   },
   hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" }
-}
-
-return {
- "3rd/image.nvim",
- opts = options
-}
+})
