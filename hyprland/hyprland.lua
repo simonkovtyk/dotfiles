@@ -22,10 +22,10 @@ hl.monitor({
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("dbus-update-activation-environment --all")
-  hl.exec_cmd("hyprlock")
   hl.exec_cmd("hyprpm reload")
   hl.exec_cmd("udiskie")
   hl.exec_cmd("hypridle")
+  hl.exec_cmd("clipse -listen")
 
   if mode == "dark-orchid" then
     hl.exec_cmd("waybar")
@@ -84,9 +84,6 @@ hl.config({
   },
   decoration = {
     rounding = 16,
-    rounding_power = 2,
-    active_opacity = 1.0,
-    inactive_opacity = 1.0,
     shadow = {
       enabled = true,
       range = 4,
@@ -98,7 +95,7 @@ hl.config({
       size = 2,
       passes = 3,
       vibrancy = 0.1696
-    },
+    }
   },
   animations = {
     enabled = true
@@ -210,7 +207,16 @@ hl.window_rule({
     title = ".*Mozilla Firefox Private Browsing$"
   }
 })
-
+hl.window_rule({
+  match = {
+    class = "clipse"
+  },
+  name = "clipse",
+  float = true,
+  center = true,
+  stay_focused = true,
+  size = {600, 400}
+})
 hl.curve("easeOutQuint", {
   type = "bezier",
   points = { { 0.22, 1 }, { 0.36, 1 } }
@@ -238,6 +244,7 @@ local menu = "rofi -show drun"
 local email = "EDITOR=" .. editor .. " " .. terminal .. " -e aerc"
 local soundMixer = terminal .. " -e wiremix"
 local music = terminal .. " -e spotify_player"
+local clipboardManager = terminal .. " --class clipse -e clipse"
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
@@ -246,8 +253,10 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(soundMixer))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(music))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(email))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(clipboardManager))
 
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.kill())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
