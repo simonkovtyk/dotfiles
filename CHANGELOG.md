@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.5.0](https://github.com/simonkovtyk/dotfiles/compare/v1.4.0...v1.5.0) (2026-07-21)
+
+
+### Features
+
+* **neovim:** upgrade treesitter ([5b07e6d](https://github.com/simonkovtyk/dotfiles/commit/5b07e6d0adfbe529a5abc7bc52042c9682a76ac3))
+* **neovim:** use vim.pack instead ([12325e0](https://github.com/simonkovtyk/dotfiles/commit/12325e0a17b3d40c714f779feaccf88e36ea5310))
+* update icons ([41ef710](https://github.com/simonkovtyk/dotfiles/commit/41ef7105d324431928818bef0b4264204201d495))
+* update starship & fish configs ([aab6775](https://github.com/simonkovtyk/dotfiles/commit/aab67754c6ef44a3be99ab5e6b12b8ae1d5849fa))
+
+
+### Bug Fixes
+
+* **hypr:** remove hyprlock on start ([ef02640](https://github.com/simonkovtyk/dotfiles/commit/ef0264042bf15ff5324c94430159f9f4b810995f))
+
 ## [1.4.0](https://github.com/simonkovtyk/dotfiles/compare/v1.3.0...v1.4.0) (2026-06-16)
 
 
