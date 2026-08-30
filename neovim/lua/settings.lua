@@ -77,3 +77,5 @@ vim.g.rust_recommended_style = false
 vim.o.winborder = "rounded"
 vim.o.pumborder = "rounded"
 vim.o.pummaxwidth = 60
+vim.g.zig_fmt_parse_errors = 0
+vim.g.zig_fmt_autosave = 0

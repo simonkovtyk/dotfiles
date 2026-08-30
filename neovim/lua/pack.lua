@@ -1,5 +1,4 @@
 vim.pack.add({
-  { src = "https://github.com/romgrk/barbar.nvim", name = "barbar" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons", name = "icons" },
   { src = "https://github.com/3rd/image.nvim", name = "image" },
   { src = "https://github.com/neovim/nvim-lspconfig", name = "lspconfig" },
@@ -13,5 +12,6 @@ vim.pack.add({
   { src = "https://github.com/nvimdev/indentmini.nvim", name = "indentmini" },
   { src = "https://github.com/nvim-mini/mini.pairs", name = "mini-pairs" },
   { src = "https://github.com/lewis6991/gitsigns.nvim", name = "gitsigns" },
-  { src = "https://github.com/nvimdev/dashboard-nvim", name = "dashboard" }
+  { src = "https://github.com/nvimdev/dashboard-nvim", name = "dashboard" },
+  { src = "https://codeberg.org/ziglang/zig.vim", name = "zig" }
 })
