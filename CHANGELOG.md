@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://github.com/simonkovtyk/dotfiles/compare/v1.4.0...v1.5.0) (2026-09-27)
+
+
+### Features
+
+* **neovim:** remove plugins and improve keybinds ([382161d](https://github.com/simonkovtyk/dotfiles/commit/382161d419328b609535d655d171a35edcca2a1a))
+* **neovim:** upgrade treesitter ([5b07e6d](https://github.com/simonkovtyk/dotfiles/commit/5b07e6d0adfbe529a5abc7bc52042c9682a76ac3))
+* **neovim:** use vim.pack instead ([12325e0](https://github.com/simonkovtyk/dotfiles/commit/12325e0a17b3d40c714f779feaccf88e36ea5310))
+* update icons ([41ef710](https://github.com/simonkovtyk/dotfiles/commit/41ef7105d324431928818bef0b4264204201d495))
+* update starship & fish configs ([aab6775](https://github.com/simonkovtyk/dotfiles/commit/aab67754c6ef44a3be99ab5e6b12b8ae1d5849fa))
+* update various configs ([5385c60](https://github.com/simonkovtyk/dotfiles/commit/5385c60a066a18446f8c840a3dccf6a1ca5a335e))
+
+
+### Bug Fixes
+
+* **hypr:** remove hyprlock on start ([ef02640](https://github.com/simonkovtyk/dotfiles/commit/ef0264042bf15ff5324c94430159f9f4b810995f))
+
 ## [1.4.0](https://github.com/simonkovtyk/dotfiles/compare/v1.3.0...v1.4.0) (2026-06-16)
 
 
