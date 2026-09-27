@@ -1,0 +1,46 @@
+# Dark Orchid — an fzf theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# The list, the input and the preview show the terminal through.
+--color=bg:-1,list-bg:-1,preview-bg:-1,input-bg:-1,header-bg:-1,footer-bg:-1,gutter:-1
+
+# Text
+--color=fg:#d4d4d8                 # fg
+--color=preview-fg:#d4d4d8         # fg
+--color=query:#d4d4d8              # fg
+--color=header:#71717a             # fg-muted
+--color=footer:#71717a             # fg-muted
+--color=info:#71717a               # fg-muted
+--color=disabled:#52525b           # fg-faint
+--color=ghost:#52525b              # fg-faint
+--color=nomatch:#52525b            # fg-faint
+
+# Matched characters carry weight rather than a hue of their own.
+--color=hl:#f4f4f5:bold            # fg-strong
+
+# The current line is the one thing that is lit.
+--color=fg+:#000000                # on-accent
+--color=bg+:#7300ff                # accent
+--color=hl+:#000000:bold           # on-accent
+--color=pointer:#000000            # on-accent
+
+# Lines picked in multi-select mode, and their marker.
+--color=selected-fg:#d4d4d8        # fg
+--color=selected-bg:#3f3f46        # selection-muted
+--color=selected-hl:#f4f4f5:bold   # fg-strong
+--color=marker:#f4f4f5             # fg-strong
+
+# Prompt and spinner
+--color=prompt:#7300ff             # accent
+--color=spinner:#7300ff            # accent
+
+# Borders, separators, scrollbars and labels
+--color=border:#3f3f46             # border
+--color=separator:#3f3f46          # border
+--color=scrollbar:#3f3f46          # border
+--color=preview-border:#3f3f46     # border
+--color=preview-scrollbar:#3f3f46  # border
+--color=label:#71717a              # fg-muted
+--color=preview-label:#71717a      # fg-muted

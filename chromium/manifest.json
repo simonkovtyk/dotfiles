@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Orchid",
+  "short_name": "Dark Orchid",
+  "description": "A dark, monochrome theme, and it is purple. Greys carry the browser; a single purple lights what you are pointing at.",
+  "version": "1.0.0",
+  "theme": {
+    "colors": {
+      "frame": [9, 9, 11],
+      "frame_inactive": [9, 9, 11],
+      "frame_incognito": [12, 0, 26],
+      "frame_incognito_inactive": [12, 0, 26],
+
+      "background_tab": [9, 9, 11],
+      "background_tab_inactive": [9, 9, 11],
+      "background_tab_incognito": [12, 0, 26],
+      "background_tab_incognito_inactive": [12, 0, 26],
+
+      "toolbar": [24, 24, 27],
+      "toolbar_text": [212, 212, 216],
+      "toolbar_button_icon": [115, 0, 255],
+      "button_background": [39, 39, 42],
+      "bookmark_text": [212, 212, 216],
+
+      "tab_text": [244, 244, 245],
+      "tab_background_text": [113, 113, 122],
+      "tab_background_text_inactive": [82, 82, 91],
+      "tab_background_text_incognito": [113, 113, 122],
+      "tab_background_text_incognito_inactive": [82, 82, 91],
+
+      "omnibox_background": [39, 39, 42],
+      "omnibox_text": [212, 212, 216],
+
+      "ntp_background": [9, 9, 11],
+      "ntp_text": [212, 212, 216],
+      "ntp_link": [115, 0, 255],
+      "ntp_header": [39, 39, 42]
+    },
+    "properties": {
+      "ntp_logo_alternate": 1
+    }
+  }
+}

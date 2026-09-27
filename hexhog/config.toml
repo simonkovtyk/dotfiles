@@ -1,0 +1,33 @@
+# Dark Orchid — a hexhog theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+[theme]
+
+# The surface behind everything. "reset" hands it back to the terminal, so
+# whatever is behind the window — a wallpaper, a blurred desktop — comes
+# through.
+background = "reset"
+
+# Body text. The same colour draws the block cursor and the text sitting on a
+# selection, because there is one key for all three.
+primary = "#d4d4d8"           # fg
+
+# The rules down either side of the hex column
+border = "#3f3f46"            # border
+
+# The title, and the shortcut letter of each entry in the help bar
+accent = "#7300ff"            # accent
+
+# The fill behind a selected range
+select = "#7300ff"            # accent
+
+# Bytes are coloured by what they are. That is the content of the file rather
+# than the interface around it, so it keeps a palette of its own instead of the
+# single purple the chrome uses.
+null = "#52525b"              # fg-faint — padding, the quietest thing on screen
+ascii_printable = "#86efac"   # syn-string — bytes that are readable text
+ascii_whitespace = "#71717a"  # syn-comment — spaces, tabs and line ends
+ascii_other = "#a5f3fc"       # syn-type — the remaining control bytes
+non_ascii = "#d4d4d8"         # syn-text — everything above 0x7f

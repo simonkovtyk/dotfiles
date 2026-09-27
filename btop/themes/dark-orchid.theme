@@ -1,0 +1,105 @@
+# Dark Orchid — a btop theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# Main background. Left empty so the terminal shows through.
+theme[main_bg]=""
+
+# Main text color
+theme[main_fg]="#d4d4d8"            # fg
+
+# Title color for boxes and buttons. The shortcut letter inside a label is
+# hi_fg, so this stays a plain light label or the letter disappears into it.
+theme[title]="#f4f4f5"              # fg-strong
+
+# Highlight color for keyboard shortcuts — the one lit letter in a label
+theme[hi_fg]="#7300ff"              # accent
+
+# Background and foreground of the selected process
+theme[selected_bg]="#7300ff"        # accent
+theme[selected_fg]="#000000"        # on-accent
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#52525b"        # fg-faint
+
+# Text drawn over a graph — the up/down labels on the network graphs
+theme[graph_text]="#71717a"         # fg-muted
+
+# The unfilled remainder of a meter
+theme[meter_bg]="#3f3f46"           # border
+
+# Misc colors for the processes box: the mini cpu graphs, the detailed memory
+# graph, and the status text of a running process
+theme[proc_misc]="#7300ff"          # accent
+
+# Box outlines. One grey for all four — a box does not earn a hue for being a
+# different box.
+theme[cpu_box]="#3f3f46"            # border
+theme[mem_box]="#3f3f46"            # border
+theme[net_box]="#3f3f46"            # border
+theme[proc_box]="#3f3f46"           # border
+
+# Box divider line and small boxes line color
+theme[div_line]="#3f3f46"           # border
+
+# Every graph and meter rides one ramp, quiet to loud. What a reading means is
+# carried by how far the meter has filled, not by the hue it turns.
+
+# Temperature graph
+theme[temp_start]="#5c00cc"         # accent-dim
+theme[temp_mid]="#8f33ff"           # accent-lit
+theme[temp_end]="#c799ff"           # accent-peak
+
+# Cpu graph
+theme[cpu_start]="#5c00cc"          # accent-dim
+theme[cpu_mid]="#8f33ff"            # accent-lit
+theme[cpu_end]="#c799ff"            # accent-peak
+
+# Mem/Disk free meter
+theme[free_start]="#5c00cc"         # accent-dim
+theme[free_mid]="#8f33ff"           # accent-lit
+theme[free_end]="#c799ff"           # accent-peak
+
+# Mem/Disk cached meter
+theme[cached_start]="#5c00cc"       # accent-dim
+theme[cached_mid]="#8f33ff"         # accent-lit
+theme[cached_end]="#c799ff"         # accent-peak
+
+# Mem/Disk available meter
+theme[available_start]="#5c00cc"    # accent-dim
+theme[available_mid]="#8f33ff"      # accent-lit
+theme[available_end]="#c799ff"      # accent-peak
+
+# Mem/Disk used meter
+theme[used_start]="#5c00cc"         # accent-dim
+theme[used_mid]="#8f33ff"           # accent-lit
+theme[used_end]="#c799ff"           # accent-peak
+
+# Download graph
+theme[download_start]="#5c00cc"     # accent-dim
+theme[download_mid]="#8f33ff"       # accent-lit
+theme[download_end]="#c799ff"       # accent-peak
+
+# Upload graph
+theme[upload_start]="#5c00cc"       # accent-dim
+theme[upload_mid]="#8f33ff"         # accent-lit
+theme[upload_end]="#c799ff"         # accent-peak
+
+# Process box cpu% meter
+theme[process_start]="#5c00cc"      # accent-dim
+theme[process_mid]="#8f33ff"        # accent-lit
+theme[process_end]="#c799ff"        # accent-peak
+
+# The banner across the processes box, one fill per state: paused, following,
+# or both. Three stops of the one ramp, so a single light text reads on all of
+# them and the states still stay apart.
+theme[proc_pause_bg]="#5c00cc"      # accent-dim
+theme[proc_follow_bg]="#8f33ff"     # accent-lit
+theme[proc_banner_bg]="#7300ff"     # accent
+theme[proc_banner_fg]="#f4f4f5"     # fg-strong
+
+# The followed process, which takes the place of the selection highlight on
+# that row — so it steps back to the quieter of the two selection fills.
+theme[followed_bg]="#3f3f46"        # selection-muted
+theme[followed_fg]="#d4d4d8"        # fg

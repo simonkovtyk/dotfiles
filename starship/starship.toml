@@ -1,3 +1,5 @@
+palette = "dark-orchid"
+
 add_newline = true
 continuation_prompt = "[▸▹ ](dimmed white)"
 
@@ -5,28 +7,404 @@ format = """$character"""
 
 right_format = """$directory$cmd_duration"""
 
-palette = "dark-orchid"
+# Dark Orchid — a Starship theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
 
-[fill]
-symbol = ' '
+# ---------------------------------------------------------------------------
+# The prompt character
+# ---------------------------------------------------------------------------
 
 [character]
-format = "$symbol "
-success_symbol = ""
-error_symbol = ""
+# The character you type against, after a command that succeeded
+success_symbol = "[❯](bold accent)"
+# The same character after a command that failed
+error_symbol = "[❯](bold error)"
+# Vim normal mode
+vimcmd_symbol = "[❮](bold accent)"
+# Vim visual mode
+vimcmd_visual_symbol = "[❮](bold accent-peak)"
+# Vim replace mode, which overwrites what is under the cursor
+vimcmd_replace_symbol = "[❮](bold error)"
+vimcmd_replace_one_symbol = "[❮](bold error)"
+
+# ---------------------------------------------------------------------------
+# Where you are
+# ---------------------------------------------------------------------------
 
 [directory]
-format = "[$path]($style)"
-style = "zinc_500"
-truncation_length = 2
-read_only = " ◈"
-use_os_path_sep = true
+# The working directory — the loudest thing in the prompt
+style = "bold accent"
+# The part of the path above the repository root
+before_repo_root_style = "fg-muted"
+# The repository root itself
+repo_root_style = "bold accent"
+# The marker on a directory you cannot write to
+read_only_style = "warning"
+
+[fill]
+# The run of padding characters between a left and a right segment
+style = "border"
+
+# ---------------------------------------------------------------------------
+# Version control
+# ---------------------------------------------------------------------------
+
+[git_branch]
+# The current branch
+style = "bold fg"
+
+[git_commit]
+# The commit hash on a detached HEAD, and the tag beside it
+style = "fg-muted"
+
+[git_state]
+# An interrupted operation: rebase, merge, bisect, revert, cherry-pick
+style = "bold error"
+
+[git_status]
+# Staged, modified, untracked, stashed, ahead and behind counts
+style = "bold warning"
+
+[git_metrics]
+# Lines added in the working tree
+added_style = "success"
+# Lines deleted in the working tree
+deleted_style = "error"
+
+[hg_branch]
+# The current Mercurial branch or bookmark
+style = "bold fg"
+
+[fossil_branch]
+# The current Fossil branch
+style = "bold fg"
+
+[fossil_metrics]
+# Lines added in the Fossil checkout
+added_style = "success"
+# Lines deleted in the Fossil checkout
+deleted_style = "error"
+
+[pijul_channel]
+# The current Pijul channel
+style = "bold fg"
+
+[vcsh]
+# The active vcsh repository
+style = "fg"
+
+# ---------------------------------------------------------------------------
+# How the last command went
+# ---------------------------------------------------------------------------
 
 [cmd_duration]
-format = " [took $duration]($style)"
-style = "zinc_500"
+# How long a long-running command took
+style = "warning"
+
+[status]
+# The exit code of a command that failed
+style = "bold error"
+
+[jobs]
+# Background jobs of this shell
+style = "fg-muted"
+
+[[battery.display]]
+# A battery below the threshold
+threshold = 10
+style = "error"
+
+# ---------------------------------------------------------------------------
+# Who and where you are
+# ---------------------------------------------------------------------------
+
+[username]
+# The current user
+style_user = "fg-muted"
+# The same field when that user is root
+style_root = "bold error"
+
+[hostname]
+# The machine name, shown over SSH
+style = "fg-muted"
+
+[localip]
+# The machine's LAN address
+style = "fg-muted"
+
+[os]
+# The operating system glyph
+style = "fg-muted"
+
+[shell]
+# Which shell is running
+style = "fg-muted"
+
+[shlvl]
+# How deeply shells are nested
+style = "fg-muted"
+
+[sudo]
+# Cached sudo credentials
+style = "fg"
+
+[memory_usage]
+# Used memory and swap
+style = "fg-faint"
+
+[time]
+# The clock
+style = "fg-faint"
+
+# ---------------------------------------------------------------------------
+# Context — what a command in this directory will actually act on
+# ---------------------------------------------------------------------------
+
+[aws]
+style = "fg"
+
+[azure]
+style = "fg"
+
+[gcloud]
+style = "fg"
+
+[openstack]
+style = "fg"
+
+[kubernetes]
+style = "fg"
+
+[docker_context]
+style = "fg"
+
+[container]
+style = "fg"
+
+[netns]
+style = "fg"
+
+[nats]
+style = "fg"
+
+[pulumi]
+style = "fg"
+
+[terraform]
+style = "fg"
+
+[vagrant]
+style = "fg"
+
+[singularity]
+style = "fg"
+
+[nix_shell]
+style = "fg"
+
+[guix_shell]
+style = "fg"
+
+[spack]
+style = "fg"
+
+[conda]
+style = "fg"
+
+[pixi]
+style = "fg"
+
+[mise]
+style = "fg"
+
+[direnv]
+style = "fg"
+
+# ---------------------------------------------------------------------------
+# Toolchains, languages and build systems
+#
+# One stop on the grey ramp for all of them: a version number is reference
+# material, not something the prompt should be pointing at.
+# ---------------------------------------------------------------------------
+
+[buf]
+style = "fg-muted"
+
+[bun]
+style = "fg-muted"
+
+[c]
+style = "fg-muted"
+
+[cmake]
+style = "fg-muted"
+
+[cobol]
+style = "fg-muted"
+
+[cpp]
+style = "fg-muted"
+
+[crystal]
+style = "fg-muted"
+
+[daml]
+style = "fg-muted"
+
+[dart]
+style = "fg-muted"
+
+[deno]
+style = "fg-muted"
+
+[dotnet]
+style = "fg-muted"
+
+[elixir]
+style = "fg-muted"
+
+[elm]
+style = "fg-muted"
+
+[erlang]
+style = "fg-muted"
+
+[fennel]
+style = "fg-muted"
+
+[gleam]
+style = "fg-muted"
+
+[golang]
+style = "fg-muted"
+# A go.mod that asks for a toolchain this Go cannot provide
+not_capable_style = "error"
+
+[gradle]
+style = "fg-muted"
+
+[haskell]
+style = "fg-muted"
+
+[haxe]
+style = "fg-muted"
+
+[helm]
+style = "fg-muted"
+
+[java]
+style = "fg-muted"
+
+[julia]
+style = "fg-muted"
+
+[kotlin]
+style = "fg-muted"
+
+[lua]
+style = "fg-muted"
+
+[meson]
+style = "fg-muted"
+
+[mojo]
+style = "fg-muted"
+
+[nim]
+style = "fg-muted"
+
+[nodejs]
+style = "fg-muted"
+# A package.json that asks for a Node this one cannot satisfy
+not_capable_style = "error"
+
+[ocaml]
+style = "fg-muted"
+
+[odin]
+style = "fg-muted"
+
+[opa]
+style = "fg-muted"
+
+[package]
+style = "fg-muted"
+
+[perl]
+style = "fg-muted"
+
+[php]
+style = "fg-muted"
+
+[purescript]
+style = "fg-muted"
+
+[python]
+style = "fg-muted"
+
+[quarto]
+style = "fg-muted"
+
+[raku]
+style = "fg-muted"
+
+[red]
+style = "fg-muted"
+
+[rlang]
+style = "fg-muted"
+
+[ruby]
+style = "fg-muted"
+
+[rust]
+style = "fg-muted"
+
+[scala]
+style = "fg-muted"
+
+[solidity]
+style = "fg-muted"
+
+[swift]
+style = "fg-muted"
+
+[typst]
+style = "fg-muted"
+
+[vlang]
+style = "fg-muted"
+
+[zig]
+style = "fg-muted"
+
+# ---------------------------------------------------------------------------
+# The palette
+#
+# Every color the theme uses, declared once and referenced by name above.
+# The comment on each line is the shade it is taken from.
+# ---------------------------------------------------------------------------
 
 [palettes.dark-orchid]
-zinc_300 = "#d4d4d8"
-zinc_700 = "#3f3f46"
-zinc_500 = "#71717a"
+accent = "#7300ff" # brand_500
+on-accent = "#000000" # black
+accent-bright = "#ab66ff" # brand_300 — deprecated — accent text takes `accent`
+accent-lit = "#8f33ff" # brand_400
+accent-dim = "#5c00cc" # brand_600
+accent-peak = "#c799ff" # brand_200
+accent-surface = "#2e0066" # brand_800
+bg = "#09090b" # zinc_950
+bg-alt = "#18181b" # zinc_900
+surface = "#27272a" # zinc_800
+border = "#3f3f46" # zinc_700
+selection-muted = "#3f3f46" # zinc_700
+fg-faint = "#52525b" # zinc_600
+fg-muted = "#71717a" # zinc_500
+fg = "#d4d4d8" # zinc_300
+fg-strong = "#f4f4f5" # zinc_100
+error = "#dc2626" # red_600
+warning = "#ca8a04" # yellow_600
+success = "#16a34a" # green_600
+info = "#2563eb" # blue_600

@@ -1,6 +1,4 @@
 theme = "dark-orchid"
-client_port = 8080
-login_redirect_uri = "http://127.0.0.1:8989/login"
 playback_format = """
 {track} {liked}
 {artists}

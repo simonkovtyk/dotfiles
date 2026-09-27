@@ -1,0 +1,162 @@
+/* Dark Orchid — a rofi launcher
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+/* The colours live next door, under the names the family gives them; this file
+   only says what each one is for, and holds no colour of its own. The import
+   resolves against this file's own directory first, so both files travel
+   together wherever they are put. */
+@import "dark-orchid.rasi"
+
+* {
+    background-color: transparent;
+    text-color:       @fg;
+    spacing:          0;
+}
+
+/* rofi draws its own window, so there is nothing behind it to leave unset.
+   The alpha channel is the next best thing: under a compositor the desktop
+   still comes through, and without one it falls back to flat black. */
+window {
+    background-color: @bg-translucent;
+    border:           1px;
+    border-color:     @border;
+    border-radius:    8px;
+    padding:          0;
+    width:            40em;
+}
+
+mainbox {
+    padding:  0;
+    children: [ inputbar, message, listview, mode-switcher ];
+}
+
+/* The prompt is the one place the brand purple speaks before you select
+   anything. */
+inputbar {
+    padding:      12px 16px;
+    spacing:      8px;
+    border:       0 0 1px 0;
+    border-color: @border;
+    children:     [ prompt, entry ];
+}
+
+prompt {
+    text-color:       @accent;
+    vertical-align:   0.5;
+}
+
+entry {
+    placeholder-color: @fg-muted;
+    text-color:        @fg;
+    cursor:            text;
+    vertical-align:    0.5;
+}
+
+listview {
+    padding:      6px;
+    spacing:      2px;
+    lines:        10;
+    columns:      1;
+    fixed-height: false;
+    dynamic:      true;
+    scrollbar:    true;
+    cycle:        true;
+}
+
+scrollbar {
+    handle-color:  @border;
+    handle-width:  4px;
+    border:        0;
+    margin:        0 0 0 6px;
+}
+
+element {
+    padding:       7px 10px;
+    spacing:       8px;
+    border-radius: 6px;
+    cursor:        pointer;
+}
+
+element normal.normal    { text-color: @fg; }
+element normal.urgent    { text-color: @error; }
+/* An active entry — a window already open, a mode already running — is the
+   accent as text. */
+element normal.active    { text-color: @accent; }
+
+/* Zebra striping would break the flat surface this theme keeps, so the
+   alternate rows are simply the normal ones. */
+element alternate.normal { text-color: @fg; }
+element alternate.urgent { text-color: @error; }
+element alternate.active { text-color: @accent; }
+
+element selected.normal  { background-color: @accent;        text-color: @on-accent; }
+element selected.urgent  { background-color: @error;         text-color: @bg; }
+/* Selected *and* active is the one role the token names have no entry for: the
+   accent is already spoken for by the plain selection, so this reaches past
+   them into the ramp for a stop that still reads as a different row. */
+element selected.active  { background-color: @brand-300; text-color: @on-accent; }
+
+/* Matched characters carry weight rather than a color of their own: bold
+   stays legible on the accent, where a second hue would not. */
+element-text {
+    highlight:      bold;
+    text-color:     inherit;
+    vertical-align: 0.5;
+    cursor:         inherit;
+}
+
+element-icon {
+    size:   1.1em;
+    cursor: inherit;
+}
+
+message {
+    padding:      10px 16px;
+    border:       0 0 1px 0;
+    border-color: @border;
+}
+
+textbox {
+    background-color: @bg-alt;
+    text-color:       @fg;
+    padding:          8px 10px;
+    border-radius:    6px;
+}
+
+/* An error needs a solid backing, so this one panel stays opaque. */
+error-message {
+    padding:          16px;
+    background-color: @bg;
+}
+
+error-message textbox {
+    background-color: transparent;
+    text-color:       @error;
+}
+
+/* Mode buttons (drun / run / window), when more than one mode is open */
+mode-switcher {
+    border:       1px 0 0 0;
+    border-color: @border;
+    spacing:      0;
+}
+
+button {
+    padding:    8px;
+    text-color: @fg-muted;
+    cursor:     pointer;
+}
+
+button selected {
+    text-color:   @fg-strong;
+    border:       2px 0 0 0;
+    border-color: @accent;
+}
+
+/* Used by the `+kb-mode` combi mode and by `-show calc` style dialogs */
+inputbar case-indicator {
+    text-color: @fg-muted;
+}

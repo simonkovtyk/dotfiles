@@ -1,0 +1,257 @@
+#:schema https://yazi-rs.github.io/schemas/theme.json
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# Dark Orchid — a yazi flavor
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#71717a", italic = true }  # fg-muted
+
+# Find
+find_keyword  = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+find_position = { fg = "#71717a", italic = true }   # fg-muted
+
+# Symlink
+symlink_target = { fg = "#71717a", italic = true }  # fg-muted
+
+# Marker
+marker_copied   = { fg = "#16a34a", bg = "#16a34a" }  # success
+marker_cut      = { fg = "#dc2626", bg = "#dc2626" }  # error
+marker_marked   = { fg = "#2563eb", bg = "#2563eb" }  # info
+marker_selected = { fg = "#d4d4d8", bg = "#d4d4d8" }  # fg
+marker_symbol   = "│"
+
+# Count
+count_copied   = { fg = "#000000", bg = "#16a34a" }  # on-accent on success
+count_cut      = { fg = "#000000", bg = "#dc2626" }  # on-accent on error
+count_selected = { fg = "#000000", bg = "#d4d4d8" }  # on-accent on fg
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#3f3f46" }  # border
+
+# : }}}
+
+
+# : Tabs {{{
+
+[tabs]
+active   = { fg = "#000000", bg = "#7300ff", italic = true }  # on-accent on accent
+inactive = { fg = "#71717a", italic = true }                  # fg-muted
+
+# Separator
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+normal_main = { fg = "#000000", bg = "#7300ff", bold = true }  # on-accent on accent
+normal_alt  = { fg = "#d4d4d8", bg = "#27272a" }               # fg on surface
+
+# Select mode
+select_main = { fg = "#000000", bg = "#ab66ff", bold = true }  # on-accent on brand-300
+select_alt  = { fg = "#d4d4d8", bg = "#27272a" }               # fg on surface
+
+# Unset mode
+unset_main = { fg = "#000000", bg = "#dc2626", bold = true }  # on-accent on error
+unset_alt  = { fg = "#d4d4d8", bg = "#27272a" }               # fg on surface
+
+# : }}}
+
+
+# : Indicator of hovered file {{{
+
+[indicator]
+parent  = { fg = "#d4d4d8", bg = "#27272a" }  # fg on surface
+current = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+preview = { fg = "#d4d4d8", bg = "#27272a" }  # fg on surface
+padding = { open = "", close = "" }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+overall   = {}
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_sep   = { fg = "#3f3f46" }  # border
+perm_type  = { fg = "#d4d4d8" }  # fg
+perm_read  = { fg = "#71717a" }  # fg-muted
+perm_write = { fg = "#71717a" }  # fg-muted
+perm_exec  = { fg = "#71717a" }  # fg-muted
+
+# Progress
+progress_label  = { fg = "#d4d4d8" }                # fg
+progress_normal = { fg = "#7300ff", bg = "#27272a" }  # accent on surface
+progress_error  = { fg = "#dc2626", bg = "#27272a" }  # error on surface
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+border          = { fg = "#3f3f46" }  # border
+cols            = 3
+mask            = { bg = "#09090b" }  # bg
+cand            = { fg = "#7300ff" }  # accent
+rest            = { fg = "#71717a" }  # fg-muted
+desc            = { fg = "#d4d4d8" }  # fg
+separator       = "  "
+separator_style = { fg = "#3f3f46" }  # border
+
+# : }}}
+
+
+# : Confirmation {{{
+
+[confirm]
+border     = { fg = "#3f3f46" }                # border
+title      = { fg = "#d4d4d8" }                # fg
+body       = { fg = "#d4d4d8" }                # fg
+list       = { fg = "#71717a" }                # fg-muted
+btn_yes    = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+btn_no     = { fg = "#d4d4d8" }                # fg
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border = { fg = "#3f3f46" }  # border
+title  = { fg = "#d4d4d8" }  # fg
+
+# Table
+tbl_col  = { fg = "#7300ff" }                 # accent
+tbl_cell = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info  = { fg = "#2563eb" }  # info
+title_warn  = { fg = "#ca8a04" }  # warning
+title_error = { fg = "#dc2626" }  # error
+
+# : }}}
+
+
+# : Picker {{{
+
+[pick]
+border   = { fg = "#3f3f46" }                # border
+active   = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+inactive = { fg = "#d4d4d8" }                # fg
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#3f3f46" }                # border
+title    = { fg = "#d4d4d8" }                # fg
+value    = { fg = "#d4d4d8" }                # fg
+selected = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border   = { fg = "#3f3f46" }                # border
+active   = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+inactive = { fg = "#d4d4d8" }                # fg
+
+# : }}}
+
+
+# : Task manager {{{
+
+[tasks]
+border  = { fg = "#3f3f46" }                # border
+title   = { fg = "#d4d4d8" }                # fg
+hovered = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+
+# : }}}
+
+
+# : Help menu {{{
+
+[help]
+hovered = { fg = "#000000", bg = "#7300ff" }  # on-accent on accent
+
+# Yazi >= 26.8
+border  = { fg = "#3f3f46" }  # border
+chord   = { fg = "#7300ff" }  # accent
+action  = { fg = "#d4d4d8" }  # fg
+
+# Yazi <= 26.5
+on      = { fg = "#7300ff" }                # accent
+run     = { fg = "#d4d4d8" }                # fg
+desc    = { fg = "#71717a" }                # fg-muted
+footer  = { fg = "#d4d4d8", bg = "#27272a" }  # fg on surface
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+rules = [
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#3f3f46" },  # fallback: zinc-700
+	# Special file
+	{ url = "*", is = "orphan", fg = "#dc2626" },   # error
+	{ url = "*", is = "dummy", fg = "#dc2626" },    # error
+	{ url = "*/", is = "dummy", fg = "#dc2626" },   # error
+	# Fallback
+	{ url = "*/", fg = "#7300ff" },  # accent
+	{ url = "*", fg = "#d4d4d8" }    # fg
+]
+
+# : }}}
+
+
+# : Icons {{{
+
+[icon]
+globs = []
+dirs  = []
+files = []
+exts  = []
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "#dc2626" },  # error
+	{ if = "dummy",  text = "", fg = "#dc2626" },  # error
+	{ if = "link",   text = "", fg = "#71717a" },  # fg-muted
+	{ if = "block",  text = "", fg = "#71717a" },  # fg-muted
+	{ if = "char",   text = "", fg = "#71717a" },  # fg-muted
+	{ if = "fifo",   text = "", fg = "#71717a" },  # fg-muted
+	{ if = "sock",   text = "", fg = "#71717a" },  # fg-muted
+	{ if = "sticky", text = "", fg = "#71717a" },  # fg-muted
+
+	# Fallback
+	{ if = "dir & hovered", text = "", fg = "#7300ff" },  # accent
+	{ if = "dir",           text = "", fg = "#7300ff" },  # accent
+	{ if = "!dir",          text = "", fg = "#d4d4d8" },  # fg
+]
+
+# : }}}

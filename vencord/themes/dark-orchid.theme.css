@@ -1,0 +1,407 @@
+/**
+ * @name Dark Orchid Transparent
+ * @author The Dark Orchid Maintainers
+ * @description A transparent Discord theme, that's purple.
+ * @version 1.0.0
+ */
+
+/*
+ * Dark Orchid — a Discord theme
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+:root,
+.theme-dark,
+.theme-light,
+.visual-refresh.theme-dark,
+.visual-refresh .theme-dark {
+  /* : Palette {{{ */
+
+  --dark-orchid-purple-50: #f1e6ff; /* brand-50 */
+  --dark-orchid-purple-100: #e3ccff; /* brand-100 */
+  --dark-orchid-purple-200: #c799ff; /* accent-peak */
+  --dark-orchid-purple-300: #ab66ff; /* brand-300 */
+  --dark-orchid-purple-400: #8f33ff; /* accent-lit */
+  --dark-orchid-purple-500: #7300ff; /* accent */
+  --dark-orchid-purple-600: #5c00cc; /* accent-dim */
+  --dark-orchid-purple-700: #450099; /* brand-700 */
+  --dark-orchid-purple-800: #2e0066; /* accent-surface */
+  --dark-orchid-purple-900: #170033; /* brand-900 */
+
+  --dark-orchid-accent-bright: #ab66ff; /* deprecated — accent text takes `accent` */
+  --dark-orchid-fg-strong: #f4f4f5; /* fg-strong */
+  --dark-orchid-fg: #d4d4d8; /* fg */
+  --dark-orchid-fg-muted: #71717a; /* fg-muted */
+  --dark-orchid-border: #3f3f46; /* border */
+  --dark-orchid-red: #dc2626; /* error */
+  --dark-orchid-green: #16a34a; /* success */
+  --dark-orchid-yellow: #ca8a04; /* warning */
+  --dark-orchid-blue: #2563eb; /* info */
+
+  /* Transparency knobs — the only values you normally want to change. */
+  --dark-orchid-transparent: rgba(0, 0, 0, 0); /* none */
+  --dark-orchid-backdrop: rgba(0, 0, 0, 0); /* none — set to #09090b (bg) for an opaque build */
+  --dark-orchid-scrim: rgba(9, 9, 11, 0.55); /* scrim */
+  --dark-orchid-scrim-strong: rgba(9, 9, 11, 0.8); /* scrim-strong */
+  --dark-orchid-hover: rgba(115, 0, 255, 0.14); /* overlay-hover */
+  --dark-orchid-active: rgba(115, 0, 255, 0.24); /* overlay-active */
+  --dark-orchid-blur: blur(12px);
+
+  /* : }}} */
+
+  /* : Surfaces {{{ */
+
+  --app-frame-background: var(--dark-orchid-transparent) !important;
+  --background-base-lowest: var(--dark-orchid-transparent) !important;
+  --background-base-lower: var(--dark-orchid-transparent) !important;
+  --background-base-low: var(--dark-orchid-transparent) !important;
+  --background-surface-high: var(--dark-orchid-transparent) !important;
+  --background-surface-higher: var(--dark-orchid-transparent) !important;
+  --background-surface-highest: var(--dark-orchid-transparent) !important;
+  --background-gradient-highest: var(--dark-orchid-transparent) !important;
+  --background-secondary-alt: var(--dark-orchid-transparent) !important;
+  --background-accent: var(--dark-orchid-purple-500) !important;
+  --bg-surface-raised: var(--dark-orchid-transparent) !important;
+  --home-background: var(--dark-orchid-transparent) !important;
+  --chat-background: var(--dark-orchid-transparent) !important;
+  --chat-background-default: var(--dark-orchid-transparent) !important;
+  --channeltextarea-background: var(--dark-orchid-transparent) !important;
+  --custom-channel-members-bg: var(--dark-orchid-transparent) !important;
+  --input-background-default: var(--dark-orchid-transparent) !important;
+  --card-background-default: var(--dark-orchid-scrim) !important;
+  --background-code: var(--dark-orchid-scrim) !important;
+  --spoiler-hidden-background: var(--dark-orchid-scrim-strong) !important;
+  --spoiler-revealed-background: var(--dark-orchid-hover) !important;
+
+  /* Floating surfaces keep a scrim so text stays readable. */
+  --modal-background: var(--dark-orchid-scrim-strong) !important;
+  --modal-footer-background: var(--dark-orchid-transparent) !important;
+  --user-profile-overlay-background: var(--dark-orchid-scrim-strong) !important;
+  --user-profile-overlay-background-hover: var(--dark-orchid-scrim-strong) !important;
+
+  /* Overlays and hover states. */
+  --background-mod-subtle: var(--dark-orchid-transparent) !important;
+  --background-mod-normal: var(--dark-orchid-hover) !important;
+  --background-mod-strong: var(--dark-orchid-active) !important;
+  --background-mod-muted: var(--dark-orchid-hover) !important;
+  --interactive-background-hover: var(--dark-orchid-hover) !important;
+  --interactive-background-active: var(--dark-orchid-active) !important;
+  --interactive-background-selected: var(--dark-orchid-active) !important;
+  --message-background-hover: var(--dark-orchid-hover) !important;
+  --message-highlight-background-default: var(--dark-orchid-hover) !important;
+  --message-highlight-background-hover: var(--dark-orchid-active) !important;
+  --message-reacted-background-default: var(--dark-orchid-hover) !important;
+  --message-automod-background-default: var(--dark-orchid-transparent) !important;
+  --message-automod-background-hover: var(--dark-orchid-hover) !important;
+  --message-mentioned-background-default: var(--dark-orchid-hover) !important;
+  --message-mentioned-background-hover: var(--dark-orchid-active) !important;
+  --mention-background: var(--dark-orchid-hover) !important;
+  --mention-foreground: var(--dark-orchid-purple-500) !important;
+
+  /* : }}} */
+
+  /* : Text and icons {{{ */
+
+  --text-default: var(--dark-orchid-fg) !important;
+  --text-strong: var(--dark-orchid-fg-strong) !important;
+  --text-muted: var(--dark-orchid-fg-muted) !important;
+  --text-subtle: var(--dark-orchid-fg-muted) !important;
+  --text-brand: var(--dark-orchid-purple-500) !important;
+  --text-link: var(--dark-orchid-purple-500) !important;
+  --channels-default: var(--dark-orchid-fg-muted) !important;
+  --channel-icon: var(--dark-orchid-fg-muted) !important;
+  --channel-text-area-placeholder: var(--dark-orchid-fg-muted) !important;
+  --chat-text-muted: var(--dark-orchid-fg-muted) !important;
+  --input-text-default: var(--dark-orchid-fg) !important;
+  --input-placeholder-text-default: var(--dark-orchid-fg-muted) !important;
+  --textbox-markdown-syntax: var(--dark-orchid-fg-muted) !important;
+
+  --icon-default: var(--dark-orchid-fg) !important;
+  --icon-strong: var(--dark-orchid-fg-strong) !important;
+  --icon-muted: var(--dark-orchid-fg-muted) !important;
+  --icon-subtle: var(--dark-orchid-fg-muted) !important;
+  --interactive-muted: var(--dark-orchid-fg-muted) !important;
+  --interactive-text-default: var(--dark-orchid-fg) !important;
+  --interactive-text-hover: var(--dark-orchid-fg-strong) !important;
+  --interactive-text-active: var(--dark-orchid-fg-strong) !important;
+  --interactive-icon-default: var(--dark-orchid-fg) !important;
+  --interactive-icon-hover: var(--dark-orchid-fg-strong) !important;
+  --interactive-icon-active: var(--dark-orchid-fg-strong) !important;
+
+  /* : }}} */
+
+  /* : Brand ramp — light (100) to dark (900), the way Discord orders it {{{ */
+
+  --brand-100: var(--dark-orchid-purple-50) !important;
+  --brand-130: var(--dark-orchid-purple-100) !important;
+  --brand-160: var(--dark-orchid-purple-100) !important;
+  --brand-200: var(--dark-orchid-purple-200) !important;
+  --brand-230: var(--dark-orchid-purple-200) !important;
+  --brand-260: var(--dark-orchid-purple-200) !important;
+  --brand-300: var(--dark-orchid-purple-300) !important;
+  --brand-330: var(--dark-orchid-purple-300) !important;
+  --brand-360: var(--dark-orchid-purple-300) !important;
+  --brand-400: var(--dark-orchid-purple-400) !important;
+  --brand-430: var(--dark-orchid-purple-400) !important;
+  --brand-460: var(--dark-orchid-purple-400) !important;
+  --brand-500: var(--dark-orchid-purple-500) !important;
+  --brand-530: var(--dark-orchid-purple-500) !important;
+  --brand-560: var(--dark-orchid-purple-600) !important;
+  --brand-600: var(--dark-orchid-purple-600) !important;
+  --brand-630: var(--dark-orchid-purple-600) !important;
+  --brand-660: var(--dark-orchid-purple-700) !important;
+  --brand-700: var(--dark-orchid-purple-700) !important;
+  --brand-730: var(--dark-orchid-purple-700) !important;
+  --brand-760: var(--dark-orchid-purple-800) !important;
+  --brand-800: var(--dark-orchid-purple-800) !important;
+  --brand-830: var(--dark-orchid-purple-800) !important;
+  --brand-860: var(--dark-orchid-purple-900) !important;
+  --brand-900: var(--dark-orchid-purple-900) !important;
+
+  --brand-05a: rgba(115, 0, 255, 0.05) !important; /* accent at 5% */
+  --brand-10a: rgba(115, 0, 255, 0.1) !important; /* accent at 10% */
+  --brand-15a: rgba(115, 0, 255, 0.15) !important; /* accent at 15% */
+  --brand-20a: rgba(115, 0, 255, 0.2) !important; /* accent at 20% */
+  --brand-25a: rgba(115, 0, 255, 0.25) !important; /* accent at 25% */
+  --brand-30a: rgba(115, 0, 255, 0.3) !important; /* accent at 30% */
+  --brand-35a: rgba(115, 0, 255, 0.35) !important; /* accent at 35% */
+  --brand-40a: rgba(115, 0, 255, 0.4) !important; /* accent at 40% */
+  --brand-45a: rgba(115, 0, 255, 0.45) !important; /* accent at 45% */
+  --brand-50a: rgba(115, 0, 255, 0.5) !important; /* accent at 50% */
+  --brand-55a: rgba(115, 0, 255, 0.55) !important; /* accent at 55% */
+  --brand-60a: rgba(115, 0, 255, 0.6) !important; /* accent at 60% */
+  --brand-65a: rgba(115, 0, 255, 0.65) !important; /* accent at 65% */
+  --brand-70a: rgba(115, 0, 255, 0.7) !important; /* accent at 70% */
+  --brand-75a: rgba(115, 0, 255, 0.75) !important; /* accent at 75% */
+  --brand-80a: rgba(115, 0, 255, 0.8) !important; /* accent at 80% */
+  --brand-85a: rgba(115, 0, 255, 0.85) !important; /* accent at 85% */
+  --brand-90a: rgba(115, 0, 255, 0.9) !important; /* accent at 90% */
+  --brand-95a: rgba(115, 0, 255, 0.95) !important; /* accent at 95% */
+
+  --blurple-50: var(--dark-orchid-purple-500) !important;
+  --blurple-60: var(--dark-orchid-purple-600) !important;
+  --opacity-blurple-8: rgba(115, 0, 255, 0.08) !important; /* accent at 8% */
+  --opacity-blurple-16: rgba(115, 0, 255, 0.16) !important; /* accent at 16% */
+  --opacity-blurple-24: rgba(115, 0, 255, 0.24) !important; /* accent at 24% */
+  --opacity-blurple-32: rgba(115, 0, 255, 0.32) !important; /* accent at 32% */
+  --opacity-blurple-60: rgba(115, 0, 255, 0.6) !important; /* accent at 60% */
+
+  /* : }}} */
+
+  /* : Controls {{{ */
+
+  --control-brand-foreground: var(--dark-orchid-purple-500) !important;
+  --control-brand-foreground-new: var(--dark-orchid-purple-500) !important;
+  --control-primary-background-default: var(--dark-orchid-purple-500) !important;
+  --control-primary-background-hover: var(--dark-orchid-purple-600) !important;
+  --control-primary-background-active: var(--dark-orchid-purple-700) !important;
+  --control-secondary-background-default: var(--dark-orchid-transparent) !important;
+  --control-secondary-background-hover: var(--dark-orchid-hover) !important;
+  --control-secondary-background-active: var(--dark-orchid-active) !important;
+  --control-secondary-border-default: var(--dark-orchid-border) !important;
+  --control-secondary-text-default: var(--dark-orchid-fg) !important;
+  --control-secondary-text-hover: var(--dark-orchid-fg-strong) !important;
+  --button-outline-brand-text: var(--dark-orchid-purple-500) !important;
+  --button-outline-brand-background-hover: var(--dark-orchid-purple-500) !important;
+  --button-outline-brand-border-active: var(--dark-orchid-purple-500) !important;
+  --checkbox-border-default: var(--dark-orchid-border) !important;
+  --checkbox-icon-active: var(--dark-orchid-purple-500) !important;
+  --radio-thumb-background-active: var(--dark-orchid-purple-500) !important;
+  --input-border-default: var(--dark-orchid-border) !important;
+
+  /* : }}} */
+
+  /* : Borders and scrollbars {{{ */
+
+  --border-subtle: var(--dark-orchid-transparent) !important;
+  --border-muted: var(--dark-orchid-border) !important;
+  --border-normal: var(--dark-orchid-border) !important;
+  --border-strong: var(--dark-orchid-border) !important;
+  --chat-border: var(--dark-orchid-transparent) !important;
+
+  --scrollbar-thin-thumb: var(--dark-orchid-border) !important;
+  --scrollbar-thin-track: var(--dark-orchid-transparent) !important;
+  --scrollbar-auto-thumb: var(--dark-orchid-border) !important;
+  --scrollbar-auto-track: var(--dark-orchid-transparent) !important;
+  --scrollbar-auto-scrollbar-color-thumb: var(--dark-orchid-border) !important;
+  --scrollbar-auto-scrollbar-color-track: var(--dark-orchid-transparent) !important;
+
+  /* : }}} */
+
+  /* : Status and feedback {{{ */
+
+  --status-danger: var(--dark-orchid-red) !important;
+  --status-positive: var(--dark-orchid-green) !important;
+  --status-warning: var(--dark-orchid-yellow) !important;
+  --status-positive-background: var(--dark-orchid-transparent) !important;
+  --status-warning-background: var(--dark-orchid-transparent) !important;
+  --status-positive-text: var(--dark-orchid-green) !important;
+  --status-warning-text: var(--dark-orchid-yellow) !important;
+
+  --text-feedback-critical: var(--dark-orchid-red) !important;
+  --text-feedback-positive: var(--dark-orchid-green) !important;
+  --text-feedback-warning: var(--dark-orchid-yellow) !important;
+  --text-feedback-info: var(--dark-orchid-blue) !important;
+  --icon-feedback-critical: var(--dark-orchid-red) !important;
+  --icon-feedback-positive: var(--dark-orchid-green) !important;
+  --icon-feedback-warning: var(--dark-orchid-yellow) !important;
+  --icon-feedback-info: var(--dark-orchid-blue) !important;
+  --icon-feedback-notification: var(--dark-orchid-red) !important;
+  --background-feedback-critical: var(--dark-orchid-red) !important;
+  --background-feedback-positive: var(--dark-orchid-green) !important;
+  --background-feedback-warning: var(--dark-orchid-yellow) !important;
+  --background-feedback-info: var(--dark-orchid-blue) !important;
+  --background-feedback-notification: var(--dark-orchid-red) !important;
+  --badge-notification-background: var(--dark-orchid-red) !important;
+  --badge-text-brand: var(--dark-orchid-purple-500) !important;
+  --notice-background-critical: var(--dark-orchid-red) !important;
+  --notice-background-positive: var(--dark-orchid-green) !important;
+  --notice-background-warning: var(--dark-orchid-yellow) !important;
+  --notice-background-info: var(--dark-orchid-purple-500) !important;
+
+  --icon-status-online: var(--dark-orchid-green) !important;
+  --icon-status-idle: var(--dark-orchid-yellow) !important;
+  --icon-status-dnd: var(--dark-orchid-red) !important;
+  --icon-status-offline: var(--dark-orchid-fg-muted) !important;
+  --text-status-online: var(--dark-orchid-green) !important;
+  --text-status-idle: var(--dark-orchid-yellow) !important;
+  --text-status-dnd: var(--dark-orchid-red) !important;
+  --text-status-offline: var(--dark-orchid-fg-muted) !important;
+
+  /* : }}} */
+}
+
+/* : Window {{{
+ *
+ * The app frame itself. `--dark-orchid-backdrop` decides whether the desktop
+ * shows through or an opaque zinc-950 is painted instead.
+ */
+
+html,
+body,
+#app-mount,
+[class^="app_"],
+[class*="appAsidePanelWrapper_"],
+[class*="notAppAsidePanel_"] {
+  background: var(--dark-orchid-backdrop) !important;
+}
+
+/*
+ * Structural panels paint their own background on top of the tokens.
+ *
+ * Discord suffixes class names with a build hash (`.chat_ee72fa`), so these
+ * match on the stable prefix instead. If a panel turns opaque after a Discord
+ * update, its class was renamed — that is the first place to look.
+ */
+[class^="base_"],
+[class^="content_"],
+[class^="chat_"],
+[class*="chatContent_"],
+[class^="sidebar_"],
+[class*="sidebarList_"],
+[class^="guilds_"],
+[class^="panels_"],
+[class^="members_"],
+[class*="membersWrap_"],
+[class^="form_"],
+[class^="scroller_"],
+[class*="nowPlayingColumn_"],
+[class^="bg_"],
+[class^="title_"] {
+  background: var(--dark-orchid-transparent) !important;
+}
+
+/* : }}} */
+
+
+/* : Floating surfaces {{{
+ *
+ * Modals, popouts, menus and tooltips keep a blurred scrim — fully
+ * transparent popouts are unreadable over a busy wallpaper.
+ */
+
+[class^="layer_"],
+[class^="modal_"],
+[class^="menu_"],
+[class*="popout_"],
+[class^="autocomplete_"],
+[class*="quickswitcher_"],
+[class*="emojiPicker_"],
+[class*="contentWrapper_"] {
+  background: var(--dark-orchid-scrim-strong) !important;
+  backdrop-filter: var(--dark-orchid-blur);
+  border: 1px solid var(--dark-orchid-border);
+}
+
+/* Tooltips are small; a border would fight with the arrow. */
+[class^="tooltip_"] {
+  background: var(--dark-orchid-scrim-strong) !important;
+  backdrop-filter: var(--dark-orchid-blur);
+}
+
+/* The dimmed backdrop behind modals. */
+[class^="backdrop_"] {
+  background: var(--dark-orchid-scrim) !important;
+  backdrop-filter: var(--dark-orchid-blur);
+}
+
+/* : }}} */
+
+
+/* : Accents {{{ */
+
+::selection {
+  background: var(--dark-orchid-purple-500);
+  color: var(--dark-orchid-fg-strong);
+  text-shadow: none;
+}
+
+/* Inline @mentions and role mentions — `.mention` carries no build hash. */
+.mention {
+  background: var(--dark-orchid-hover) !important;
+  color: var(--dark-orchid-purple-500) !important;
+}
+
+.mention:hover {
+  background: var(--dark-orchid-active) !important;
+}
+
+/* Selected channel / DM. */
+[class^="link_"][class*="selected_"],
+[class*="interactiveSelected_"] {
+  background: var(--dark-orchid-active) !important;
+}
+
+/* Unread and mention bars. */
+[class*="unreadMentionsBar_"],
+[class*="unreadPill_"] {
+  background: var(--dark-orchid-purple-500) !important;
+  color: var(--dark-orchid-fg-strong) !important;
+}
+
+/* Code blocks get the scrim so syntax stays legible over the wallpaper. */
+code,
+pre,
+[class^="markup_"] code {
+  background: var(--dark-orchid-scrim) !important;
+  border-color: var(--dark-orchid-border) !important;
+}
+
+/* : }}} */
+
+
+/* : Optional {{{
+ *
+ * Uncomment to force the system font.
+ */
+
+/*
+:root {
+  --font-primary: system-ui;
+  --font-headline: system-ui;
+}
+*/
+
+/* : }}} */

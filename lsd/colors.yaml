@@ -1,0 +1,66 @@
+# Dark Orchid — an lsd theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# The owner, and the group beside it one step quieter
+user: "#71717a" # fg-muted
+group: "#52525b" # fg-faint
+
+# The permission bits. An executable file is the one thing in a listing worth
+# pointing at, so it takes the accent and the sticky bit takes it one louder.
+permission:
+  read: "#71717a" # fg-muted
+  write: "#d4d4d8" # fg
+  exec: "#7300ff" # accent
+  exec-sticky: "#8f33ff" # accent-lit
+  no-access: "#52525b" # fg-faint
+  octal: "#71717a" # fg-muted
+  acl: "#71717a" # fg-muted
+  context: "#52525b" # fg-faint
+
+# File attributes, which only appear on Windows
+attributes:
+  archive: "#71717a" # fg-muted
+  read: "#71717a" # fg-muted
+  hidden: "#52525b" # fg-faint
+  system: "#52525b" # fg-faint
+
+# How recently a file changed, read as brightness: the newest is ordinary text
+# and the oldest recedes.
+date:
+  hour-old: "#d4d4d8" # fg
+  day-old: "#71717a" # fg-muted
+  older: "#52525b" # fg-faint
+
+# Size, the same way round: the bigger the number the more it carries.
+size:
+  none: "#52525b" # fg-faint
+  small: "#71717a" # fg-muted
+  medium: "#d4d4d8" # fg
+  large: "#f4f4f5" # fg-strong
+
+# The lines drawn down a tree listing
+tree-edge: "#3f3f46" # border
+
+# Hard link and inode counts, and what a broken one looks like
+links:
+  valid: "#71717a" # fg-muted
+  invalid: "#dc2626" # error
+inode:
+  valid: "#71717a" # fg-muted
+  invalid: "#dc2626" # error
+
+# The git column. Added, changed and removed keep the three colours the family
+# uses for a diff everywhere else; a rename is a move rather than a change.
+git-status:
+  default: "#71717a" # fg-muted
+  unmodified: "#52525b" # fg-faint
+  ignored: "#52525b" # fg-faint
+  new-in-index: "#16a34a" # success
+  new-in-workdir: "#ca8a04" # warning
+  typechange: "#ca8a04" # warning
+  deleted: "#dc2626" # error
+  renamed: "#2563eb" # info
+  modified: "#ca8a04" # warning
+  conflicted: "#dc2626" # error

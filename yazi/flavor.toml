@@ -1,0 +1,76 @@
+[mgr]
+cwd = { fg = "#71717a", italic = true}
+hovered = { fg = "#000000", bg = "#7300ff" }
+preview_hovered = { fg = "#7300ff" }
+border_symbol = "│"
+border_style = { fg = "#3f3f46" }
+marker_selected = { fg = "#d4d4d8" }
+count_selected = { fg = "#71717a" }
+count_copied = { fg = "#71717a" }
+count_cut = { fg = "#71717a" }
+
+[filetype]
+rules = [
+  { url = "*/", fg = "#7300ff" },
+  { url = "*", fg = "#d4d4d8" }
+]
+
+[input]
+border = { fg = "#3f3f46" }
+title = { fg = "#d4d4d8" }
+value = { fg = "#d4d4d8" }
+selected = { fg = "#d4d4d8" }
+
+# TODO(simonkov): buggy theming
+[tabs]
+active = { fg = "#000000", bg = "#7300ff", italic = true }
+inactive = { fg = "#71717a", italic = true }
+sep_inner = { open = "", close = "", bg = "#7300ff" }
+sep_outer = { open = "", close = "" }
+
+# TODO(simonkov): buggy theming
+[mode]
+select_main = { fg = "#ff0000" }
+
+# TODO(simonkov): usage unclear
+[pick]
+border = { fg = "#3f3f46" }
+
+# TODO(simonkov): usage unclear
+[cmp]
+border = { fg = "#3f3f46" }
+
+# TODO(simonkov): buggy theming
+[tasks]
+border = { fg = "#3f3f46" }
+title = { fg = "#d4d4d8" }
+hovered = { bg = "#7300ff" }
+
+[confirm]
+border = { fg = "#3f3f46" }
+title = { fg = "#d4d4d8" }
+content = { fg = "#d4d4d8" }
+list = { fg = "#d4d4d8" }
+btn_yes = { fg = "#d4d4d8" }
+btn_no = { fg = "#d4d4d8" }
+btn_labels = [ "[Y]es", "[N]o" ]
+
+[spot]
+border = { fg = "#3f3f46" }
+title = { fg = "#d4d4d8" }
+tbl_col = { fg = "#d4d4d8" }
+tbl_cell = { fg = "#d4d4d8" }
+
+[help]
+on = { fg = "#d4d4d8" }
+run = { fg = "#d4d4d8" }
+desc = { fg = "#d4d4d8" }
+hovered = { bg = "#7300ff" }
+footer = {}
+
+# TODO(simonkov): buggy theming for files
+[icon]
+dirs = [
+  { url = "*", fg = "#7300ff" }
+]
+exts = []

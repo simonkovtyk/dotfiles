@@ -1,16 +1,5 @@
-[language-server.copilot]
-command = "copilot-language-server"
-args = ["--stdio"]
-
-[language-server.copilot.config]
-editorInfo = { name = "Helix", version = "25.01" }
-editorPluginInfo = { name = "helix-copilot", version = "0.1.0" }
-
 [language-server.rust]
 command = "rust-analyzer"
-
-[language-server.rust.check]
-command = "check"
 
 [language-server.rust.config]
 procMacro.enable = true
@@ -52,13 +41,12 @@ args = ["--stdio"]
 [language-server.systemd]
 command = "systemd-lsp"
 
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-required-root-patterns = ["eslint.config.js", "eslint.config.mjs", "eslint.config.cjs", "eslint.config.ts", "eslint.config.mts", "eslint.config.cts"]
-
 [language-server.vue]
-command = "vls"
+command = "vue-language-server"
+args = ["--stdio"]
+
+[language-server.vue.config]
+typescript = { tsdk = "/usr/lib/node_modules/typescript/lib" }
 
 [language-server.yaml]
 command = "yaml-language-server"
@@ -67,49 +55,95 @@ args = ["--stdio"]
 [language-server.yaml.config]
 redhat = { telemetry = { enabled = false } }
 
-[language-server.typescript]
-command = "typescript-language-server"
-args = ["--stdio"]
-
-[language-server.typescript.config]
-hostInfo = "helix"
-
-[language-server.typescript.config.preferences]
-quotePreference = "double"
-jsxAttributeCompletionStyle = "none"
-
-[language-server.typescript-go]
-command = "tsgo"
+[language-server.tsc]
+command = "tsc"
 args = ["--lsp", "--stdio"]
+
+[language-server.tsc.config."js/ts"]
+preferences.quoteStyle = "double"
+preferences.importModuleSpecifier = "shortest"
+preferences.importModuleSpecifierEnding = "auto"
+preferences.jsxAttributeCompletionStyle = "auto"
+preferences.preferTypeOnlyAutoImports = true
+preferences.useAliasesForRenames = true
+preferences.autoImportSpecifierExcludeRegexes = [
+  '^@mui/[^/]+$',
+  '^@base-ui/react$',
+  '^@base-ui-components/react$',
+  '^es-toolkit$',
+  '^lodash$',
+  '^lodash-es$',
+  '^date-fns$',
+  '^date-fns/locale$',
+  '^ramda$',
+  '^react-bootstrap$',
+  '^primereact$',
+  '^@fortawesome/free-(solid|regular|brands)-svg-icons$',
+  '^react-use$',
+  '^lucide-svelte$',
+  '^@lucide/svelte$',
+  '^phosphor-svelte$',
+  '^@ant-design/icons$',
+  '^@react-icons/all-files/[^/]+$',
+  '^@styled-icons/[^/]+$',
+  '^@iconify/icons-[^/]+$',
+  '^@ark-ui/(react|svelte)$',
+  '^@heroui/react$',
+  '^@nextui-org/react$',
+  '^@visx/visx$',
+  '^effect$',
+  '^fp-ts$',
+  '^lodash/fp$',
+  '^validator$',
+]
+preferences.organizeImports.typeOrder = "auto"
+suggest.autoImports = true
+suggest.includeCompletionsForImportStatements = true
+suggest.includeAutomaticOptionalChainCompletions = true
+suggest.classMemberSnippets.enabled = true
+suggest.objectLiteralMethodSnippets.enabled = true
+suggest.jsdoc.enabled = true
+suggest.jsdoc.generateReturns = true
+format.enabled = false
+validate.enabled = true
+autoClosingTags.enabled = true
+reportStyleChecksAsWarnings = true
+workspaceSymbols.excludeLibrarySymbols = true
+tsserver.automaticTypeAcquisition.enabled = true
+inlayHints.parameterNames.enabled = "none"
+inlayHints.parameterTypes.enabled = false
+inlayHints.variableTypes.enabled = false
+inlayHints.propertyDeclarationTypes.enabled = false
+inlayHints.functionLikeReturnTypes.enabled = false
+inlayHints.enumMemberValues.enabled = false
+referencesCodeLens.enabled = false
+implementationsCodeLens.enabled = false
 
 [language-server.oxlint]
 command = "oxlint"
 args = ["--lsp"]
 
-[language-server.oxfmt]
-command = "oxfmt"
-args = ["--lsp"]
-
-[language-server.angular]
-command = "ngserver"
-args = [
-  "--ngProbeLocations",
-  "${$NODE_MODULES_GLOBAL}",
-  "--tsProbeLocations",
-  "${$NODE_MODULES_GLOBAL}",
-  "--stdio"
-]
-required-root-patterns = ["angular.json"]
-
 [language-server.tailwind]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
-required-root-pattern = ["tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs", "tailwind.config.ts", "postcss.config.js", "postcss.config.cjs", "postcss.config.mjs", "postcss.config.ts"]
 
-[language-server.tailwind.settings.tailwindCSS]
-classFunctions = ["cva", "cx"]
+[language-server.tailwind.config.tailwindCSS]
+classFunctions = ["cn", "cx", "cva", "clsx", "tv", "twMerge", "twJoin", "tw"]
+classAttributes = ["class", "className", "class:list", "classList", "classes"]
+emmetCompletions = true
+showPixelEquivalents = true
+rootFontSize = 16
+colorDecorators = true
 validate = true
-classAttributes = ["class", "className", "class:list", "classList", "ngClass"]
+
+[language-server.tailwind.config.tailwindCSS.lint]
+cssConflict = "warning"
+recommendedVariantOrder = "warning"
+invalidApply = "error"
+invalidVariant = "error"
+invalidTailwindDirective = "error"
+invalidConfigPath = "error"
+suggestCanonicalClasses = "warning"
 
 [language-server.css]
 command = "vscode-css-language-server"
@@ -123,114 +157,375 @@ args = ["--stdio"]
 command = "vscode-json-language-server"
 args = ["--stdio"]
 
+[language-server.json.config]
+provideFormatter = false
+json.validate.enable = true
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["package.json"]
+url = "https://json.schemastore.org/package.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["tsconfig.json", "tsconfig.*.json"]
+url = "https://json.schemastore.org/tsconfig.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["jsconfig.json", "jsconfig.*.json"]
+url = "https://json.schemastore.org/jsconfig.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".oxlintrc.json"]
+url = "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".prettierrc", ".prettierrc.json"]
+url = "https://json.schemastore.org/prettierrc.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".swcrc"]
+url = "https://swc.rs/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["turbo.json"]
+url = "https://turbo.build/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["vercel.json"]
+url = "https://openapi.vercel.sh/vercel.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["components.json"]
+url = "https://ui.shadcn.com/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["renovate.json", ".renovaterc", ".renovaterc.json"]
+url = "https://docs.renovatebot.com/renovate-schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["deno.json", "deno.jsonc"]
+url = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".oxfmtrc.json", ".oxfmtrc.jsonc"]
+url = "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxfmt/configuration_schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["biome.json", "biome.jsonc"]
+url = "https://biomejs.dev/schemas/latest/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".eslintrc", ".eslintrc.json"]
+url = "https://json.schemastore.org/eslintrc.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".stylelintrc", ".stylelintrc.json"]
+url = "https://json.schemastore.org/stylelintrc.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".markdownlint.json", ".markdownlint.jsonc", ".markdownlintrc"]
+url = "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".babelrc", ".babelrc.json", "babel.config.json"]
+url = "https://json.schemastore.org/babelrc.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".lintstagedrc", ".lintstagedrc.json"]
+url = "https://json.schemastore.org/lintstagedrc.schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".commitlintrc", ".commitlintrc.json"]
+url = "https://json.schemastore.org/commitlintrc.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".releaserc", ".releaserc.json"]
+url = "https://json.schemastore.org/semantic-release.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".changeset/config.json"]
+url = "https://unpkg.com/@changesets/config/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["knip.json", "knip.jsonc", ".knip.json", ".knip.jsonc"]
+url = "https://unpkg.com/knip@5/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["typedoc.json"]
+url = "https://typedoc.org/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["nodemon.json"]
+url = "https://json.schemastore.org/nodemon.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["lerna.json"]
+url = "https://json.schemastore.org/lerna.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["nx.json"]
+url = "https://raw.githubusercontent.com/nrwl/nx/master/packages/nx/schemas/nx-schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["project.json"]
+url = "https://raw.githubusercontent.com/nrwl/nx/master/packages/nx/schemas/project-schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["manifest.json", "site.webmanifest", "manifest.webmanifest"]
+url = "https://json.schemastore.org/web-manifest-combined.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["devcontainer.json", ".devcontainer.json"]
+url = "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["firebase.json"]
+url = "https://raw.githubusercontent.com/firebase/firebase-tools/master/schema/firebase-config.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = ["composer.json"]
+url = "https://getcomposer.org/schema.json"
+
+[[language-server.json.config.json.schemas]]
+fileMatch = [".claude/settings.json", ".claude/settings.local.json"]
+url = "https://json.schemastore.org/claude-code-settings.json"
+
+[language-server.tombi]
+command = "tombi"
+args = ["lsp"]
+
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
+
+[language-server.bash-language-server.config]
+bashIde = { shellcheckPath = "" }
+
+[language-server.cssmodules]
+command = "cssmodules-language-server"
+
+[language-server.hx-lsp]
+command = "hx-lsp"
+
+[language-server.emmet]
+command = "emmet-language-server"
+args = ["--stdio"]
+
 [[language]]
 name = "rust"
 file-types = ["rs"]
-language-servers = ["rust"]
+language-servers = ["rust", { name = "hx-lsp", only-features = ["completion"] }]
 roots = ["Cargo.toml", "Cargo.lock"]
 
 [[language]]
 name = "go"
 file-types = ["go", "gomod", "gowork", "gotmpl"]
-language-servers = ["go"]
+language-servers = ["go", { name = "hx-lsp", only-features = ["completion"] }]
 roots = ["go.work", "go.mod"]
 
 [[language]]
 name = "lua"
 file-types = ["lua"]
-language-servers = ["lua"]
+language-servers = ["lua", { name = "hx-lsp", only-features = ["completion"] }]
 
 [[language]]
 name = "markdown"
 file-types = ["md", "mdx"]
-language-servers = ["markdown"]
+language-servers = ["markdown", { name = "hx-lsp", only-features = ["completion"] }]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
 
 [[language]]
 name = "ansible"
 scope = "source.yaml"
-file-types = ["yaml.ansible"]
+file-types = [
+  { glob = "**/playbooks/*.yml" },
+  { glob = "**/playbooks/*.yaml" },
+  { glob = "**/roles/**/*.yml" },
+  { glob = "**/roles/**/*.yaml" },
+  { glob = "*playbook*.yml" },
+  { glob = "*playbook*.yaml" },
+]
 language-servers = ["ansible"]
 
 [[language]]
 name = "python"
 file-types = ["py"]
-language-servers = ["python"]
+language-servers = ["python", { name = "hx-lsp", only-features = ["completion"] }]
 
 [[language]]
 name = "svelte"
 file-types = ["svelte"]
-language-servers = ["svelte"]
+language-servers = ["svelte", { name = "hx-lsp", only-features = ["completion"] }, "tailwind", "emmet"]
 roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
 
 [[language]]
 name = "systemd"
-file-types = ["service", "socket", "timer", "mount", "automount", "swap", "target", "path", "slice", "scope", "device", "container", "volume", "network", "kube", "pod", "build", "image"]
+file-types = [
+  "service",
+  "socket",
+  "timer",
+  "mount",
+  "automount",
+  "swap",
+  "target",
+  "path",
+  "slice",
+  "scope",
+  "device",
+  "container",
+  "volume",
+  "network",
+  "kube",
+  "pod",
+  "build",
+  "image",
+]
 language-servers = ["systemd"]
 
 [[language]]
 name = "vue"
 file-types = ["vue"]
-language-servers = ["vue"]
+language-servers = ["vue", "tailwind", "emmet"]
 roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "vue.config.ts"]
 auto-format = true
 
 [[language]]
 name = "typescript"
-file-types = ["ts", "mts", "cts", "js", "mjs", "cjs"]
-language-servers = ["typescript", "oxlint", "oxfmt"]
-roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
+file-types = ["ts", "mts", "cts"]
+language-servers = [
+  { name = "tsc", except-features = [
+    "format",
+  ] },
+  { name = "hx-lsp", only-features = [
+    "completion",
+  ] },
+  { name = "oxlint", only-features = [
+    "diagnostics",
+    "code-action",
+  ] },
+]
+roots = ["package.json", "tsconfig.json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+file-types = ["js", "mjs", "cjs"]
+language-servers = [
+  { name = "tsc", except-features = [
+    "format",
+  ] },
+  { name = "hx-lsp", only-features = [
+    "completion",
+  ] },
+  { name = "oxlint", only-features = [
+    "diagnostics",
+    "code-action",
+  ] },
+]
+roots = ["package.json", "jsconfig.json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-file-types = ["tsx", "jsx", "mtsx", "ctsx", "mjsx", "cjsx"]
-language-servers = ["typescript", "oxlint", "oxfmt", "tailwind"]
-roots = ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "tsconfig.json"]
+file-types = ["tsx", "mtsx", "ctsx"]
+language-servers = [
+  { name = "tsc", except-features = [
+    "format",
+  ] },
+  { name = "hx-lsp", only-features = [
+    "completion",
+  ] },
+  "tailwind",
+  "emmet",
+  "cssmodules",
+  { name = "oxlint", only-features = [
+    "diagnostics",
+    "code-action",
+  ] },
+]
+roots = ["package.json", "tsconfig.json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+file-types = ["jsx", "mjsx", "cjsx"]
+language-servers = [
+  { name = "tsc", except-features = [
+    "format",
+  ] },
+  { name = "hx-lsp", only-features = [
+    "completion",
+  ] },
+  "tailwind",
+  "emmet",
+  "cssmodules",
+  { name = "oxlint", only-features = [
+    "diagnostics",
+    "code-action",
+  ] },
+]
+roots = ["package.json", "jsconfig.json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "latex"
 file-types = ["tex", "plaintex", "bib"]
-language-servers = ["latex"]
+language-servers = ["latex", { name = "hx-lsp", only-features = ["completion"] }]
 
 [[language]]
 name = "css"
-file-types = ["css", "scss", "less", "sass"]
-language-servers = ["css", "oxfmt"]
+file-types = ["css", "less"]
+language-servers = ["css", { name = "hx-lsp", only-features = ["completion"] }, "tailwind", "emmet"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "html"
 file-types = ["html", "htm"]
-language-servers = ["html", "tailwind", "angular", "oxfmt"]
+language-servers = ["html", { name = "hx-lsp", only-features = ["completion"] }, "tailwind", "emmet"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "json"
-file-types = ["json", "jsonc", "json5"]
-language-servers = ["json", "oxfmt"]
+file-types = ["json"]
+language-servers = ["json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "scss"
 file-types = ["scss", "sass"]
-language-servers = ["oxfmt"]
+language-servers = ["css", "tailwind", "emmet"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "yaml"
 file-types = ["yaml", "yml"]
-language-servers = ["yaml", "oxfmt"]
-auto-format = true
-
-[[language]]
-name = "markdown"
-file-types = ["md", "mdx"]
-language-servers = ["oxfmt"]
+language-servers = ["yaml"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "toml"
 file-types = ["toml"]
-language-servers = ["oxfmt"]
+language-servers = ["tombi"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+language-servers = ["json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "json5"
+language-servers = ["json"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 auto-format = true

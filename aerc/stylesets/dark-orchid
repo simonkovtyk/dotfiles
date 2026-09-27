@@ -1,0 +1,205 @@
+# vim: ft=dosini
+#
+# Dark Orchid — an aerc styleset
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+*.default = true
+*.normal = true
+
+# : Base {{{
+
+default.fg = #d4d4d8           # fg
+default.selected.fg = #d4d4d8  # fg
+default.selected.bg = #3f3f46  # selection-muted
+
+error.fg = #dc2626             # error
+error.bold = true
+warning.fg = #ca8a04           # warning
+success.fg = #16a34a           # success
+
+title.fg = #d4d4d8             # fg
+title.bold = true
+header.fg = #7300ff            # accent
+header.bold = true
+
+border.fg = #3f3f46            # border
+spinner.fg = #71717a           # fg-muted
+
+# : }}}
+
+
+# : Tabs {{{
+
+tab.fg = #71717a               # fg-muted
+tab.italic = true
+tab.selected.fg = #000000      # on-accent
+tab.selected.bg = #7300ff      # accent
+tab.selected.italic = true
+
+# : }}}
+
+
+# : Status bar {{{
+
+statusline_default.fg = #71717a  # fg-muted
+statusline_error.fg = #dc2626    # error
+statusline_error.bold = true
+statusline_warning.fg = #ca8a04  # warning
+statusline_warning.bold = true
+statusline_success.fg = #16a34a  # success
+statusline_success.bold = true
+
+# : }}}
+
+
+# : Message list {{{
+#
+# These styles are layered; later entries win. `fg`/`bg` left unset stay
+# transparent and fall through to the layer below.
+
+msglist_default.fg = #d4d4d8   # fg
+msglist_read.fg = #71717a      # fg-muted
+msglist_unread.fg = #f4f4f5    # fg-strong
+msglist_unread.bold = true
+
+msglist_answered.fg = #86efac  # fallback: green-300
+msglist_forwarded.fg = #93c5fd # fallback: blue-300
+msglist_flagged.fg = #fde047   # fallback: yellow-300
+msglist_flagged.bold = true
+msglist_deleted.fg = #52525b   # fg-faint
+msglist_deleted.dim = true
+msglist_result.fg = #7300ff    # accent
+msglist_result.bold = true
+
+msglist_thread_folded.fg = #7300ff   # accent
+msglist_thread_context.fg = #52525b  # fg-faint
+msglist_thread_orphan.fg = #71717a   # fg-muted
+msglist_thread_orphan.italic = true
+
+msglist_marked.fg = #000000    # on-accent
+msglist_marked.bg = #7300ff    # accent
+msglist_marked.bold = true
+
+# Selection keeps the flag colors readable, so only the background changes.
+msglist_*.selected.bg = #3f3f46      # selection-muted
+msglist_marked.selected.fg = #000000 # on-accent
+msglist_marked.selected.bg = #8f33ff # accent-lit
+
+msglist_gutter.fg = #3f3f46    # border
+msglist_pill.fg = #7300ff      # accent
+
+# : }}}
+
+
+# : Directory list {{{
+
+dirlist_default.fg = #d4d4d8   # fg
+dirlist_unread.fg = #7300ff    # accent
+dirlist_unread.bold = true
+dirlist_recent.fg = #7300ff    # accent
+
+dirlist_*.selected.fg = #000000  # on-accent
+dirlist_*.selected.bg = #7300ff  # accent
+dirlist_*.selected.bold = true
+
+# : }}}
+
+
+# : Message viewer headers {{{
+
+realname.fg = #d4d4d8          # fg
+email.fg = #71717a             # fg-muted
+subject.fg = #d4d4d8           # fg
+subject.bold = true
+date.fg = #71717a              # fg-muted
+
+# : }}}
+
+
+# : Part switcher {{{
+
+part_switcher.fg = #d4d4d8     # fg
+part_filename.fg = #d4d4d8     # fg
+part_mimetype.fg = #71717a     # fg-muted
+
+part_switcher.selected.bg = #27272a   # surface
+part_filename.selected.fg = #000000   # on-accent
+part_filename.selected.bg = #7300ff   # accent
+part_filename.selected.bold = true
+part_mimetype.selected.fg = #000000   # on-accent
+part_mimetype.selected.bg = #7300ff   # accent
+
+# : }}}
+
+
+# : Completion {{{
+
+completion_default.fg = #d4d4d8           # fg
+completion_default.selected.fg = #000000  # on-accent
+completion_default.selected.bg = #7300ff  # accent
+completion_description.fg = #71717a       # fg-muted
+completion_description.italic = true
+completion_gutter.fg = #27272a            # surface
+completion_pill.fg = #7300ff              # accent
+
+# : }}}
+
+
+# : Selector {{{
+
+selector_default.fg = #d4d4d8  # fg
+selector_focused.fg = #000000  # on-accent
+selector_focused.bg = #7300ff  # accent
+selector_focused.bold = true
+selector_chooser.fg = #d4d4d8  # fg
+selector_chooser.bg = #3f3f46  # selection-muted
+
+# : }}}
+
+
+# : Key hints {{{
+
+keyhint_default.fg = #d4d4d8   # fg
+keyhint_key.fg = #7300ff       # accent
+keyhint_key.bold = true
+keyhint_desc.fg = #71717a      # fg-muted
+
+# : }}}
+
+
+# : Viewer (built-in colorize filter) {{{
+
+[viewer]
+*.default = true
+*.normal = true
+
+url.fg = #7300ff               # accent
+url.underline = true
+
+header.fg = #7300ff            # accent
+header.bold = true
+signature.fg = #71717a         # fg-muted
+signature.dim = true
+code.fg = #86efac              # syn-string
+
+# Diffs — added and deleted lines take the success and error colors.
+diff_meta.fg = #d4d4d8         # fg
+diff_meta.bold = true
+diff_chunk.fg = #71717a        # fg-muted
+diff_chunk_func.fg = #93c5fd   # syn-function
+diff_chunk_func.bold = true
+diff_add.fg = #16a34a          # success
+diff_del.fg = #dc2626          # error
+diff_whitespace.bg = #dc2626   # error
+
+# Quote levels ride the depth gradient, one stop per nesting level.
+quote_1.fg = #ab66ff           # depth-1
+quote_2.fg = #a78bfa           # depth-2
+quote_3.fg = #c084fc           # depth-3
+quote_4.fg = #f0abfc           # depth-4
+quote_x.fg = #71717a           # fg-muted
+quote_x.italic = true
+
+# : }}}

@@ -1,0 +1,58 @@
+# Dark Orchid — a Posting theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+name: dark-orchid
+author: The Dark Orchid Maintainers
+description: A dark, monochrome theme, and it is purple.
+dark: true
+
+# The interface. Textual works out every other shade from these.
+primary: "#7300ff"      # accent
+secondary: "#3f3f46"    # border
+accent: "#7300ff"       # accent
+background: "#09090b"   # bg
+surface: "#18181b"      # bg-alt
+panel: "#27272a"        # surface
+warning: "#ca8a04"      # warning
+error: "#dc2626"        # error
+success: "#16a34a"      # success
+
+# Request and response bodies.
+text_area:
+  gutter: "#3f3f46"                        # border
+  cursor: "#18181b on #d4d4d8"             # on-cursor on fg
+  cursor_line: "on #18181b"                # bg-alt
+  cursor_line_gutter: "#71717a on #18181b" # fg-muted on bg-alt
+  matched_bracket: "on #3f3f46"            # selection-muted
+  selection: "on #3f3f46"                  # selection-muted
+
+# JSON in the request and response bodies.
+syntax:
+  json_key: "#f0abfc"      # syn-property
+  json_string: "#86efac"   # syn-string
+  json_number: "#86efac"   # syn-string
+  json_boolean: "#86efac"  # syn-string
+  json_null: "#86efac"     # syn-string
+
+# The URL bar.
+url:
+  base: "#d4d4d8"          # fg
+  protocol: "#71717a"      # fg-muted
+  separator: "#52525b"     # fg-faint
+
+# Variables in URLs, headers and bodies.
+variable:
+  resolved: "#16a34a"      # success
+  unresolved: "#dc2626"    # error
+
+# HTTP methods in the collection tree, told apart like kinds of code.
+method:
+  get: "#93c5fd"           # syn-function
+  post: "#86efac"          # syn-string
+  put: "#a5f3fc"           # syn-type
+  patch: "#f0abfc"         # syn-property
+  delete: "#f9a8d4"        # syn-tag
+  options: "#a78bfa"       # syn-keyword
+  head: "#c084fc"          # syn-storage

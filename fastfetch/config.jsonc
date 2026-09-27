@@ -1,29 +1,108 @@
+// Dark Orchid — a fastfetch theme
+//
+// Copyright (c) 2026 — present by The Dark Orchid Maintainers
+// Released under the MIT License — see LICENSE at the repository root.
+
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "display": {
-    "constants": [
-      "\u001b[48;2;115;0;255m", // purple-500 bg
-      "\u001b[38;2;115;0;255m", // purple-500 fg
-      "\u001b[0m" // reset
-    ]
-  },
+
   "logo": {
-    "type": "small",
+    // Colors 1 through 9 ride one purple ramp, palest first. Most logos reach
+    // for only the first two or three, so the emblem stays light against the
+    // terminal; a logo that uses all nine fades towards the deep end.
     "color": {
-      "1": "#7300ff",
-      "2": "#5c00cc"
-    }
+      "1": "#e3ccff", // brand-100
+      "2": "#c799ff", // brand-200
+      "3": "#ab66ff", // brand-300
+      "4": "#8f33ff", // brand-400
+      "5": "#7300ff", // brand-500
+      "6": "#5c00cc", // brand-600
+      "7": "#450099", // brand-700
+      "8": "#2e0066", // brand-800
+      "9": "#170033", // brand-900
+    },
   },
+
+  "display": {
+    // Hex colors are emitted verbatim; the bright attribute would only add a
+    // bold that some terminals repaint as a lighter shade of their own.
+    "brightColor": false,
+
+    "color": {
+      "keys": "#7300ff", // accent
+      "output": "#d4d4d8", // fg
+      "separator": "#3f3f46", // border
+    },
+
+    // The lit block behind the title line: the accent as a background, with
+    // the title's own black text on top. $2 closes it again.
+    "constants": [
+      "\u001b[48;2;115;0;255m", // accent
+      "\u001b[0m", // reset
+    ],
+
+    // Percentages and temperatures are the only readings that carry a state,
+    // so they are the only place a second hue is allowed in.
+    "percent": {
+      "color": {
+        "green": "#16a34a", // success
+        "yellow": "#ca8a04", // warning
+        "red": "#dc2626", // error
+      },
+    },
+    "temp": {
+      "color": {
+        "green": "#16a34a", // success
+        "yellow": "#ca8a04", // warning
+        "red": "#dc2626", // error
+      },
+    },
+
+    // A bar is a surface, not a reading: the filled part is the accent and the
+    // rest of the track sits on the border grey.
+    "bar": {
+      "color": {
+        "elapsed": "#7300ff", // accent
+        "total": "#3f3f46", // border
+        "border": "#3f3f46", // border
+      },
+    },
+  },
+
+  // fastfetch's own default module list, with the title and the rule under it
+  // dressed. Reorder it, cut it or extend it as you like — the colors above
+  // apply to whatever ends up here.
   "modules": [
-    "break",
     {
       "type": "title",
       "color": {
-        "at": "#000000",
-        "user": "#000000",
-        "host": "#000000"
+        "user": "#000000", // on-accent
+        "at": "#000000", // on-accent
+        "host": "#000000", // on-accent
       },
-      "format": "{$2}{$3}{$1}{user-name-colored}{$1}{at-symbol-colored}{$1}{host-name-colored}{$3}{$2}{$3}"
-    }
-  ]
+      "format": "{$1} {user-name-colored}{$1}{at-symbol-colored}{$1}{host-name-colored}{$1} {$2}",
+    },
+    {
+      "type": "separator",
+      "outputColor": "#3f3f46", // border
+    },
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "de",
+    "wm",
+    "terminal",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "localip",
+    "battery",
+    "poweradapter",
+    "break",
+  ],
 }

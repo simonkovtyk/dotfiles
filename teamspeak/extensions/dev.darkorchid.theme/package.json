@@ -1,0 +1,28 @@
+{
+  "name": "Dark Orchid",
+  "description": "A dark, monochrome theme, and it is purple: greys carry the interface, one purple carries every selection and active state.",
+  "version": "1.0.0",
+  "identifier": "dev.darkorchid.theme",
+  "engines": {
+    "teamspeak": 1
+  },
+  "repository": {
+    "url": "https://github.com/dark-orchid/dark-orchid",
+    "directory": "packages/teamspeak6",
+    "type": "git"
+  },
+  "image": "preview.svg",
+  "license": "MIT",
+  "author": "The Dark Orchid Maintainers",
+  "keywords": ["dark", "purple", "monochrome"],
+  "content": {
+    "themes": [
+      {
+        "name": "Dark Orchid",
+        "source": "theme.css",
+        "image": "preview.svg",
+        "apiVersion": 1
+      }
+    ]
+  }
+}

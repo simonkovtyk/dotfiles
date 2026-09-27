@@ -1,0 +1,550 @@
+/* Dark Orchid — a Spicetify theme
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+/* Every value here is a name out of color.ini, never a colour. Spotify turns
+ * each key in that file into --spice-<name> and --spice-rgb-<name>, so the
+ * name beside a surface is also the legend for it: --spice-fg-muted is the
+ * muted foreground, --spice-accent is the one thing that is lit.
+ *
+ * The translucent names are the exception, and they are composed rather than
+ * named: an .ini value is a flat RGB triple with no alpha channel, so the
+ * washes over artwork and the backing behind a dialog are built here out of
+ * --spice-rgb-accent and --spice-rgb-bg. The colour is still the module's;
+ * only the alpha is written down here.
+ *
+ * Spotify declares its own design system inside `@layer encore`. Nothing in
+ * this file is layered, and an unlayered rule beats a layered one outright
+ * whatever its specificity, so the two blocks that re-point those names need
+ * no !important.
+ *
+ * The rules further down do. Spotify splits the rest of its styling across
+ * eighty-odd stylesheets that are fetched as you walk into the parts of the
+ * client that need them, and each one lands after this file rather than
+ * before it. Being last in the document is worth nothing against a sheet that
+ * has not loaded yet, so every declaration outside the two variable blocks is
+ * marked !important. */
+
+/* : The design system {{{
+ *
+ * Re-pointing these fifteen names is what themes the bulk of the client:
+ * every surface, every piece of text and every icon resolves through them. */
+
+:root,
+.encore-dark-theme,
+.encore-light-theme,
+.encore-dark-theme .encore-base-set,
+.encore-light-theme .encore-base-set {
+  /* Surfaces, flat: the view itself, a row under the pointer, a row pressed. */
+  --background-base: var(--spice-bg);
+  --background-highlight: var(--spice-bg-alt);
+  --background-press: var(--spice-surface);
+
+  /* Surfaces, lifted: a card, and the same card hovered and pressed. */
+  --background-elevated-base: var(--spice-surface);
+  --background-elevated-highlight: var(--spice-border);
+  --background-elevated-press: var(--spice-selection-muted);
+
+  /* Surfaces, tinted: a control floating on artwork. These are the only
+   * washes in the client, and they are the accent rather than plain white. */
+  --background-tinted-base: rgba(var(--spice-rgb-accent), 0.14);
+  --background-tinted-highlight: rgba(var(--spice-rgb-accent), 0.24);
+  --background-tinted-press: rgba(var(--spice-rgb-accent), 0.32);
+
+  /* Text. */
+  --text-base: var(--spice-fg);
+  --text-subdued: var(--spice-fg-muted);
+  --text-bright-accent: var(--spice-accent);
+  --text-positive: var(--spice-success);
+  --text-negative: var(--spice-error);
+  --text-warning: var(--spice-warning);
+  --text-announcement: var(--spice-info);
+
+  /* Icons and other essential marks. */
+  --essential-base: var(--spice-fg);
+  --essential-subdued: var(--spice-fg-muted);
+  --essential-bright-accent: var(--spice-accent);
+  --essential-positive: var(--spice-success);
+  --essential-negative: var(--spice-error);
+  --essential-warning: var(--spice-warning);
+  --essential-announcement: var(--spice-info);
+
+  /* Decoration: rules, dividers and the hairlines between sections. */
+  --decorative-base: var(--spice-fg);
+  --decorative-subdued: var(--spice-border);
+}
+
+/* : }}} */
+
+/* : Contextual sets {{{
+ *
+ * Spotify swaps the whole design system underneath a subtree to recolour it —
+ * a banner, a pill, a warning strip. Each one is a fresh declaration on its
+ * own element, so a root override cannot reach it and every set is answered
+ * here. Left alone, this is exactly where the stock green comes back. */
+
+/* The accent set — a subtree filled with the lit colour. */
+.encore-dark-theme .encore-bright-accent-set,
+.encore-light-theme .encore-bright-accent-set {
+  --background-base: var(--spice-accent);
+  --background-highlight: var(--spice-accent-lit);
+  --background-press: var(--spice-accent-dim);
+  --background-tinted-base: rgba(var(--spice-rgb-on-accent), 0.14);
+  --background-tinted-highlight: rgba(var(--spice-rgb-on-accent), 0.24);
+  --background-tinted-press: rgba(var(--spice-rgb-on-accent), 0.32);
+  --text-base: var(--spice-on-accent);
+  --text-subdued: var(--spice-on-accent);
+  --text-bright-accent: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --essential-subdued: var(--spice-on-accent);
+  --essential-bright-accent: var(--spice-on-accent);
+  --decorative-base: var(--spice-on-accent);
+  --decorative-subdued: var(--spice-accent-dim);
+}
+
+/* The quiet accent set — the accent as a background rather than a fill. */
+.encore-dark-theme .encore-muted-accent-set,
+.encore-light-theme .encore-muted-accent-set {
+  --background-base: var(--spice-accent-surface);
+  --background-highlight: var(--spice-accent-dim);
+  --background-press: var(--spice-accent);
+  --text-base: var(--spice-fg-strong);
+  --text-subdued: var(--spice-fg);
+  --essential-base: var(--spice-fg-strong);
+  --essential-subdued: var(--spice-fg);
+  --decorative-base: var(--spice-fg-strong);
+  --decorative-subdued: var(--spice-accent-dim);
+}
+
+/* The status sets. The plain set is the state as a fill; the subdued set is
+ * the same state as quiet text on the ordinary background. */
+.encore-dark-theme .encore-positive-set,
+.encore-light-theme .encore-positive-set {
+  --background-base: var(--spice-success);
+  --text-base: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --decorative-base: var(--spice-on-accent);
+}
+
+.encore-dark-theme .encore-negative-set,
+.encore-light-theme .encore-negative-set {
+  --background-base: var(--spice-error);
+  --text-base: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --decorative-base: var(--spice-on-accent);
+}
+
+.encore-dark-theme .encore-warning-set,
+.encore-light-theme .encore-warning-set {
+  --background-base: var(--spice-warning);
+  --text-base: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --decorative-base: var(--spice-on-accent);
+}
+
+.encore-dark-theme .encore-announcement-set,
+.encore-light-theme .encore-announcement-set {
+  --background-base: var(--spice-info);
+  --text-base: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --decorative-base: var(--spice-on-accent);
+}
+
+.encore-dark-theme .encore-positive-subdued-set,
+.encore-light-theme .encore-positive-subdued-set {
+  --background-base: var(--spice-bg-alt);
+  --text-base: var(--spice-success);
+  --essential-base: var(--spice-success);
+}
+
+.encore-dark-theme .encore-negative-subdued-set,
+.encore-light-theme .encore-negative-subdued-set {
+  --background-base: var(--spice-bg-alt);
+  --text-base: var(--spice-error);
+  --essential-base: var(--spice-error);
+}
+
+.encore-dark-theme .encore-warning-subdued-set,
+.encore-light-theme .encore-warning-subdued-set {
+  --background-base: var(--spice-bg-alt);
+  --text-base: var(--spice-warning);
+  --essential-base: var(--spice-warning);
+}
+
+.encore-dark-theme .encore-announcement-subdued-set,
+.encore-light-theme .encore-announcement-subdued-set {
+  --background-base: var(--spice-bg-alt);
+  --text-base: var(--spice-info);
+  --essential-base: var(--spice-info);
+}
+
+/* The window frame — the strip the panels are inset into. */
+.encore-dark-theme .encore-app-frame-set,
+.encore-light-theme .encore-app-frame-set {
+  --background-base: var(--spice-bg);
+  --background-highlight: var(--spice-bg-alt);
+  --background-press: var(--spice-surface);
+  --text-base: var(--spice-fg);
+  --text-subdued: var(--spice-fg-muted);
+  --essential-base: var(--spice-fg);
+  --essential-subdued: var(--spice-fg-muted);
+}
+
+/* Over artwork, where the backdrop is somebody's album cover and the only
+ * safe foreground is the brightest one. */
+.encore-dark-theme .encore-over-media-set,
+.encore-light-theme .encore-over-media-set {
+  --background-base: rgba(var(--spice-rgb-bg), 0.55);
+  --background-highlight: rgba(var(--spice-rgb-bg), 0.8);
+  --background-press: var(--spice-bg);
+  --background-tinted-base: rgba(var(--spice-rgb-accent), 0.14);
+  --background-tinted-highlight: rgba(var(--spice-rgb-accent), 0.24);
+  --background-tinted-press: rgba(var(--spice-rgb-accent), 0.32);
+  --text-base: var(--spice-fg-strong);
+  --text-subdued: var(--spice-fg);
+  --essential-base: var(--spice-fg-strong);
+  --essential-subdued: var(--spice-fg);
+  --decorative-base: var(--spice-fg-strong);
+  --decorative-subdued: var(--spice-border);
+}
+
+/* The inverted sets, which Spotify uses for a surface that has to read as the
+ * opposite of its surroundings. Kept a plain inversion rather than an accent:
+ * the accent marks what is selected, and these are not. */
+.encore-dark-theme .encore-inverted-set,
+.encore-light-theme .encore-inverted-set,
+.encore-dark-theme .encore-inverted-light-set,
+.encore-light-theme .encore-inverted-light-set {
+  --background-base: var(--spice-fg-strong);
+  --background-highlight: var(--spice-fg);
+  --background-press: var(--spice-fg-muted);
+  --text-base: var(--spice-bg);
+  --text-subdued: var(--spice-bg-alt);
+  --essential-base: var(--spice-bg);
+  --essential-subdued: var(--spice-bg-alt);
+  --decorative-base: var(--spice-bg);
+}
+
+.encore-dark-theme .encore-inverted-dark-set,
+.encore-light-theme .encore-inverted-dark-set {
+  --background-base: var(--spice-bg);
+  --background-highlight: var(--spice-bg-alt);
+  --background-press: var(--spice-surface);
+  --text-base: var(--spice-fg);
+  --text-subdued: var(--spice-fg-muted);
+  --essential-base: var(--spice-fg);
+  --essential-subdued: var(--spice-fg-muted);
+  --decorative-base: var(--spice-fg);
+}
+
+/* : }}} */
+
+/* : The panels {{{ */
+
+/* The client leaves a stock grey on the body and lets most text inherit it,
+ * so the foreground is set here rather than left to trickle down. */
+body {
+  background-color: var(--spice-bg) !important;
+  color: var(--spice-fg) !important;
+}
+
+.Root__top-container,
+.Root__globalNav {
+  background-color: var(--spice-bg) !important;
+}
+
+.Root__main-view {
+  background-color: var(--spice-bg) !important;
+}
+
+.Root__nav-bar,
+.Root__right-sidebar {
+  background-color: var(--spice-bg-alt) !important;
+}
+
+.Root__now-playing-bar {
+  background-color: var(--spice-bg-alt) !important;
+  border-top: 1px solid var(--spice-border) !important;
+}
+
+/* : }}} */
+
+/* : Navigation {{{
+ *
+ * The one item the accent is for: wherever you actually are. */
+
+.main-globalNav-navLink:hover,
+.main-yourLibraryX-navLink:hover {
+  background-color: rgba(var(--spice-rgb-accent), 0.14) !important;
+}
+
+.Root__globalNav .main-globalNav-navLinkActive,
+.main-globalNav-navLinkActive {
+  background-color: var(--spice-accent) !important;
+  color: var(--spice-on-accent) !important;
+}
+
+.Root__globalNav .main-globalNav-navLinkActive svg,
+.main-globalNav-navLinkActive svg {
+  fill: var(--spice-on-accent) !important;
+  color: var(--spice-on-accent) !important;
+}
+
+/* The library list: a row at rest, hovered, and the one that is open. */
+.main-yourLibraryX-listItem .main-useDropTarget-base:hover,
+.main-rootlist-wrapper li:hover > div {
+  background-color: rgba(var(--spice-rgb-accent), 0.14) !important;
+}
+
+.main-yourLibraryX-listItemActive .main-useDropTarget-base,
+.main-rootlist-wrapper li > div[aria-current="page"] {
+  background-color: var(--spice-accent) !important;
+  color: var(--spice-on-accent) !important;
+}
+
+/* The library's filter pills and the home page's chips. */
+.x-filterBox-filterInput,
+.main-yourLibraryX-libraryFilter input {
+  background-color: var(--spice-surface) !important;
+  color: var(--spice-fg) !important;
+}
+
+.x-filterBox-filterInput::placeholder {
+  color: var(--spice-fg-muted) !important;
+}
+
+.main-home-filterChipsSectionActive,
+.main-home-filterChipsContainer button[aria-checked="true"] {
+  background-color: var(--spice-accent) !important;
+  color: var(--spice-on-accent) !important;
+}
+
+/* : }}} */
+
+/* : Search {{{ */
+
+.main-globalNav-searchInputWrapper,
+.main-globalNav-searchInputContainer {
+  background-color: var(--spice-surface) !important;
+  border-color: var(--spice-border) !important;
+}
+
+.x-searchInput-searchInputInput {
+  background-color: var(--spice-surface) !important;
+  color: var(--spice-fg) !important;
+}
+
+.x-searchInput-searchInputInput::placeholder {
+  color: var(--spice-fg-muted) !important;
+}
+
+.x-searchInput-searchInputInput:focus,
+.main-globalNav-searchInputWrapper:focus-within {
+  border-color: var(--spice-accent) !important;
+  outline-color: var(--spice-accent) !important;
+}
+
+/* : }}} */
+
+/* : Track lists {{{
+ *
+ * A row is quiet until it is the one you are pointing at or the one playing. */
+
+.main-trackList-trackListRow:hover,
+.main-trackList-trackListRowGrid:hover {
+  background-color: rgba(var(--spice-rgb-accent), 0.14) !important;
+}
+
+/* A row you have picked out but are not playing. It takes the quiet fill
+ * rather than the accent, which is reserved for the track that is sounding. */
+.main-trackList-selected,
+.main-trackList-trackListRow[aria-selected="true"] {
+  background-color: var(--spice-selection-muted) !important;
+  color: var(--spice-fg) !important;
+}
+
+/* The track that is playing: the accent, and every mark on the row with it. */
+.main-trackList-active,
+.main-trackList-trackListRow.main-trackList-active {
+  background-color: var(--spice-accent) !important;
+}
+
+.main-trackList-active,
+.main-trackList-active a,
+.main-trackList-active .main-trackList-rowTitle,
+.main-trackList-active .main-trackList-rowMainContentTitle,
+.main-trackList-active .main-trackList-rowMainContentSubTitle,
+.main-trackList-active .main-trackList-rowSectionIndex,
+.main-trackList-active .main-trackList-number,
+.main-trackList-active .main-trackList-duration,
+.main-trackList-active .main-trackList-playingIcon {
+  color: var(--spice-on-accent) !important;
+  --text-base: var(--spice-on-accent);
+  --text-subdued: var(--spice-on-accent);
+  --essential-base: var(--spice-on-accent);
+  --essential-subdued: var(--spice-on-accent);
+  --essential-bright-accent: var(--spice-on-accent);
+}
+
+/* Elsewhere — the now playing bar, a queue entry — the playing track is named
+ * rather than filled, so it takes purple as text instead. */
+.main-trackList-playingIcon,
+.main-trackList-rowMainContentTitle.main-trackList-rowTitleActive {
+  color: var(--spice-accent) !important;
+}
+
+.main-trackList-rowSectionIndex,
+.main-trackList-number,
+.main-trackList-duration {
+  color: var(--spice-fg-muted) !important;
+}
+
+.main-trackList-rowSeperator,
+.main-trackList-rowSectionDivider {
+  border-color: var(--spice-border) !important;
+}
+
+.main-trackList-rowMainContentSubTitle {
+  color: var(--spice-fg-muted) !important;
+}
+
+/* The header above the columns. */
+.main-trackList-trackListHeaderRow {
+  color: var(--spice-fg-muted) !important;
+  border-bottom: 1px solid var(--spice-border) !important;
+}
+
+/* : }}} */
+
+/* : The player {{{ */
+
+/* The seek bar and the volume bar. Both are the same shape: the part that has
+ * played is the accent, the part that has not is a plain rule. */
+.playback-bar .x-progressBar-progressBarBg,
+.volume-bar .x-progressBar-progressBarBg,
+.progress-bar {
+  --bg-color: var(--spice-border) !important;
+  --fg-color: var(--spice-accent) !important;
+  --is-active-fg-color: var(--spice-accent-lit) !important;
+  --mg-color: var(--spice-accent-surface) !important;
+}
+
+.x-progressBar-fillColor {
+  background-color: var(--spice-accent) !important;
+}
+
+/* The handle sits on the filled part of the bar, so it cannot be the accent
+ * itself — it reaches past the token names into the ramp to stay visible. */
+.progress-bar__slider,
+.x-progressBar-sliderArea .progress-bar__slider {
+  background-color: var(--spice-brand-300) !important;
+}
+
+.volume-bar__slider-container {
+  background-color: var(--spice-surface) !important;
+}
+
+/* Transport controls: quiet until hovered, lit while engaged. */
+.main-shuffleButton-button,
+.main-repeatButton-button,
+.main-skipForwardButton-button,
+.main-skipBackButton-button,
+.control-button {
+  color: var(--spice-fg-muted) !important;
+}
+
+.main-shuffleButton-button:hover,
+.main-repeatButton-button:hover,
+.main-skipForwardButton-button:hover,
+.main-skipBackButton-button:hover,
+.control-button:hover {
+  color: var(--spice-fg-strong) !important;
+}
+
+.main-shuffleButton-active,
+.main-repeatButton-active,
+.control-button--active,
+.main-addButton-active {
+  color: var(--spice-accent) !important;
+}
+
+/* The now playing track and its artist. */
+.main-trackInfo-name a {
+  color: var(--spice-fg-strong) !important;
+}
+
+.main-trackInfo-artists a {
+  color: var(--spice-fg-muted) !important;
+}
+
+.main-trackInfo-artists a:hover {
+  color: var(--spice-accent) !important;
+}
+
+/* : }}} */
+
+/* : Menus, dialogs and toasts {{{ */
+
+.main-contextMenu-menu {
+  background-color: var(--spice-bg-alt) !important;
+  border: 1px solid var(--spice-border) !important;
+}
+
+.main-contextMenu-menuItemButton {
+  color: var(--spice-fg) !important;
+}
+
+.main-contextMenu-menuItemButton:hover,
+.main-contextMenu-menuItemButton:focus {
+  background-color: rgba(var(--spice-rgb-accent), 0.24) !important;
+  color: var(--spice-fg-strong) !important;
+}
+
+.main-contextMenu-dividerBefore::before,
+.main-contextMenu-dividerAfter::after {
+  background-color: var(--spice-border) !important;
+}
+
+.main-dropDown-dropDown {
+  background-color: var(--spice-surface) !important;
+  color: var(--spice-fg) !important;
+}
+
+/* Modals keep a deeper backing than the view behind them. */
+.GenericModal__overlay {
+  background-color: rgba(var(--spice-rgb-bg), 0.8) !important;
+}
+
+.main-embedWidgetGenerator-container,
+.GenericModal {
+  background-color: var(--spice-bg-alt) !important;
+  border: 1px solid var(--spice-border) !important;
+  color: var(--spice-fg) !important;
+}
+
+/* : }}} */
+
+/* : Scrollbars {{{
+ *
+ * A plain rule that brightens under the pointer, never the accent — a
+ * scrollbar is not a thing you selected. */
+
+.os-scrollbar {
+  --os-handle-bg: var(--spice-border) !important;
+  --os-handle-bg-hover: var(--spice-fg-faint) !important;
+  --os-handle-bg-active: var(--spice-fg-muted) !important;
+  --os-track-bg: transparent !important;
+}
+
+/* : }}} */
+
+/* : Selection {{{ */
+
+::selection {
+  background-color: var(--spice-accent) !important;
+  color: var(--spice-on-accent) !important;
+}
+
+/* : }}} */

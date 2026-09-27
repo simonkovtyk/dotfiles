@@ -1,0 +1,515 @@
+@OBSThemeMeta {
+    name: 'Dark Orchid';
+    id: 'dev.darkorchid.obs';
+    extends: 'com.obsproject.Yami';
+    author: 'The Dark Orchid Maintainers';
+    dark: 'true';
+}
+
+/*
+ * Dark Orchid — an OBS Studio theme
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+@OBSThemeVars {
+    /* : The palette — every color that exists, named after its ramp and stop */
+
+    --do_white: #ffffff; /* white */
+    --do_black: #000000; /* on-accent */
+
+    --do_brand_50: #f1e6ff; /* brand-50 */
+    --do_brand_100: #e3ccff; /* brand-100 */
+    --do_brand_200: #c799ff; /* accent-peak */
+    --do_brand_300: #ab66ff; /* depth-1 */
+    --do_brand_400: #8f33ff; /* accent-lit */
+    --do_brand_500: #7300ff; /* accent */
+    --do_brand_600: #5c00cc; /* accent-dim */
+    --do_brand_700: #450099; /* brand-700 */
+    --do_brand_800: #2e0066; /* accent-surface */
+    --do_brand_900: #170033; /* brand-900 */
+    --do_brand_950: #0c001a; /* bg-tinted */
+
+    --do_slate_50: #f8fafc; /* slate-50 */
+    --do_slate_100: #f1f5f9; /* slate-100 */
+    --do_slate_200: #e2e8f0; /* slate-200 */
+    --do_slate_300: #cbd5e1; /* slate-300 */
+    --do_slate_400: #94a3b8; /* slate-400 */
+    --do_slate_500: #64748b; /* slate-500 */
+    --do_slate_600: #475569; /* slate-600 */
+    --do_slate_700: #334155; /* slate-700 */
+    --do_slate_800: #1e293b; /* slate-800 */
+    --do_slate_900: #0f172a; /* slate-900 */
+    --do_slate_950: #020617; /* slate-950 */
+
+    --do_gray_50: #f9fafb; /* gray-50 */
+    --do_gray_100: #f3f4f6; /* gray-100 */
+    --do_gray_200: #e5e7eb; /* gray-200 */
+    --do_gray_300: #d1d5db; /* gray-300 */
+    --do_gray_400: #9ca3af; /* gray-400 */
+    --do_gray_500: #6b7280; /* gray-500 */
+    --do_gray_600: #4b5563; /* gray-600 */
+    --do_gray_700: #374151; /* gray-700 */
+    --do_gray_800: #1f2937; /* gray-800 */
+    --do_gray_900: #111827; /* gray-900 */
+    --do_gray_950: #030712; /* gray-950 */
+
+    --do_zinc_50: #fafafa; /* zinc-50 */
+    --do_zinc_100: #f4f4f5; /* fg-strong */
+    --do_zinc_200: #e4e4e7; /* zinc-200 */
+    --do_zinc_300: #d4d4d8; /* fg, syn-text */
+    --do_zinc_400: #a1a1aa; /* zinc-400 */
+    --do_zinc_500: #71717a; /* fg-muted, hint, syn-comment */
+    --do_zinc_600: #52525b; /* fg-faint */
+    --do_zinc_700: #3f3f46; /* border, selection-muted */
+    --do_zinc_800: #27272a; /* surface */
+    --do_zinc_900: #18181b; /* bg-alt, on-cursor */
+    --do_zinc_950: #09090b; /* bg */
+
+    --do_neutral_50: #fafafa; /* neutral-50 */
+    --do_neutral_100: #f5f5f5; /* neutral-100 */
+    --do_neutral_200: #e5e5e5; /* neutral-200 */
+    --do_neutral_300: #d4d4d4; /* neutral-300 */
+    --do_neutral_400: #a3a3a3; /* neutral-400 */
+    --do_neutral_500: #737373; /* neutral-500 */
+    --do_neutral_600: #525252; /* neutral-600 */
+    --do_neutral_700: #404040; /* neutral-700 */
+    --do_neutral_800: #262626; /* neutral-800 */
+    --do_neutral_900: #171717; /* neutral-900 */
+    --do_neutral_950: #0a0a0a; /* neutral-950 */
+
+    --do_stone_50: #fafaf9; /* stone-50 */
+    --do_stone_100: #f5f5f4; /* stone-100 */
+    --do_stone_200: #e7e5e4; /* stone-200 */
+    --do_stone_300: #d6d3d1; /* stone-300 */
+    --do_stone_400: #a8a29e; /* stone-400 */
+    --do_stone_500: #78716c; /* stone-500 */
+    --do_stone_600: #57534e; /* stone-600 */
+    --do_stone_700: #44403c; /* stone-700 */
+    --do_stone_800: #292524; /* stone-800 */
+    --do_stone_900: #1c1917; /* stone-900 */
+    --do_stone_950: #0c0a09; /* stone-950 */
+
+    --do_red_50: #fef2f2; /* red-50 */
+    --do_red_100: #fee2e2; /* red-100 */
+    --do_red_200: #fecaca; /* red-200 */
+    --do_red_300: #fca5a5; /* red-300 */
+    --do_red_400: #f87171; /* red-400 */
+    --do_red_500: #ef4444; /* red-500 */
+    --do_red_600: #dc2626; /* error */
+    --do_red_700: #b91c1c; /* red-700 */
+    --do_red_800: #991b1b; /* red-800 */
+    --do_red_900: #7f1d1d; /* error-underline */
+    --do_red_950: #450a0a; /* red-950 */
+
+    --do_orange_50: #fff7ed; /* orange-50 */
+    --do_orange_100: #ffedd5; /* orange-100 */
+    --do_orange_200: #fed7aa; /* orange-200 */
+    --do_orange_300: #fdba74; /* orange-300 */
+    --do_orange_400: #fb923c; /* orange-400 */
+    --do_orange_500: #f97316; /* orange-500 */
+    --do_orange_600: #ea580c; /* orange-600 */
+    --do_orange_700: #c2410c; /* orange-700 */
+    --do_orange_800: #9a3412; /* orange-800 */
+    --do_orange_900: #7c2d12; /* orange-900 */
+    --do_orange_950: #431407; /* orange-950 */
+
+    --do_amber_50: #fffbeb; /* amber-50 */
+    --do_amber_100: #fef3c7; /* amber-100 */
+    --do_amber_200: #fde68a; /* amber-200 */
+    --do_amber_300: #fcd34d; /* amber-300 */
+    --do_amber_400: #fbbf24; /* amber-400 */
+    --do_amber_500: #f59e0b; /* amber-500 */
+    --do_amber_600: #d97706; /* amber-600 */
+    --do_amber_700: #b45309; /* amber-700 */
+    --do_amber_800: #92400e; /* amber-800 */
+    --do_amber_900: #78350f; /* amber-900 */
+    --do_amber_950: #451a03; /* amber-950 */
+
+    --do_yellow_50: #fefce8; /* yellow-50 */
+    --do_yellow_100: #fef9c3; /* yellow-100 */
+    --do_yellow_200: #fef08a; /* yellow-200 */
+    --do_yellow_300: #fde047; /* yellow-300 */
+    --do_yellow_400: #facc15; /* yellow-400 */
+    --do_yellow_500: #eab308; /* yellow-500 */
+    --do_yellow_600: #ca8a04; /* warning */
+    --do_yellow_700: #a16207; /* yellow-700 */
+    --do_yellow_800: #854d0e; /* yellow-800 */
+    --do_yellow_900: #713f12; /* yellow-900 */
+    --do_yellow_950: #422006; /* yellow-950 */
+
+    --do_lime_50: #f7fee7; /* lime-50 */
+    --do_lime_100: #ecfccb; /* lime-100 */
+    --do_lime_200: #d9f99d; /* lime-200 */
+    --do_lime_300: #bef264; /* lime-300 */
+    --do_lime_400: #a3e635; /* lime-400 */
+    --do_lime_500: #84cc16; /* lime-500 */
+    --do_lime_600: #65a30d; /* lime-600 */
+    --do_lime_700: #4d7c0f; /* lime-700 */
+    --do_lime_800: #3f6212; /* lime-800 */
+    --do_lime_900: #365314; /* lime-900 */
+    --do_lime_950: #1a2e05; /* lime-950 */
+
+    --do_green_50: #f0fdf4; /* green-50 */
+    --do_green_100: #dcfce7; /* green-100 */
+    --do_green_200: #bbf7d0; /* green-200 */
+    --do_green_300: #86efac; /* syn-string */
+    --do_green_400: #4ade80; /* green-400 */
+    --do_green_500: #22c55e; /* green-500 */
+    --do_green_600: #16a34a; /* success */
+    --do_green_700: #15803d; /* green-700 */
+    --do_green_800: #166534; /* green-800 */
+    --do_green_900: #14532d; /* green-900 */
+    --do_green_950: #052e16; /* green-950 */
+
+    --do_emerald_50: #ecfdf5; /* emerald-50 */
+    --do_emerald_100: #d1fae5; /* emerald-100 */
+    --do_emerald_200: #a7f3d0; /* emerald-200 */
+    --do_emerald_300: #6ee7b7; /* emerald-300 */
+    --do_emerald_400: #34d399; /* emerald-400 */
+    --do_emerald_500: #10b981; /* emerald-500 */
+    --do_emerald_600: #059669; /* emerald-600 */
+    --do_emerald_700: #047857; /* emerald-700 */
+    --do_emerald_800: #065f46; /* emerald-800 */
+    --do_emerald_900: #064e3b; /* emerald-900 */
+    --do_emerald_950: #022c22; /* emerald-950 */
+
+    --do_teal_50: #f0fdfa; /* teal-50 */
+    --do_teal_100: #ccfbf1; /* teal-100 */
+    --do_teal_200: #99f6e4; /* teal-200 */
+    --do_teal_300: #5eead4; /* teal-300 */
+    --do_teal_400: #2dd4bf; /* teal-400 */
+    --do_teal_500: #14b8a6; /* teal-500 */
+    --do_teal_600: #0d9488; /* teal-600 */
+    --do_teal_700: #0f766e; /* teal-700 */
+    --do_teal_800: #115e59; /* teal-800 */
+    --do_teal_900: #134e4a; /* teal-900 */
+    --do_teal_950: #042f2e; /* teal-950 */
+
+    --do_cyan_50: #ecfeff; /* cyan-50 */
+    --do_cyan_100: #cffafe; /* cyan-100 */
+    --do_cyan_200: #a5f3fc; /* syn-type */
+    --do_cyan_300: #67e8f9; /* cyan-300 */
+    --do_cyan_400: #22d3ee; /* cyan-400 */
+    --do_cyan_500: #06b6d4; /* cyan-500 */
+    --do_cyan_600: #0891b2; /* cyan-600 */
+    --do_cyan_700: #0e7490; /* cyan-700 */
+    --do_cyan_800: #155e75; /* cyan-800 */
+    --do_cyan_900: #164e63; /* cyan-900 */
+    --do_cyan_950: #083344; /* cyan-950 */
+
+    --do_sky_50: #f0f9ff; /* sky-50 */
+    --do_sky_100: #e0f2fe; /* sky-100 */
+    --do_sky_200: #bae6fd; /* sky-200 */
+    --do_sky_300: #7dd3fc; /* sky-300 */
+    --do_sky_400: #38bdf8; /* sky-400 */
+    --do_sky_500: #0ea5e9; /* sky-500 */
+    --do_sky_600: #0284c7; /* sky-600 */
+    --do_sky_700: #0369a1; /* sky-700 */
+    --do_sky_800: #075985; /* sky-800 */
+    --do_sky_900: #0c4a6e; /* sky-900 */
+    --do_sky_950: #082f49; /* sky-950 */
+
+    --do_blue_50: #eff6ff; /* blue-50 */
+    --do_blue_100: #dbeafe; /* blue-100 */
+    --do_blue_200: #bfdbfe; /* blue-200 */
+    --do_blue_300: #93c5fd; /* syn-function, syn-link, depth-6 */
+    --do_blue_400: #60a5fa; /* syn-todo */
+    --do_blue_500: #3b82f6; /* blue-500 */
+    --do_blue_600: #2563eb; /* info */
+    --do_blue_700: #1d4ed8; /* blue-700 */
+    --do_blue_800: #1e40af; /* blue-800 */
+    --do_blue_900: #1e3a8a; /* blue-900 */
+    --do_blue_950: #172554; /* blue-950 */
+
+    --do_indigo_50: #eef2ff; /* indigo-50 */
+    --do_indigo_100: #e0e7ff; /* indigo-100 */
+    --do_indigo_200: #c7d2fe; /* indigo-200 */
+    --do_indigo_300: #a5b4fc; /* indigo-300 */
+    --do_indigo_400: #818cf8; /* indigo-400 */
+    --do_indigo_500: #6366f1; /* indigo-500 */
+    --do_indigo_600: #4f46e5; /* indigo-600 */
+    --do_indigo_700: #4338ca; /* indigo-700 */
+    --do_indigo_800: #3730a3; /* indigo-800 */
+    --do_indigo_900: #312e81; /* indigo-900 */
+    --do_indigo_950: #1e1b4b; /* indigo-950 */
+
+    --do_violet_50: #f5f3ff; /* violet-50 */
+    --do_violet_100: #ede9fe; /* violet-100 */
+    --do_violet_200: #ddd6fe; /* violet-200 */
+    --do_violet_300: #c4b5fd; /* violet-300 */
+    --do_violet_400: #a78bfa; /* syn-keyword, depth-2 */
+    --do_violet_500: #8b5cf6; /* violet-500 */
+    --do_violet_600: #7c3aed; /* violet-600 */
+    --do_violet_700: #6d28d9; /* violet-700 */
+    --do_violet_800: #5b21b6; /* violet-800 */
+    --do_violet_900: #4c1d95; /* violet-900 */
+    --do_violet_950: #2e1065; /* violet-950 */
+
+    --do_purple_50: #faf5ff; /* purple-50 */
+    --do_purple_100: #f3e8ff; /* purple-100 */
+    --do_purple_200: #e9d5ff; /* purple-200 */
+    --do_purple_300: #d8b4fe; /* purple-300 */
+    --do_purple_400: #c084fc; /* syn-storage, depth-3 */
+    --do_purple_500: #a855f7; /* purple-500 */
+    --do_purple_600: #9333ea; /* purple-600 */
+    --do_purple_700: #7e22ce; /* purple-700 */
+    --do_purple_800: #6b21a8; /* purple-800 */
+    --do_purple_900: #581c87; /* purple-900 */
+    --do_purple_950: #3b0764; /* purple-950 */
+
+    --do_fuchsia_50: #fdf4ff; /* fuchsia-50 */
+    --do_fuchsia_100: #fae8ff; /* fuchsia-100 */
+    --do_fuchsia_200: #f5d0fe; /* fuchsia-200 */
+    --do_fuchsia_300: #f0abfc; /* syn-property, depth-4 */
+    --do_fuchsia_400: #e879f9; /* fuchsia-400 */
+    --do_fuchsia_500: #d946ef; /* fuchsia-500 */
+    --do_fuchsia_600: #c026d3; /* fuchsia-600 */
+    --do_fuchsia_700: #a21caf; /* fuchsia-700 */
+    --do_fuchsia_800: #86198f; /* fuchsia-800 */
+    --do_fuchsia_900: #701a75; /* fuchsia-900 */
+    --do_fuchsia_950: #4a044e; /* fuchsia-950 */
+
+    --do_pink_50: #fdf2f8; /* pink-50 */
+    --do_pink_100: #fce7f3; /* pink-100 */
+    --do_pink_200: #fbcfe8; /* pink-200 */
+    --do_pink_300: #f9a8d4; /* syn-tag, depth-5 */
+    --do_pink_400: #f472b6; /* pink-400 */
+    --do_pink_500: #ec4899; /* pink-500 */
+    --do_pink_600: #db2777; /* pink-600 */
+    --do_pink_700: #be185d; /* pink-700 */
+    --do_pink_800: #9d174d; /* pink-800 */
+    --do_pink_900: #831843; /* pink-900 */
+    --do_pink_950: #500724; /* pink-950 */
+
+    --do_rose_50: #fff1f2; /* rose-50 */
+    --do_rose_100: #ffe4e6; /* rose-100 */
+    --do_rose_200: #fecdd3; /* rose-200 */
+    --do_rose_300: #fda4af; /* rose-300 */
+    --do_rose_400: #fb7185; /* rose-400 */
+    --do_rose_500: #f43f5e; /* rose-500 */
+    --do_rose_600: #e11d48; /* rose-600 */
+    --do_rose_700: #be123c; /* rose-700 */
+    --do_rose_800: #9f1239; /* rose-800 */
+    --do_rose_900: #881337; /* rose-900 */
+    --do_rose_950: #4c0519; /* rose-950 */
+
+    /* : The roles — what the colors above are for */
+
+    --do_accent: var(--do_brand_500);
+    --do_on_accent: var(--do_black);
+    --do_accent_lit: var(--do_brand_400);
+    --do_accent_dim: var(--do_brand_600);
+    --do_accent_peak: var(--do_brand_200);
+    --do_accent_surface: var(--do_brand_800);
+
+    --do_bg: var(--do_zinc_950);
+    --do_bg_tinted: var(--do_brand_950);
+    --do_bg_alt: var(--do_zinc_900);
+    --do_surface: var(--do_zinc_800);
+    --do_border: var(--do_zinc_700);
+    --do_selection_muted: var(--do_zinc_700);
+    --do_fg_faint: var(--do_zinc_600);
+    --do_fg_muted: var(--do_zinc_500);
+    --do_fg: var(--do_zinc_300);
+    --do_fg_strong: var(--do_zinc_100);
+    --do_on_cursor: var(--do_zinc_900);
+
+    --do_error: var(--do_red_600);
+    --do_warning: var(--do_yellow_600);
+    --do_success: var(--do_green_600);
+    --do_info: var(--do_blue_600);
+    --do_hint: var(--do_zinc_500);
+    --do_error_underline: var(--do_red_900);
+
+    --do_depth_1: var(--do_brand_300);
+    --do_depth_2: var(--do_violet_400);
+    --do_depth_3: var(--do_purple_400);
+    --do_depth_4: var(--do_fuchsia_300);
+    --do_depth_5: var(--do_pink_300);
+    --do_depth_6: var(--do_blue_300);
+
+    --do_syn_comment: var(--do_zinc_500);
+    --do_syn_string: var(--do_green_300);
+    --do_syn_function: var(--do_blue_300);
+    --do_syn_keyword: var(--do_violet_400);
+    --do_syn_type: var(--do_cyan_200);
+    --do_syn_storage: var(--do_purple_400);
+    --do_syn_property: var(--do_fuchsia_300);
+    --do_syn_text: var(--do_zinc_300);
+    --do_syn_tag: var(--do_pink_300);
+    --do_syn_todo: var(--do_blue_400);
+    --do_syn_link: var(--do_blue_300);
+
+    --do_overlay_hover: rgba(115, 0, 255, 0.14); /* overlay-hover — accent at 14% */
+    --do_overlay_active: rgba(115, 0, 255, 0.24); /* overlay-active — accent at 24% */
+
+    /* : The base theme's own names, pointed at the roles above */
+
+    /* Its accent ramp becomes the purple one. */
+    --blue1: var(--do_brand_300);
+    --blue2: var(--do_accent_lit);
+    --blue3: var(--do_accent);
+    --blue4: var(--do_accent_dim);
+    --blue5: var(--do_brand_700);
+    --blue6: var(--do_accent_surface);
+
+    /* Hidden sources are a quiet state, not a hue. */
+    --purple1: var(--do_fg_muted);
+    --purple2: var(--do_fg_faint);
+    --purple3: var(--do_border);
+    --purple4: var(--do_border);
+    --purple5: var(--do_surface);
+    --purple6: var(--do_bg_alt);
+
+    /* Status ramps stay status colors. */
+    --red1: var(--do_red_300);
+    --red2: var(--do_red_500);
+    --red3: var(--do_error);
+    --red4: var(--do_red_700);
+    --red5: var(--do_red_800);
+    --red6: var(--do_red_900);
+
+    --green1: var(--do_green_300);
+    --green2: var(--do_green_500);
+    --green3: var(--do_success);
+    --green4: var(--do_green_700);
+    --green5: var(--do_green_800);
+    --green6: var(--do_green_900);
+
+    --yellow1: var(--do_yellow_300);
+    --yellow2: var(--do_yellow_500);
+    --yellow3: var(--do_warning);
+    --yellow4: var(--do_yellow_700);
+    --yellow5: var(--do_yellow_800);
+    --yellow6: var(--do_yellow_900);
+
+    /* Greys, lightest to darkest. */
+    --grey1: var(--do_fg_faint);
+    --grey2: var(--do_fg_faint);
+    --grey3: var(--do_border);
+    --grey4: var(--do_border);
+    --grey5: var(--do_surface);
+    --grey6: var(--do_surface);
+    --grey7: var(--do_bg_alt);
+    --grey8: var(--do_bg);
+
+    --white1: var(--do_fg_strong);
+    --white2: var(--do_zinc_200);
+    --white3: var(--do_fg);
+    --white4: var(--do_zinc_400);
+    --white5: var(--do_fg_muted);
+
+    --black1: var(--do_bg);
+    --black2: var(--do_bg_alt);
+    --black3: var(--do_border);
+    --black4: var(--do_fg_faint);
+    --black5: var(--do_fg_muted);
+
+    /* Surfaces and text. */
+    --bg_window: var(--do_bg);
+    --bg_base: var(--do_bg_alt);
+    --bg_preview: var(--do_bg);
+
+    --primary: var(--do_accent);
+    --primary_light: var(--do_accent_lit);
+    --primary_lighter: var(--do_accent);
+    --primary_dark: var(--do_accent_dim);
+    --primary_darker: var(--do_accent_surface);
+
+    --warning: var(--do_warning);
+    --danger: var(--do_error);
+
+    --text: var(--do_fg);
+    --text_light: var(--do_fg_strong);
+    --text_muted: var(--do_fg_muted);
+    --text_disabled: var(--do_fg_faint);
+    --text_inactive: var(--do_fg);
+
+    --highlight_color: var(--do_accent);
+
+    /* Inputs, buttons, lists and tabs. */
+    --border_color: var(--do_border);
+    --input_bg: var(--do_surface);
+    --input_bg_hover: var(--do_surface);
+    --input_bg_focus: var(--do_bg_alt);
+    --input_border: var(--do_border);
+    --input_border_hover: var(--do_fg_faint);
+    --input_border_focus: var(--do_accent);
+
+    --list_item_bg_selected: var(--do_accent);
+    --list_item_bg_hover: var(--do_overlay_hover);
+
+    --button_bg: var(--do_surface);
+    --button_bg_hover: var(--do_border);
+    --button_bg_down: var(--do_bg_alt);
+    --button_bg_disabled: var(--do_bg_alt);
+    --button_border: var(--do_surface);
+    --button_border_hover: var(--do_fg_faint);
+    --button_border_focus: var(--do_accent);
+
+    --tab_bg: var(--do_bg_alt);
+    --tab_bg_hover: var(--do_surface);
+    --tab_bg_down: var(--do_accent);
+    --tab_bg_disabled: var(--do_bg_alt);
+    --tab_border: var(--do_border);
+    --tab_border_hover: var(--do_fg_faint);
+    --tab_border_focus: var(--do_accent);
+    --tab_border_selected: var(--do_accent);
+
+    --separator_hover: var(--do_accent);
+
+    --scrollbar_handle: var(--do_border);
+    --scrollbar_bg: var(--do_bg_alt);
+    --scrollbar_hover: var(--do_fg_faint);
+    --scrollbar_down: var(--do_accent);
+    --scrollbar_border: var(--do_bg_alt);
+
+    /* The Qt palette, for widgets the stylesheet does not reach. */
+    --palette_window: var(--do_bg);
+    --palette_windowText: var(--do_fg);
+    --palette_base: var(--do_bg_alt);
+    --palette_light: var(--do_fg_faint);
+    --palette_mid: var(--do_bg_alt);
+    --palette_dark: var(--do_surface);
+    --palette_highlight: var(--do_accent);
+    --palette_highlightedText: var(--do_on_accent);
+    --palette_text: var(--do_fg);
+    --palette_link: var(--do_accent);
+    --palette_linkVisited: var(--do_accent);
+    --palette_button: var(--do_surface);
+    --palette_buttonText: var(--do_fg);
+    --palette_text_active: var(--do_fg);
+    --palette_text_disabled: var(--do_fg_faint);
+    --palette_text_inactive: var(--do_fg);
+}
+
+/* Selected rows carry black text on the accent. */
+QListView::item:selected,
+QTreeView::item:selected,
+QTableView::item:selected,
+QMenu::item:selected {
+    color: var(--do_on_accent);
+}
+
+/* The audio meters ride the purple ramp from quiet to loud, and the unlit part
+ * of every zone is the border grey. */
+VolumeMeter {
+    qproperty-backgroundNominalColor: var(--do_border);
+    qproperty-backgroundWarningColor: var(--do_border);
+    qproperty-backgroundErrorColor: var(--do_border);
+    qproperty-foregroundNominalColor: var(--do_accent_dim);
+    qproperty-foregroundWarningColor: var(--do_accent_lit);
+    qproperty-foregroundErrorColor: var(--do_accent_peak);
+    qproperty-magnitudeColor: var(--do_on_accent);
+    qproperty-majorTickColor: var(--do_fg_muted);
+    qproperty-minorTickColor: var(--do_border);
+
+    qproperty-backgroundNominalColorDisabled: var(--do_bg_alt);
+    qproperty-backgroundWarningColorDisabled: var(--do_bg_alt);
+    qproperty-backgroundErrorColorDisabled: var(--do_bg_alt);
+    qproperty-foregroundNominalColorDisabled: var(--do_fg_faint);
+    qproperty-foregroundWarningColorDisabled: var(--do_fg_faint);
+    qproperty-foregroundErrorColorDisabled: var(--do_fg_faint);
+}

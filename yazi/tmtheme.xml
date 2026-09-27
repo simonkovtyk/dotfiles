@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Dark Orchid - syntect (.tmTheme) port of the Dark Orchid NeoVim theme.
+  Generated from lua/dark-orchid/colors.lua and lua/dark-orchid/integrations/nvim.lua.
+
+  Usage (yazi ~/.config/yazi/theme.toml):
+    [mgr]
+    syntect_theme = "~/.config/yazi/dark-orchid.tmTheme"
+-->
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>Dark Orchid</string>
+  <key>semanticClass</key>
+  <string>theme.dark.dark_orchid</string>
+  <key>uuid</key>
+  <string>e6a7ef15-3165-457c-ae98-26521b998197</string>
+  <key>colorSpaceName</key>
+  <string>sRGB</string>
+  <key>settings</key>
+  <array>
+
+    <!-- Editor base -->
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#09090B</string><!-- zinc_950 -->
+        <key>foreground</key>
+        <string>#D4D4D8</string><!-- zinc_300 / Normal -->
+        <key>caret</key>
+        <string>#D4D4D8</string><!-- zinc_300 / Cursor -->
+        <key>invisibles</key>
+        <string>#3F3F46</string><!-- zinc_700 -->
+        <key>lineHighlight</key>
+        <string>#18181B</string><!-- zinc_900 -->
+        <key>gutterForeground</key>
+        <string>#3F3F46</string><!-- zinc_700 / LineNr -->
+        <key>selection</key>
+        <string>#7300FF</string><!-- own_purple_500 -->
+        <key>selectionForeground</key>
+        <string>#000000</string>
+        <key>findHighlight</key>
+        <string>#3F3F46</string><!-- zinc_700 / Search -->
+        <key>activeGuide</key>
+        <string>#3F3F46</string>
+        <key>guide</key>
+        <string>#27272A</string><!-- zinc_800 -->
+      </dict>
+    </dict>
+
+    <!-- Comment -->
+    <dict>
+      <key>name</key>
+      <string>Comment</string>
+      <key>scope</key>
+      <string>comment, punctuation.definition.comment</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#71717A</string><!-- zinc_500 -->
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <!-- String / Character -->
+    <dict>
+      <key>name</key>
+      <string>String</string>
+      <key>scope</key>
+      <string>string, punctuation.definition.string</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#86EFAC</string><!-- green_300 -->
+      </dict>
+    </dict>
+
+    <!-- Regular expressions -->
+    <dict>
+      <key>name</key>
+      <string>Regular Expression</string>
+      <key>scope</key>
+      <string>string.regexp, constant.other.character-class.regexp, keyword.operator.quantifier.regexp</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A5F3FC</string><!-- cyan_200 -->
+      </dict>
+    </dict>
+
+    <!-- Escape sequences / SpecialChar -->
+    <dict>
+      <key>name</key>
+      <string>Escaped Character</string>
+      <key>scope</key>
+      <string>constant.character.escape, constant.character.entity</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string><!-- zinc_300 / SpecialChar -->
+      </dict>
+    </dict>
+
+    <!-- Number / Boolean / Float / language constants -->
+    <dict>
+      <key>name</key>
+      <string>Number, Boolean, Constant</string>
+      <key>scope</key>
+      <string>constant.numeric, constant.language, constant.other.symbol, support.constant</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#86EFAC</string><!-- green_300 -->
+      </dict>
+    </dict>
+
+    <!-- Constant (other) -->
+    <dict>
+      <key>name</key>
+      <string>Constant</string>
+      <key>scope</key>
+      <string>constant, constant.other</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string><!-- zinc_300 / Constant -->
+      </dict>
+    </dict>
+
+    <!-- Identifier / Variable -->
+    <dict>
+      <key>name</key>
+      <string>Variable</string>
+      <key>scope</key>
+      <string>variable, variable.other, variable.parameter, support.variable, entity.name.variable, meta.definition.variable</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string><!-- zinc_300 / Identifier -->
+      </dict>
+    </dict>
+
+    <!-- this / self -->
+    <dict>
+      <key>name</key>
+      <string>Language Variable</string>
+      <key>scope</key>
+      <string>variable.language</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 -->
+      </dict>
+    </dict>
+
+    <!-- Function -->
+    <dict>
+      <key>name</key>
+      <string>Function</string>
+      <key>scope</key>
+      <string>entity.name.function, support.function, meta.function-call, variable.function, meta.require</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#93C5FD</string><!-- blue_300 / Function -->
+      </dict>
+    </dict>
+
+    <!-- Keyword / Conditional / Repeat / Exception -->
+    <dict>
+      <key>name</key>
+      <string>Keyword</string>
+      <key>scope</key>
+      <string>keyword, keyword.control, keyword.other, keyword.control.conditional, keyword.control.loop, keyword.control.flow, keyword.control.exception</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A78BFA</string><!-- violet_400 / Keyword -->
+      </dict>
+    </dict>
+
+    <!-- Label -->
+    <dict>
+      <key>name</key>
+      <string>Label</string>
+      <key>scope</key>
+      <string>entity.name.label, keyword.control.label</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A78BFA</string><!-- violet_400 / Label -->
+      </dict>
+    </dict>
+
+    <!-- Operator -->
+    <dict>
+      <key>name</key>
+      <string>Operator</string>
+      <key>scope</key>
+      <string>keyword.operator</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A5F3FC</string><!-- cyan_200 / Operator -->
+      </dict>
+    </dict>
+
+    <!-- Type / Structure / Typedef -->
+    <dict>
+      <key>name</key>
+      <string>Type</string>
+      <key>scope</key>
+      <string>storage.type, entity.name.type, entity.name.class, entity.name.struct, entity.name.enum, entity.name.union, entity.name.interface, entity.name.trait, entity.other.inherited-class, support.type, support.class, meta.type.name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A5F3FC</string><!-- cyan_200 / Type -->
+      </dict>
+    </dict>
+
+    <!-- Declaration keywords scoped as storage.type (function, class, let, var, struct, ...) -->
+    <dict>
+      <key>name</key>
+      <string>Declaration Keyword</string>
+      <key>scope</key>
+      <string>storage.type.function, storage.type.class, storage.type.var, storage.type.const, storage.type.struct, storage.type.enum, storage.type.union, storage.type.interface, storage.type.trait, storage.type.impl, storage.type.namespace, storage.type.module, storage.type.package, storage.type.keyword</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A78BFA</string><!-- violet_400 / Keyword -->
+      </dict>
+    </dict>
+
+    <!-- Namespace / Module -->
+    <dict>
+      <key>name</key>
+      <string>Namespace</string>
+      <key>scope</key>
+      <string>entity.name.namespace, entity.name.module, entity.name.package, support.module</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A5F3FC</string><!-- cyan_200 -->
+      </dict>
+    </dict>
+
+    <!-- StorageClass (static, const, public, async, ...) -->
+    <dict>
+      <key>name</key>
+      <string>Storage Class</string>
+      <key>scope</key>
+      <string>storage, storage.modifier, storage.type.modifier</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 / StorageClass -->
+      </dict>
+    </dict>
+
+    <!-- Decorator / Annotation -->
+    <dict>
+      <key>name</key>
+      <string>Decorator</string>
+      <key>scope</key>
+      <string>meta.decorator, entity.name.function.decorator, punctuation.definition.decorator, meta.annotation, storage.type.annotation</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 -->
+      </dict>
+    </dict>
+
+    <!-- PreProc / Include / Define / Macro -->
+    <dict>
+      <key>name</key>
+      <string>Preprocessor</string>
+      <key>scope</key>
+      <string>meta.preprocessor, keyword.control.import, keyword.control.export, keyword.control.from, keyword.control.directive, keyword.control.at-rule, entity.name.function.preprocessor, punctuation.definition.preprocessor, support.function.macro, entity.name.function.macro</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#93C5FD</string><!-- blue_300 / PreProc -->
+      </dict>
+    </dict>
+
+    <!-- Tag -->
+    <dict>
+      <key>name</key>
+      <string>Tag</string>
+      <key>scope</key>
+      <string>entity.name.tag, punctuation.definition.tag, meta.tag</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 / Tag -->
+      </dict>
+    </dict>
+
+    <!-- Attribute (HTML attributes, CSS selectors / @attribute.css) -->
+    <dict>
+      <key>name</key>
+      <string>Attribute</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name, entity.other.pseudo-class, entity.other.pseudo-element</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 / @attribute.css -->
+      </dict>
+    </dict>
+
+    <!-- Property names (CSS properties, JSON / YAML keys) -->
+    <dict>
+      <key>name</key>
+      <string>Property</string>
+      <key>scope</key>
+      <string>support.type.property-name, meta.object-literal.key, meta.object-literal.key string, meta.object-literal.key punctuation.definition.string, meta.structure.dictionary.key, meta.structure.dictionary.key string, meta.structure.dictionary.key punctuation.definition.string, meta.mapping.key string, meta.mapping.key punctuation.definition.string, entity.name.tag.yaml</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#F0ABFC</string><!-- fuchsia_300 / @property.css -->
+      </dict>
+    </dict>
+
+    <!-- Delimiter / Punctuation -->
+    <dict>
+      <key>name</key>
+      <string>Punctuation</string>
+      <key>scope</key>
+      <string>punctuation, punctuation.separator, punctuation.terminator, punctuation.accessor, punctuation.section, meta.brace, meta.delimiter</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string><!-- zinc_300 / Delimiter -->
+      </dict>
+    </dict>
+
+    <!-- Error -->
+    <dict>
+      <key>name</key>
+      <string>Invalid</string>
+      <key>scope</key>
+      <string>invalid, invalid.illegal</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#DC2626</string><!-- red_600 / Error -->
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Invalid - Deprecated</string>
+      <key>scope</key>
+      <string>invalid.deprecated</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#CA8A04</string><!-- yellow_600 / Changed -->
+      </dict>
+    </dict>
+
+    <!-- Todo -->
+    <dict>
+      <key>name</key>
+      <string>Todo</string>
+      <key>scope</key>
+      <string>keyword.codetag, comment.line.todo, storage.type.class.todo</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#60A5FA</string><!-- blue_400 / Todo -->
+      </dict>
+    </dict>
+
+    <!-- Markup: headings -->
+    <dict>
+      <key>name</key>
+      <string>Markup Heading</string>
+      <key>scope</key>
+      <string>markup.heading, entity.name.section, punctuation.definition.heading</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#C084FC</string><!-- purple_400 -->
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup Bold</string>
+      <key>scope</key>
+      <string>markup.bold</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup Italic</string>
+      <key>scope</key>
+      <string>markup.italic</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#D4D4D8</string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup Link</string>
+      <key>scope</key>
+      <string>markup.underline.link, string.other.link, constant.other.reference.link</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#93C5FD</string><!-- blue_300 -->
+        <key>fontStyle</key>
+        <string>underline</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup Code</string>
+      <key>scope</key>
+      <string>markup.raw, markup.inline.raw, markup.raw.block</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#86EFAC</string><!-- green_300 -->
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup Quote</string>
+      <key>scope</key>
+      <string>markup.quote</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#71717A</string><!-- zinc_500 -->
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup List</string>
+      <key>scope</key>
+      <string>markup.list, punctuation.definition.list_item</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#A78BFA</string><!-- violet_400 -->
+      </dict>
+    </dict>
+
+    <!-- Diff / VCS -->
+    <dict>
+      <key>name</key>
+      <string>Added</string>
+      <key>scope</key>
+      <string>markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#16A34A</string><!-- green_600 / Added -->
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Removed</string>
+      <key>scope</key>
+      <string>markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#DC2626</string><!-- red_600 / Removed -->
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Changed</string>
+      <key>scope</key>
+      <string>markup.changed, punctuation.definition.changed</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#CA8A04</string><!-- yellow_600 / Changed -->
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Diff Header</string>
+      <key>scope</key>
+      <string>meta.diff, meta.diff.header, meta.diff.range</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#71717A</string><!-- zinc_500 -->
+      </dict>
+    </dict>
+
+  </array>
+</dict>
+</plist>

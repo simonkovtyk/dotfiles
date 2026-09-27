@@ -1,5 +1,3 @@
-classic: false
-
 blocks:
   - permission
   - user
@@ -9,7 +7,7 @@ blocks:
   - name
 
 color:
-  when: never
+  theme: custom
 
 icons:
   when: always

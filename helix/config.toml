@@ -1,26 +1,29 @@
 theme = "dark_orchid"
 
 [editor]
+scrolloff = 8
 mouse = false
+default-yank-register = "+"
 middle-click-paste = false
-shell = [ "/usr/bin/fish" ]
+shell = ["/usr/bin/fish", "-c"]
 line-number = "relative"
-#cursorline = true
-color-modes = true
+cursorline = false
 auto-completion = true
 path-completion = true
-auto-format = false
 preview-completion-insert = false
-completion-trigger-len = 2
+completion-trigger-len = 1
+true-color = true
 undercurl = true
 bufferline = "multiple"
+color-modes = true
 insert-final-newline = true
 trim-final-newlines = true
 trim-trailing-whitespace = true
 popup-border = "all"
+auto-format = true
 clipboard-provider = "wayland"
-default-yank-register = "+"
 end-of-line-diagnostics = "hint"
+kitty-keyboard-protocol = "enabled"
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
@@ -31,7 +34,7 @@ character = "▏"
 skip-levels = 1
 
 [editor.smart-tab]
-enable = false
+enable = true
 
 [editor.soft-wrap]
 enable = true
@@ -39,7 +42,17 @@ enable = true
 [editor.statusline]
 left = ["mode", "separator", "spinner", "separator", "diagnostics"]
 center = ["file-name"]
-right = ["position", "separator", "selections", "separator", "file-line-ending", "separator", "file-type", "separator", "version-control"]
+right = [
+  "position",
+  "separator",
+  "selections",
+  "separator",
+  "file-line-ending",
+  "separator",
+  "file-type",
+  "separator",
+  "version-control",
+]
 separator = "  "
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -50,4 +63,22 @@ workspace-diagnostics = ["warning", "error"]
 [editor.lsp]
 enable = true
 auto-signature-help = true
-display-messages = false
+display-messages = true
+
+[keys.normal]
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
+C-g = [
+  ':write-all',
+  ':insert-output lazygit </dev/tty >/dev/tty',
+  ':redraw',
+  ':reload-all',
+  ':set mouse false',
+  ':set mouse true',
+]

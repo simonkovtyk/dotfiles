@@ -1,0 +1,37 @@
+{
+    "useCustom": true,
+
+    "TitleFore":          "#000000",
+    "TitleBack":          "#7300ff",
+    "TitleInfo":          "#71717a",
+
+    "NormalTitle":        "#d4d4d8",
+    "DimmedTitle":        "#52525b",
+    "SelectedTitle":      "#7300ff",
+
+    "NormalDesc":         "#71717a",
+    "DimmedDesc":         "#52525b",
+    "SelectedDesc":       "#7300ff",
+
+    "StatusMsg":          "#16a34a",
+    "PinIndicatorColor":  "#7300ff",
+
+    "SelectedBorder":     "#7300ff",
+    "SelectedDescBorder": "#7300ff",
+
+    "FilteredMatch":      "#f4f4f5",
+    "FilterPrompt":       "#7300ff",
+    "FilterInfo":         "#71717a",
+    "FilterText":         "#d4d4d8",
+    "FilterCursor":       "#7300ff",
+
+    "HelpKey":            "#d4d4d8",
+    "HelpDesc":           "#71717a",
+
+    "PageActiveDot":      "#7300ff",
+    "PageInactiveDot":    "#3f3f46",
+    "DividerDot":         "#3f3f46",
+
+    "PreviewedText":      "#d4d4d8",
+    "PreviewBorder":      "#3f3f46"
+}

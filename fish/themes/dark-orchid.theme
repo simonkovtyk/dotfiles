@@ -1,0 +1,89 @@
+# name: Dark Orchid
+
+# Dark Orchid — a fish theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# Unhighlighted text, left unset so it keeps the terminal's own foreground
+fish_color_normal
+
+# Commands like `echo`
+fish_color_command 93c5fd  # syn-function
+# Builtins like `cd` and `set`
+fish_color_builtin 93c5fd  # syn-function
+# Functions defined by the user
+fish_color_function 93c5fd  # syn-function
+# Keywords like `if`, `for` and `while`
+fish_color_keyword a78bfa  # syn-keyword
+# Ordinary parameters
+fish_color_param d4d4d8  # syn-text
+# Options starting with `-`, up to the first `--`
+fish_color_option f0abfc  # syn-property
+# A parameter or redirection target naming a file that exists
+fish_color_valid_path 7300ff  # accent
+# Quoted text like "abc"
+fish_color_quote 86efac  # syn-string
+# Character escapes like \n and \x70
+fish_color_escape a5f3fc  # syn-type
+# Expansion operators like * and ~
+fish_color_operator a5f3fc  # syn-type
+# Redirections like >/dev/null
+fish_color_redirection a5f3fc  # syn-type
+# Process separators like ; and &
+fish_color_end d4d4d8  # syn-text
+# Comments, the only italic on the line
+fish_color_comment 71717a --italics  # syn-comment
+# Syntax errors, unknown commands and unreadable redirection targets
+fish_color_error dc2626  # error
+# The proposed rest of a command — the quietest thing on the line
+fish_color_autosuggestion 52525b  # fg-faint
+
+# Text selected in visual mode
+fish_color_selection 000000 --background=7300ff  # on-accent on accent
+# A history search match, and the background of the selected pager row
+fish_color_search_match 000000 --background=7300ff  # on-accent on accent
+# The current entry in the `dirh` and `cdh` listings
+fish_color_history_current 7300ff --bold  # accent
+# The ^C marker on a cancelled command line
+fish_color_cancel dc2626  # error
+
+# The user name in the default prompt
+fish_color_user 71717a  # fg-muted
+# The host name in the default prompt
+fish_color_host 71717a  # fg-muted
+# The host name when the session is remote, lit so it cannot be missed
+fish_color_host_remote 7300ff  # accent
+# The working directory in the default prompt
+fish_color_cwd 7300ff  # accent
+# The working directory in the default prompt when running as root
+fish_color_cwd_root dc2626  # error
+# The nonzero exit status of the last command in the default prompt
+fish_color_status dc2626  # error
+
+# The background of a pager row, left unset so the terminal shows through
+fish_pager_color_background
+# The part of a completion that is already typed
+fish_pager_color_prefix f4f4f5 --bold  # fg-strong
+# The proposed rest of a completion
+fish_pager_color_completion d4d4d8  # fg
+# The description beside a completion
+fish_pager_color_description 71717a  # fg-muted
+# Every second row, so a long list stays readable
+fish_pager_color_secondary_background --background=27272a  # surface
+# The typed part on every second row
+fish_pager_color_secondary_prefix f4f4f5 --bold  # fg-strong
+# The proposed rest on every second row
+fish_pager_color_secondary_completion d4d4d8  # fg
+# The description on every second row
+fish_pager_color_secondary_description 71717a  # fg-muted
+# The selected row
+fish_pager_color_selected_background --background=7300ff  # accent
+# The typed part on the selected row
+fish_pager_color_selected_prefix 000000 --bold  # on-accent
+# The proposed rest on the selected row
+fish_pager_color_selected_completion 000000  # on-accent
+# The description on the selected row
+fish_pager_color_selected_description 000000  # on-accent
+# The counter at the bottom of a list too long to fit on screen
+fish_pager_color_progress 000000 --background=7300ff  # on-accent on accent

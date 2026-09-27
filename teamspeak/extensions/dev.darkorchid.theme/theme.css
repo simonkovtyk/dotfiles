@@ -1,0 +1,425 @@
+/*
+ * Dark Orchid — a TeamSpeak 6 theme
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+@import url("dark-orchid.css");
+
+/* The built-in theme sets the same names on :root; the extra html lifts these
+ * above it whichever of the two stylesheets the client loads last. */
+html:root,
+html:root::after,
+html:root::before,
+html ::after,
+html ::before {
+  /* : Surfaces {{{ */
+
+  --tsv-bg: var(--dark-orchid-bg);
+  --tsv-window-color: var(--dark-orchid-bg);
+  --tsv-deviant-bg: var(--dark-orchid-bg-alt);
+  --tsv-shaded-bg: var(--dark-orchid-bg-alt);
+  --tsv-header-bg: var(--dark-orchid-bg-alt);
+  --tsv-contrast-bg: var(--dark-orchid-bg);
+  --tsv-contrast-strong-bg: var(--dark-orchid-bg);
+  --tsv-preview-bg: var(--dark-orchid-surface);
+  --tsv-side-bar-bg-gradient-bottom: var(--dark-orchid-bg-alt);
+  --tsv-main-bg-gradient-start: var(--dark-orchid-bg);
+  --tsv-main-bg-gradient-end: var(--dark-orchid-bg);
+  --tsv-server-header-gradient-start: var(--dark-orchid-bg-alt);
+  --tsv-server-header-gradient-end: var(--dark-orchid-bg-alt);
+  --tsv-view-header-gradient-start: var(--dark-orchid-bg-alt);
+  --tsv-view-header-gradient-end: var(--dark-orchid-bg-alt);
+  --tsv-unrelated-activity-header-bg: var(--dark-orchid-bg-alt);
+  --tsv-unrelated-activity-header-controls-bg: var(--dark-orchid-bg-alt);
+  --tsv-highlight-header-bg: var(--dark-orchid-bg-alt);
+  --tsv-highlight-header-honeycomb-bg: var(--dark-orchid-bg-alt);
+  --tsv-highlight-header-font-color: var(--dark-orchid-fg);
+  --tsv-homebase-bg: var(--dark-orchid-bg);
+  --tsv-homebase-transparent-bg: var(--dark-orchid-bg-translucent);
+  --tsv-server-info-topic-bg: var(--dark-orchid-scrim);
+  --tsv-servertree-blur-tint: var(--dark-orchid-scrim);
+  --tsv-dashboard-add-contact-bg: var(--dark-orchid-bg-alt);
+  --tsv-subtle-highlight-bg-color: var(--dark-orchid-bg-alt);
+  --strong-bg: var(--dark-orchid-bg);
+  --ts-new-header-bg: var(--dark-orchid-bg-alt);
+  --spacer-bg-gradient-from: var(--dark-orchid-bg-alt);
+  --spacer-bg-gradient-to: var(--dark-orchid-bg-alt);
+  --settings-highlight-bg: var(--dark-orchid-surface);
+  --card-background: var(--dark-orchid-surface);
+  --card-hover-background: var(--dark-orchid-selection-muted);
+  --card-outline: var(--dark-orchid-accent);
+  --graph-layer-bg: var(--dark-orchid-fg-faint);
+
+  --ts-primary-background: var(--dark-orchid-bg);
+  --ts-primary-background-darker: var(--dark-orchid-bg);
+  --ts-primary-background-darker2: var(--dark-orchid-bg);
+  --ts-primary-background-darker-op95: var(--dark-orchid-bg-translucent);
+  --ts-secondary-sidebar-titlebar-bg-color: var(--dark-orchid-bg-alt);
+  --ts-content-titlebar-background: var(--dark-orchid-bg-alt);
+  --ts-sidebar-background: var(--dark-orchid-bg-alt);
+  --ts-sidebar-connections-background: var(--dark-orchid-bg-alt);
+  --ts-sidebar-search-background: var(--dark-orchid-surface);
+  --ts-sidebar-footer-background: var(--dark-orchid-bg-alt);
+  --ts-sidebar-titlebar-background: var(--dark-orchid-bg-alt);
+  --ts-sidebar-titlebar-bg-color: var(--dark-orchid-bg-alt);
+  --ts-sidebar-titlebar-color: var(--dark-orchid-fg);
+  --ts-sidebar-settings-item-highlight: var(--dark-orchid-fg-strong);
+  --ts-tab-strip-background: var(--dark-orchid-bg-alt);
+  --ts-tree-background: var(--dark-orchid-bg);
+  --ts-tree-item-hover-bg-color: var(--dark-orchid-overlay-hover);
+  --ts-tree-badges-bg: var(--dark-orchid-surface);
+  --ts-tree-channel-bg-start: var(--dark-orchid-bg-alt);
+  --ts-tree-channel-bg-end: var(--dark-orchid-bg-alt);
+  --ts-settings-background-action: var(--dark-orchid-surface);
+  --ts-chat-background-color: var(--dark-orchid-bg);
+
+  /* The decorative branding backdrops are flattened to the surfaces. */
+  --tsv-content-branding-bg: var(--dark-orchid-bg);
+  --tsv-content-branding-fancy-gradient-start: var(--dark-orchid-bg-alt);
+  --tsv-content-branding-fancy-gradient-end: var(--dark-orchid-bg-alt);
+  --tsv-content-branding-servers-bg-gradient-stop-1: var(--dark-orchid-bg);
+  --tsv-content-branding-servers-bg-gradient-stop-2: var(--dark-orchid-bg-alt);
+  --tsv-content-branding-servers-bg-gradient-stop-3: var(--dark-orchid-bg-alt);
+  --tsv-content-branding-pinned-bg: var(--dark-orchid-bg-alt);
+  --tsv-chat-widget-bg: var(--dark-orchid-bg-alt);
+
+  /* : }}} */
+
+  /* : Text {{{ */
+
+  --tsv-font-color: var(--dark-orchid-fg);
+  --tsv-item-title-color: var(--dark-orchid-fg);
+  --tsv-header-font-color: var(--dark-orchid-fg);
+  --tsv-shaded-header-font-color: var(--dark-orchid-fg);
+  --tsv-preview-font-color: var(--dark-orchid-fg);
+  --tsv-font-subtitle-color: var(--dark-orchid-fg-muted);
+  --tsv-item-subtitle-color: var(--dark-orchid-fg-muted);
+  --tsv-tab-item-single-font-color: var(--dark-orchid-fg-muted);
+  --tsv-connection-client-font-color: var(--dark-orchid-fg-muted);
+  --tsv-item-accessory-color: var(--dark-orchid-fg-faint);
+  --tsv-disabled-color: var(--dark-orchid-fg-faint);
+  --tsv-font-color-invert: var(--dark-orchid-bg);
+  --tsv-contrast-color: var(--dark-orchid-fg-strong);
+  --tsv-contrast-font-color: var(--dark-orchid-bg);
+  --ts-contact-typing-color: var(--dark-orchid-fg-muted);
+  --font-color-button-white: var(--dark-orchid-accent);
+
+  --ts-primary-font-color: var(--dark-orchid-fg);
+  --ts-primary-font-color-invert: var(--dark-orchid-bg);
+  --ts-secondary-font-color: var(--dark-orchid-fg-muted);
+  --ts-secondary-font-color-invert: var(--dark-orchid-bg);
+  --ts-third-font-color: var(--dark-orchid-fg);
+  --ts-muted-font-color: var(--dark-orchid-fg-muted);
+  --ts-titlebar-button-color: var(--dark-orchid-fg);
+  --ts-titlebar-button-color-hover: var(--dark-orchid-fg-strong);
+  --ts-settings-info-text-color: var(--dark-orchid-fg-muted);
+
+  /* : }}} */
+
+  /* : Accent — the one thing that is lit {{{ */
+
+  --tsv-tint: var(--dark-orchid-accent);
+  --tsv-tint2: var(--dark-orchid-accent);
+  --tsv-highlight-color: var(--dark-orchid-accent);
+  --tsv-icon-tint: var(--dark-orchid-accent);
+  --tsv-icon-tint2: var(--dark-orchid-accent);
+  --ts-primary-accent-color: var(--dark-orchid-accent);
+  --ts-brand-color: var(--dark-orchid-accent);
+  --ts-brand-color-bl: var(--dark-orchid-accent);
+  --ts-brand-color-dk1: var(--dark-orchid-accent-dim);
+  --ts-brand-color-grn: var(--dark-orchid-accent);
+  --ts-drag-border: var(--dark-orchid-accent);
+  --tsv-favorite-fill: var(--dark-orchid-accent);
+  --tsv-favorite-stroke: var(--dark-orchid-bg-alt);
+
+  /* Selected and hovered rows. */
+  --tsv-item-selection: var(--dark-orchid-selection-muted);
+  --tsv-shaded-bg-selection: var(--dark-orchid-accent-surface);
+  --tsv-shaded-item-selection: var(--dark-orchid-selection-muted);
+  --tsv-shade: var(--dark-orchid-overlay-hover);
+  --tsv-tab-item-active: var(--dark-orchid-selection-muted);
+
+  /* Buttons. */
+  --tsv-button-filled-bg: var(--dark-orchid-accent);
+  --tsv-button-bg: var(--dark-orchid-accent);
+  --tsv-button-hover-bg: var(--dark-orchid-accent-lit);
+  --tsv-button-filled-disabled-bg: var(--dark-orchid-surface);
+  --tsv-button-filled-destructive-bg: var(--dark-orchid-error);
+  --tsv-button-filled-destructive-hover-bg: var(--dark-orchid-error);
+  --tsv-button-warning-bg: var(--dark-orchid-error);
+  --tsv-button-warning-hover-bg: var(--dark-orchid-error);
+  --hero-button-background: var(--dark-orchid-accent);
+  --hero-button-border: var(--dark-orchid-accent);
+
+  --ts-menu-action-background: var(--dark-orchid-accent-surface);
+  --ts-menu-action-background-hover: var(--dark-orchid-selection-muted);
+  --ts-menu-action-border: var(--dark-orchid-accent);
+  --ts-menu-action-color: var(--dark-orchid-fg-strong);
+
+  /* Sliders, toggles, checkboxes and the voice activity meter. */
+  --tsv-slider-track-bg: var(--dark-orchid-border);
+  --tsv-slider-vad-color: var(--dark-orchid-accent);
+  --tsv-toggle-bg: var(--dark-orchid-border);
+  --tsv-control-handle-bg: var(--dark-orchid-fg);
+  --tsv-control-handle-active-bg: var(--dark-orchid-accent);
+  --ts-toggle-bg-color: var(--dark-orchid-border);
+  --ts-toggle-checked-bg-color: var(--dark-orchid-accent);
+  --ts-toggle-pill-color: var(--dark-orchid-fg-muted);
+  --ts-toggle-checked-pill-color: var(--dark-orchid-on-accent);
+  --ts-checkbox-bg-color: var(--dark-orchid-surface);
+
+  /* Dropdowns. */
+  --ts-select-bg: var(--dark-orchid-surface);
+  --ts-select-color: var(--dark-orchid-fg);
+  --ts-select-border-color: var(--dark-orchid-border);
+  --ts-select-arrow-color: var(--dark-orchid-fg-muted);
+  --ts-select-disabled-bg: var(--dark-orchid-bg-alt);
+  --ts-select-disabled-color: var(--dark-orchid-fg-faint);
+  --ts-select-spinner-color: var(--dark-orchid-fg-muted);
+  --ts-select-option-highlight-bg: var(--dark-orchid-accent);
+  --ts-select-option-highlight-color: var(--dark-orchid-on-accent);
+  --ts-select-option-selected-bg: var(--dark-orchid-selection-muted);
+  --ts-select-option-selected-color: var(--dark-orchid-fg-strong);
+  --ts-select-option-selected-highlight-bg: var(--dark-orchid-accent);
+  --ts-select-option-selected-highlight-color: var(--dark-orchid-on-accent);
+  --ts-select-option-selected-secondary-color: var(--dark-orchid-fg-muted);
+  --ts-select-tag-bg: var(--dark-orchid-surface);
+  --ts-select-tag-color: var(--dark-orchid-fg);
+  --ts-select-tag-icon-color-hover: var(--dark-orchid-fg-strong);
+
+  --ts-keybinds-bind-action-background-color: var(--dark-orchid-surface);
+  --ts-keybinds-bind-action-border-color: var(--dark-orchid-border);
+
+  /* : }}} */
+
+  /* : Lines {{{ */
+
+  --tsv-separation-border-color: var(--dark-orchid-border);
+  --tsv-separation-border-strong-color: var(--dark-orchid-border);
+  --presence-separator-presence: var(--dark-orchid-bg);
+  --tsv-unrelated-activity-seperator-color: var(--dark-orchid-border);
+  --ts-divider-bg-color: var(--dark-orchid-border);
+  --ts-panel-separator-color: var(--dark-orchid-border);
+  --ts-chat-message-group-divider-color: var(--dark-orchid-border);
+  --tsv-shadow-color: var(--dark-orchid-scrim);
+  --tsv-scrollbar-bg: var(--dark-orchid-border);
+  --tsv-scrollbar-chunks--bg-1: var(--dark-orchid-border);
+  --tsv-scrollbar-chunks--bg-2: var(--dark-orchid-fg-faint);
+
+  /* : }}} */
+
+  /* : Status — presence, errors and confirmations {{{ */
+
+  --tsv-error-color: var(--dark-orchid-error);
+  --tsv-error-light-color: var(--dark-orchid-red-300);
+  --ts-error-color: var(--dark-orchid-error);
+  --tsv-accept-color: var(--dark-orchid-success);
+  --tsv-accept-light-color: var(--dark-orchid-green-300);
+  --tsv-online-color: var(--dark-orchid-success);
+  --tsv-away-color: var(--dark-orchid-warning);
+  --presence-online: var(--dark-orchid-success);
+  --presence-away: var(--dark-orchid-warning);
+  --presence-dnd: var(--dark-orchid-error);
+  --presence-outline-color: var(--dark-orchid-bg);
+  --ts-settings-info-color: var(--dark-orchid-info);
+  --ts-settings-warning-color: var(--dark-orchid-warning);
+
+  /* : }}} */
+
+  /* : Voice — the ring around someone who is talking {{{ */
+
+  --tsv-client-talking--outline: var(--dark-orchid-accent);
+  --tsv-client-talking--gradient-start: var(--dark-orchid-accent);
+  --tsv-client-talking--gradient-stop: var(--dark-orchid-accent-dim);
+  --tsv-client-silent--outline: var(--dark-orchid-border);
+  --tsv-client-silent--gradient-start: var(--dark-orchid-surface);
+  --tsv-client-silent--gradient-stop: var(--dark-orchid-bg-alt);
+  --tsv-client-commander-talking--outline: var(--dark-orchid-accent-peak);
+  --tsv-client-commander-talking--gradient-start: var(--dark-orchid-accent-peak);
+  --tsv-client-commander-talking--gradient-stop: var(--dark-orchid-accent-lit);
+  --tsv-client-commander-silent--outline: var(--dark-orchid-accent-surface);
+  --tsv-client-commander-silent--gradient-start: var(--dark-orchid-accent-surface);
+  --tsv-client-commander-silent--gradient-stop: var(--dark-orchid-bg-alt);
+  --tsv-client-whisper-talking--outline: var(--dark-orchid-accent-lit);
+  --tsv-client-whisper-talking--gradient-start: var(--dark-orchid-accent-lit);
+  --tsv-client-whisper-talking--gradient-stop: var(--dark-orchid-accent);
+  --tsv-client-whisper-silent--outline: var(--dark-orchid-accent-surface);
+  --tsv-client-whisper-silent--gradient-start: var(--dark-orchid-accent-surface);
+  --tsv-client-whisper-silent--gradient-stop: var(--dark-orchid-bg-alt);
+  --ts-client-voiceless-gradient-start: var(--dark-orchid-surface);
+  --ts-client-voiceless-gradient-stop: var(--dark-orchid-bg-alt);
+  --ts-client-detailed-voiceless-gradient-start: var(--dark-orchid-surface);
+  --ts-client-detailed-voiceless-gradient-stop: var(--dark-orchid-bg-alt);
+  --ts-client-commander-voiceless-gradient-start: var(--dark-orchid-surface);
+  --ts-client-commander-voiceless-gradient-stop: var(--dark-orchid-bg-alt);
+
+  /* : }}} */
+
+  /* : Icons {{{ */
+
+  --tsv-icon-base: var(--dark-orchid-fg);
+  --tsv-icon-base-contrast: var(--dark-orchid-bg);
+  --tsv-icon-shaded-bg: var(--dark-orchid-bg-alt);
+  --tsv-icon-subtitle: var(--dark-orchid-fg-muted);
+  --tsv-icon-folder: var(--dark-orchid-fg-muted);
+  --tsv-icon-channel-bg: var(--dark-orchid-bg);
+  --tsv-icon-channel-shade1: var(--dark-orchid-fg);
+  --tsv-icon-channel-shade2: var(--dark-orchid-fg-muted);
+  --tsv-icon-channel-shade3: var(--dark-orchid-fg-strong);
+  --ts-context-menu-icon-tint-color: var(--dark-orchid-fg-muted);
+
+  /* : }}} */
+
+  /* : Menus {{{ */
+
+  --ts-context-menu-background: var(--dark-orchid-bg-translucent);
+  --ts-context-menu-font-color: var(--dark-orchid-fg);
+  --ts-context-menu-item-action-hover-bg: var(--dark-orchid-accent);
+  --tsv-context-menu-item-selection: var(--dark-orchid-accent);
+  --tsv-context-menu-disabled-color: var(--dark-orchid-fg-faint);
+  --tsv-context-menu-error-color: var(--dark-orchid-red-300);
+
+  /* : }}} */
+
+  /* : Chat {{{ */
+
+  --tsv-chat-self-bg: var(--dark-orchid-accent-surface);
+  --tsv-chat-self-font-color: var(--dark-orchid-fg);
+  --tsv-chat-self-bg-transparent: var(--dark-orchid-accent-surface);
+  --tsv-chat-self-bg-pending: var(--dark-orchid-selection-muted);
+  --tsv-chat-self-bg-pending-transparent: var(--dark-orchid-selection-muted);
+  --tsv-chat-remote-bg: var(--dark-orchid-surface);
+  --tsv-chat-remote-font-color: var(--dark-orchid-fg);
+  --tsv-chat-deleted-bg: var(--dark-orchid-bg-alt);
+  --tsv-chat-deleted-font-color: var(--dark-orchid-fg-faint);
+  --tsv-chat-mention-bg: var(--dark-orchid-accent);
+  --tsv-chat-link-color: var(--dark-orchid-accent);
+  --tsv-chat-placeholder-element-bg-1: var(--dark-orchid-surface);
+  --tsv-chat-placeholder-element-bg-2: var(--dark-orchid-border);
+  --tsv-chat-placeholder-element-bg-3: var(--dark-orchid-bg-alt);
+  --tsv-spoiler-background-color: var(--dark-orchid-surface);
+  --tsv-reply-border-color: var(--dark-orchid-border);
+  --ts-chat-sender-name-color: var(--dark-orchid-fg-strong);
+  --ts-chat-system-message-bg: var(--dark-orchid-bg-alt);
+  --ts-chat-system-message-text-color: var(--dark-orchid-fg-muted);
+  --ts-chat-system-secured-text-color: var(--dark-orchid-success);
+  --ts-chat-system-highlight-text-color: var(--dark-orchid-accent);
+  --room-event-highlight-bg: var(--dark-orchid-accent-surface);
+  --room-event-highlight-border: var(--dark-orchid-accent);
+  --room-event-highlight-border2: var(--dark-orchid-accent);
+
+  /* : }}} */
+
+  /* : Rich text and code in messages {{{ */
+
+  --md-bg: transparent;
+  --md-fg: var(--dark-orchid-fg);
+  --md-surface: var(--dark-orchid-bg-alt);
+  --md-accent: var(--dark-orchid-accent);
+  --md-link: var(--dark-orchid-accent);
+  --md-muted: var(--dark-orchid-fg-muted);
+  --md-border: var(--dark-orchid-border);
+  --md-hr: var(--dark-orchid-border);
+  --md-caret: var(--dark-orchid-fg);
+  --md-editor-fg: var(--dark-orchid-fg);
+  --md-selection-bg: var(--dark-orchid-accent);
+  --md-selected-bg: var(--dark-orchid-selection-muted);
+  --md-selected-fg: var(--dark-orchid-fg);
+  --md-selected-caret: var(--dark-orchid-fg);
+  --md-list-marker: var(--dark-orchid-fg-muted);
+  --md-footnote: var(--dark-orchid-fg-muted);
+  --md-footnote-link: var(--dark-orchid-accent);
+  --md-del: var(--dark-orchid-fg-muted);
+  --md-highlight-bg: var(--dark-orchid-accent-surface);
+  --md-spoiler-bg: var(--dark-orchid-surface);
+  --md-blockquote-border: var(--dark-orchid-border);
+  --md-details-border: var(--dark-orchid-border);
+  --md-table-border: var(--dark-orchid-border);
+  --md-table-header-bg: var(--dark-orchid-bg-alt);
+  --md-table-row-bg: var(--dark-orchid-bg);
+  --md-table-hover-bg: var(--dark-orchid-overlay-hover);
+  --md-gutter-bg: var(--dark-orchid-bg-alt);
+  --md-gutter-border: var(--dark-orchid-border);
+  --md-inline-code-bg: var(--dark-orchid-surface);
+  --md-inline-code-fg: var(--dark-orchid-fg-strong);
+  --md-code-bg: var(--dark-orchid-bg-alt);
+  --md-code-bg-alt: var(--dark-orchid-bg-alt);
+  --md-code-fg: var(--dark-orchid-syn-text);
+  --md-code-border: var(--dark-orchid-border);
+  --md-code-lineno: var(--dark-orchid-fg-faint);
+  --md-code-badge-bg: var(--dark-orchid-surface);
+  --md-code-focused-bg: var(--dark-orchid-bg-alt);
+  --md-code-focused-bg-alt: var(--dark-orchid-bg-alt);
+  --md-code-focused-border: var(--dark-orchid-accent);
+  --md-callout-note-color: var(--dark-orchid-info);
+  --md-callout-note-bg: var(--dark-orchid-bg-alt);
+  --md-callout-tip-color: var(--dark-orchid-success);
+  --md-callout-tip-bg: var(--dark-orchid-bg-alt);
+  --md-callout-important-color: var(--dark-orchid-accent);
+  --md-callout-important-bg: var(--dark-orchid-bg-alt);
+  --md-callout-warning-color: var(--dark-orchid-warning);
+  --md-callout-warning-bg: var(--dark-orchid-bg-alt);
+  --md-callout-caution-color: var(--dark-orchid-error);
+  --md-callout-caution-bg: var(--dark-orchid-bg-alt);
+  --md-mermaid-error: var(--dark-orchid-error);
+  --md-mermaid-controls-bg: var(--dark-orchid-bg-alt);
+  --md-mermaid-controls-fg: var(--dark-orchid-fg);
+  --md-mermaid-controls-hover-bg: var(--dark-orchid-overlay-hover);
+  --md-mermaid-controls-active-bg: var(--dark-orchid-overlay-active);
+  --md-mermaid-controls-focus: var(--dark-orchid-accent);
+
+  /* Syntax highlighting inside code blocks. */
+  --md-tok-comment: var(--dark-orchid-syn-comment);
+  --md-tok-string: var(--dark-orchid-syn-string);
+  --md-tok-number: var(--dark-orchid-syn-string);
+  --md-tok-bool: var(--dark-orchid-syn-string);
+  --md-tok-keyword: var(--dark-orchid-syn-keyword);
+  --md-tok-function: var(--dark-orchid-syn-function);
+  --md-tok-meta: var(--dark-orchid-syn-function);
+  --md-tok-type: var(--dark-orchid-syn-type);
+  --md-tok-operator: var(--dark-orchid-syn-type);
+  --md-tok-regexp: var(--dark-orchid-syn-type);
+  --md-tok-tag: var(--dark-orchid-syn-storage);
+  --md-tok-attr-name: var(--dark-orchid-syn-storage);
+  --md-tok-attr-value: var(--dark-orchid-syn-string);
+  --md-tok-property: var(--dark-orchid-syn-property);
+  --md-tok-variable: var(--dark-orchid-syn-text);
+  --md-tok-punctuation: var(--dark-orchid-syn-text);
+
+  /* : }}} */
+}
+
+/* Headers and side bars are flat rather than drawn with gradients. */
+html .tsv-highlight.tsv-header {
+  background: var(--dark-orchid-bg-alt);
+  border-bottom: none;
+}
+
+html .tsv-sidebar .tsv-body-background {
+  background: var(--dark-orchid-bg-alt);
+}
+
+html .tsv-sidebar .tsv-footer:not(.transparent),
+html .tsv-activity-secondary .tsv-footer:not(.transparent) {
+  background-color: var(--dark-orchid-bg-alt);
+}
+
+/* The wordmark in the title bar sets its own blue tint. */
+html .ts-title-logo {
+  --tsv-icon-tint: var(--dark-orchid-accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-orchid-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-orchid-fg-faint);
+}
+
+::selection {
+  background-color: var(--dark-orchid-accent);
+  color: var(--dark-orchid-on-accent);
+}

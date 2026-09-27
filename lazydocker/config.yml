@@ -1,0 +1,18 @@
+# Dark Orchid — a lazydocker theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+gui:
+  theme:
+    # The border and title of the panel you are in
+    activeBorderColor: ["#7300ff", "bold"] # accent
+
+    # Every other panel border
+    inactiveBorderColor: ["#3f3f46"] # border
+
+    # The line under the cursor, in every list and menu
+    selectedLineBgColor: ["#7300ff"] # accent
+
+    # The keybinding hints along the bottom line
+    optionsTextColor: ["#71717a"] # fg-muted

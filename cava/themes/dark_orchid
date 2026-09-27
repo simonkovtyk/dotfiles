@@ -1,0 +1,44 @@
+# Dark Orchid — a cava theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+[color]
+
+# Left to the terminal. Uncomment for an opaque UI — and note that the `sdl`
+# and `sdl_glsl` outputs have no terminal to show through, so they need it.
+; background = '#09090b'  # bg
+
+# Only used when `gradient = 0`: the flat brand purple.
+foreground = '#7300ff'  # accent
+
+
+# Bottom to top: deep purple at the base, the brand purple where the bars
+# spend most of their time, lavender on the peaks.
+gradient = 1
+gradient_color_1 = '#2e0066'  # brand-800
+gradient_color_2 = '#450099'  # brand-700
+gradient_color_3 = '#5c00cc'  # brand-600
+gradient_color_4 = '#7300ff'  # brand-500
+gradient_color_5 = '#8f33ff'  # brand-400
+gradient_color_6 = '#ab66ff'  # brand-300
+gradient_color_7 = '#c799ff'  # brand-200
+gradient_color_8 = '#e3ccff'  # brand-100
+
+
+# Optional, and only on the `noncurses` output: the same ramp laid across the
+# spectrum, bass on the left. Uncomment the block to blend it with the vertical
+# gradient above — `up` keeps the bottom of each bar horizontal and fades into
+# the vertical ramp towards the top.
+; horizontal_gradient = 1
+; horizontal_gradient_color_1 = '#2e0066'  # brand-800
+; horizontal_gradient_color_2 = '#450099'  # brand-700
+; horizontal_gradient_color_3 = '#5c00cc'  # brand-600
+; horizontal_gradient_color_4 = '#7300ff'  # brand-500
+; horizontal_gradient_color_5 = '#8f33ff'  # brand-400
+; horizontal_gradient_color_6 = '#ab66ff'  # brand-300
+; horizontal_gradient_color_7 = '#c799ff'  # brand-200
+; horizontal_gradient_color_8 = '#e3ccff'  # brand-100
+; blend_direction = 'up'
+
+# vim: ft=dosini

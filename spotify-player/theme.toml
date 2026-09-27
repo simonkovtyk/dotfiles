@@ -1,0 +1,71 @@
+# Dark Orchid — a spotify-player theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+[[themes]]
+name = "dark-orchid"
+
+# : Palette {{{
+
+[themes.palette]
+foreground = "#d4d4d8" # fg
+
+black = "#18181b" # bg-alt
+red = "#dc2626" # error
+green = "#16a34a" # success
+yellow = "#ca8a04" # warning
+blue = "#2563eb" # info
+magenta = "#db2777" # fallback: pink-600
+cyan = "#0891b2" # fallback: cyan-600
+white = "#d4d4d8" # fg
+
+bright_black = "#18181b" # bg-alt
+bright_red = "#dc2626" # error
+bright_green = "#16a34a" # success
+bright_yellow = "#ca8a04" # warning
+bright_blue = "#2563eb" # info
+bright_magenta = "#db2777" # fallback: pink-600
+bright_cyan = "#0891b2" # fallback: cyan-600
+bright_white = "#d4d4d8" # fg
+
+# : }}}
+
+
+# : Component styles {{{
+
+[themes.component_style]
+
+# Frame
+block_title = { fg = "#d4d4d8", modifiers = ["Bold"] } # fg
+border = { fg = "#3f3f46" } # border
+
+# Playback
+playback_status = { fg = "#71717a" } # fg-muted
+playback_track = { fg = "#d4d4d8", modifiers = ["Bold"] } # fg
+playback_artists = { fg = "#7300ff" } # accent
+playback_album = { fg = "#71717a" } # fg-muted
+playback_genres = { fg = "#71717a", modifiers = ["Italic"] } # fg-muted
+playback_metadata = { fg = "#71717a", modifiers = ["Italic"] } # fg-muted
+
+# Progress bar — the unfilled track stays at border level so the accent leads.
+playback_progress_bar = { fg = "#7300ff" } # accent
+playback_progress_bar_unfilled = { fg = "#3f3f46" } # border
+
+# Lists and tables
+current_playing = { fg = "#000000", bg = "#7300ff", modifiers = ["Bold"] } # on-accent on accent
+selection = { fg = "#d4d4d8", bg = "#3f3f46", modifiers = ["Bold"] } # fg on selection-muted
+table_header = { fg = "#71717a" } # fg-muted
+secondary_row = { bg = "#27272a" } # surface — alternating rows of the commands table
+page_desc = { fg = "#71717a", modifiers = ["Italic"] } # fg-muted
+playlist_desc = { fg = "#71717a", modifiers = ["Italic"] } # fg-muted
+like = { fg = "#f4f4f5" } # fg-strong — a marker that stays visible on the purple row of the playing track
+
+# Lyrics
+lyrics_played = { fg = "#71717a" } # fg-muted
+lyrics_playing = { fg = "#000000", bg = "#7300ff", modifiers = ["Bold"] } # on-accent on accent
+
+# Visualizer — quiet bars are dim brand purple, loud bars the brightest tier.
+visualization = { low = "#5c00cc", mid = "#8f33ff", high = "#c799ff" } # accent-dim / accent-lit / accent-peak
+
+# : }}}

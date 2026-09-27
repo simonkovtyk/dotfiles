@@ -7,13 +7,25 @@ disable_mouse = true
 
 pin_icon = "📌"
 
-highlight_color = "#d4d4d8"
-pin_color = "#7300ff"
-main_border_color = "#3f3f46"
-apps_border_color = "#3f3f46"
-input_border_color = "#3f3f46"
-main_text_color = "#d4d4d8"
-apps_text_color = "#d4d4d8"
-input_text_color = "#d4d4d8"
-fancy_mode = false
-title_panel_height_percent = 0
+# Dark Orchid — an fsel theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+# Every setting here goes at the top level of config.toml, above its first
+# [section]. The dmenu and clipboard modes take them too.
+
+# The entry under the cursor, and the cursor in the input.
+highlight_color = "#7300ff" # accent
+
+# Panel titles, and the mark beside a pinned app.
+header_title_color = "#7300ff" # accent
+pin_color = "#7300ff" # accent
+
+main_border_color = "#3f3f46" # border
+apps_border_color = "#3f3f46" # border
+input_border_color = "#3f3f46" # border
+
+main_text_color = "#d4d4d8" # fg
+apps_text_color = "#d4d4d8" # fg
+input_text_color = "#d4d4d8" # fg

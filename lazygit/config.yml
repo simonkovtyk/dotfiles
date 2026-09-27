@@ -1,0 +1,42 @@
+# Dark Orchid — a lazygit theme
+#
+# Copyright (c) 2026 — present by The Dark Orchid Maintainers
+# Released under the MIT License — see LICENSE at the repository root.
+
+gui:
+  theme:
+    # The border of the panel you are in, and the same border while a search is
+    # running in it — one step louder, so the search reads as a state.
+    activeBorderColor: ["#7300ff", "bold"] # accent
+    searchingActiveBorderColor: ["#8f33ff", "bold"] # accent-lit
+
+    # Every other panel border
+    inactiveBorderColor: ["#3f3f46"] # border
+
+    # The keybinding hints along the bottom line
+    optionsTextColor: ["#71717a"] # fg-muted
+
+    # The line under the cursor. In a panel that has lost focus it steps back to
+    # the quieter fill, so only one selection on screen is lit at a time.
+    selectedLineBgColor: ["#7300ff"] # accent
+    inactiveViewSelectedLineBgColor: ["#3f3f46"] # selection-muted
+
+    # A commit copied for cherry-picking: marked, not selected
+    cherryPickedCommitBgColor: ["#2563eb"] # info
+    cherryPickedCommitFgColor: ["#000000"] # on-accent
+
+    # The base commit marked for a rebase — an operation waiting to happen
+    markedBaseCommitBgColor: ["#ca8a04"] # warning
+    markedBaseCommitFgColor: ["#000000"] # on-accent
+
+    # A file with changes that are not staged yet
+    unstagedChangesColor: ["#ca8a04"] # warning
+
+    # Ordinary text everywhere else
+    defaultFgColor: ["#d4d4d8"] # fg
+
+  # Author initials beside a commit. Left alone these are hashed into a colour
+  # per person, which spreads the whole spectrum through the commit list; the
+  # wildcard entry holds all of them at one muted grey instead.
+  authorColors:
+    "*": "#71717a" # fg-muted

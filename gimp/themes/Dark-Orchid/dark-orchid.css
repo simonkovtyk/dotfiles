@@ -1,0 +1,364 @@
+/* Dark Orchid — a GIMP theme
+ *
+ * Copyright (c) 2026 — present by The Dark Orchid Maintainers
+ * Released under the MIT License — see LICENSE at the repository root.
+ */
+
+/* THE PALETTE
+ *
+ * Every colour that exists, named after its ramp and its stop. Nothing outside
+ * this block belongs in the interface: no blended shade, no hue of its own. Reach
+ * into a stop directly only where no name in the next block fits the job — the
+ * comment on a stop names what it is for, or spells the stop out where it
+ * carries no job of its own. */
+
+@define-color white            #ffffff;  /* white */
+@define-color black            #000000;  /* on-accent */
+
+@define-color brand-50         #f1e6ff;  /* brand-50 */
+@define-color brand-100        #e3ccff;  /* brand-100 */
+@define-color brand-200        #c799ff;  /* accent-peak */
+@define-color brand-300        #ab66ff;  /* depth-1 */
+@define-color brand-400        #8f33ff;  /* accent-lit */
+@define-color brand-500        #7300ff;  /* accent */
+@define-color brand-600        #5c00cc;  /* accent-dim */
+@define-color brand-700        #450099;  /* brand-700 */
+@define-color brand-800        #2e0066;  /* accent-surface */
+@define-color brand-900        #170033;  /* brand-900 */
+@define-color brand-950        #0c001a;  /* bg-tinted */
+
+@define-color slate-50         #f8fafc;  /* slate-50 */
+@define-color slate-100        #f1f5f9;  /* slate-100 */
+@define-color slate-200        #e2e8f0;  /* slate-200 */
+@define-color slate-300        #cbd5e1;  /* slate-300 */
+@define-color slate-400        #94a3b8;  /* slate-400 */
+@define-color slate-500        #64748b;  /* slate-500 */
+@define-color slate-600        #475569;  /* slate-600 */
+@define-color slate-700        #334155;  /* slate-700 */
+@define-color slate-800        #1e293b;  /* slate-800 */
+@define-color slate-900        #0f172a;  /* slate-900 */
+@define-color slate-950        #020617;  /* slate-950 */
+
+@define-color gray-50          #f9fafb;  /* gray-50 */
+@define-color gray-100         #f3f4f6;  /* gray-100 */
+@define-color gray-200         #e5e7eb;  /* gray-200 */
+@define-color gray-300         #d1d5db;  /* gray-300 */
+@define-color gray-400         #9ca3af;  /* gray-400 */
+@define-color gray-500         #6b7280;  /* gray-500 */
+@define-color gray-600         #4b5563;  /* gray-600 */
+@define-color gray-700         #374151;  /* gray-700 */
+@define-color gray-800         #1f2937;  /* gray-800 */
+@define-color gray-900         #111827;  /* gray-900 */
+@define-color gray-950         #030712;  /* gray-950 */
+
+@define-color zinc-50          #fafafa;  /* zinc-50 */
+@define-color zinc-100         #f4f4f5;  /* fg-strong */
+@define-color zinc-200         #e4e4e7;  /* zinc-200 */
+@define-color zinc-300         #d4d4d8;  /* fg, syn-text */
+@define-color zinc-400         #a1a1aa;  /* zinc-400 */
+@define-color zinc-500         #71717a;  /* fg-muted, hint, syn-comment */
+@define-color zinc-600         #52525b;  /* fg-faint */
+@define-color zinc-700         #3f3f46;  /* border, selection-muted */
+@define-color zinc-800         #27272a;  /* surface */
+@define-color zinc-900         #18181b;  /* bg-alt, on-cursor */
+@define-color zinc-950         #09090b;  /* bg */
+
+@define-color neutral-50       #fafafa;  /* neutral-50 */
+@define-color neutral-100      #f5f5f5;  /* neutral-100 */
+@define-color neutral-200      #e5e5e5;  /* neutral-200 */
+@define-color neutral-300      #d4d4d4;  /* neutral-300 */
+@define-color neutral-400      #a3a3a3;  /* neutral-400 */
+@define-color neutral-500      #737373;  /* neutral-500 */
+@define-color neutral-600      #525252;  /* neutral-600 */
+@define-color neutral-700      #404040;  /* neutral-700 */
+@define-color neutral-800      #262626;  /* neutral-800 */
+@define-color neutral-900      #171717;  /* neutral-900 */
+@define-color neutral-950      #0a0a0a;  /* neutral-950 */
+
+@define-color stone-50         #fafaf9;  /* stone-50 */
+@define-color stone-100        #f5f5f4;  /* stone-100 */
+@define-color stone-200        #e7e5e4;  /* stone-200 */
+@define-color stone-300        #d6d3d1;  /* stone-300 */
+@define-color stone-400        #a8a29e;  /* stone-400 */
+@define-color stone-500        #78716c;  /* stone-500 */
+@define-color stone-600        #57534e;  /* stone-600 */
+@define-color stone-700        #44403c;  /* stone-700 */
+@define-color stone-800        #292524;  /* stone-800 */
+@define-color stone-900        #1c1917;  /* stone-900 */
+@define-color stone-950        #0c0a09;  /* stone-950 */
+
+@define-color red-50           #fef2f2;  /* red-50 */
+@define-color red-100          #fee2e2;  /* red-100 */
+@define-color red-200          #fecaca;  /* red-200 */
+@define-color red-300          #fca5a5;  /* red-300 */
+@define-color red-400          #f87171;  /* red-400 */
+@define-color red-500          #ef4444;  /* red-500 */
+@define-color red-600          #dc2626;  /* error */
+@define-color red-700          #b91c1c;  /* red-700 */
+@define-color red-800          #991b1b;  /* red-800 */
+@define-color red-900          #7f1d1d;  /* error-underline */
+@define-color red-950          #450a0a;  /* red-950 */
+
+@define-color orange-50        #fff7ed;  /* orange-50 */
+@define-color orange-100       #ffedd5;  /* orange-100 */
+@define-color orange-200       #fed7aa;  /* orange-200 */
+@define-color orange-300       #fdba74;  /* orange-300 */
+@define-color orange-400       #fb923c;  /* orange-400 */
+@define-color orange-500       #f97316;  /* orange-500 */
+@define-color orange-600       #ea580c;  /* orange-600 */
+@define-color orange-700       #c2410c;  /* orange-700 */
+@define-color orange-800       #9a3412;  /* orange-800 */
+@define-color orange-900       #7c2d12;  /* orange-900 */
+@define-color orange-950       #431407;  /* orange-950 */
+
+@define-color amber-50         #fffbeb;  /* amber-50 */
+@define-color amber-100        #fef3c7;  /* amber-100 */
+@define-color amber-200        #fde68a;  /* amber-200 */
+@define-color amber-300        #fcd34d;  /* amber-300 */
+@define-color amber-400        #fbbf24;  /* amber-400 */
+@define-color amber-500        #f59e0b;  /* amber-500 */
+@define-color amber-600        #d97706;  /* amber-600 */
+@define-color amber-700        #b45309;  /* amber-700 */
+@define-color amber-800        #92400e;  /* amber-800 */
+@define-color amber-900        #78350f;  /* amber-900 */
+@define-color amber-950        #451a03;  /* amber-950 */
+
+@define-color yellow-50        #fefce8;  /* yellow-50 */
+@define-color yellow-100       #fef9c3;  /* yellow-100 */
+@define-color yellow-200       #fef08a;  /* yellow-200 */
+@define-color yellow-300       #fde047;  /* yellow-300 */
+@define-color yellow-400       #facc15;  /* yellow-400 */
+@define-color yellow-500       #eab308;  /* yellow-500 */
+@define-color yellow-600       #ca8a04;  /* warning */
+@define-color yellow-700       #a16207;  /* yellow-700 */
+@define-color yellow-800       #854d0e;  /* yellow-800 */
+@define-color yellow-900       #713f12;  /* yellow-900 */
+@define-color yellow-950       #422006;  /* yellow-950 */
+
+@define-color lime-50          #f7fee7;  /* lime-50 */
+@define-color lime-100         #ecfccb;  /* lime-100 */
+@define-color lime-200         #d9f99d;  /* lime-200 */
+@define-color lime-300         #bef264;  /* lime-300 */
+@define-color lime-400         #a3e635;  /* lime-400 */
+@define-color lime-500         #84cc16;  /* lime-500 */
+@define-color lime-600         #65a30d;  /* lime-600 */
+@define-color lime-700         #4d7c0f;  /* lime-700 */
+@define-color lime-800         #3f6212;  /* lime-800 */
+@define-color lime-900         #365314;  /* lime-900 */
+@define-color lime-950         #1a2e05;  /* lime-950 */
+
+@define-color green-50         #f0fdf4;  /* green-50 */
+@define-color green-100        #dcfce7;  /* green-100 */
+@define-color green-200        #bbf7d0;  /* green-200 */
+@define-color green-300        #86efac;  /* syn-string */
+@define-color green-400        #4ade80;  /* green-400 */
+@define-color green-500        #22c55e;  /* green-500 */
+@define-color green-600        #16a34a;  /* success */
+@define-color green-700        #15803d;  /* green-700 */
+@define-color green-800        #166534;  /* green-800 */
+@define-color green-900        #14532d;  /* green-900 */
+@define-color green-950        #052e16;  /* green-950 */
+
+@define-color emerald-50       #ecfdf5;  /* emerald-50 */
+@define-color emerald-100      #d1fae5;  /* emerald-100 */
+@define-color emerald-200      #a7f3d0;  /* emerald-200 */
+@define-color emerald-300      #6ee7b7;  /* emerald-300 */
+@define-color emerald-400      #34d399;  /* emerald-400 */
+@define-color emerald-500      #10b981;  /* emerald-500 */
+@define-color emerald-600      #059669;  /* emerald-600 */
+@define-color emerald-700      #047857;  /* emerald-700 */
+@define-color emerald-800      #065f46;  /* emerald-800 */
+@define-color emerald-900      #064e3b;  /* emerald-900 */
+@define-color emerald-950      #022c22;  /* emerald-950 */
+
+@define-color teal-50          #f0fdfa;  /* teal-50 */
+@define-color teal-100         #ccfbf1;  /* teal-100 */
+@define-color teal-200         #99f6e4;  /* teal-200 */
+@define-color teal-300         #5eead4;  /* teal-300 */
+@define-color teal-400         #2dd4bf;  /* teal-400 */
+@define-color teal-500         #14b8a6;  /* teal-500 */
+@define-color teal-600         #0d9488;  /* teal-600 */
+@define-color teal-700         #0f766e;  /* teal-700 */
+@define-color teal-800         #115e59;  /* teal-800 */
+@define-color teal-900         #134e4a;  /* teal-900 */
+@define-color teal-950         #042f2e;  /* teal-950 */
+
+@define-color cyan-50          #ecfeff;  /* cyan-50 */
+@define-color cyan-100         #cffafe;  /* cyan-100 */
+@define-color cyan-200         #a5f3fc;  /* syn-type */
+@define-color cyan-300         #67e8f9;  /* cyan-300 */
+@define-color cyan-400         #22d3ee;  /* cyan-400 */
+@define-color cyan-500         #06b6d4;  /* cyan-500 */
+@define-color cyan-600         #0891b2;  /* cyan-600 */
+@define-color cyan-700         #0e7490;  /* cyan-700 */
+@define-color cyan-800         #155e75;  /* cyan-800 */
+@define-color cyan-900         #164e63;  /* cyan-900 */
+@define-color cyan-950         #083344;  /* cyan-950 */
+
+@define-color sky-50           #f0f9ff;  /* sky-50 */
+@define-color sky-100          #e0f2fe;  /* sky-100 */
+@define-color sky-200          #bae6fd;  /* sky-200 */
+@define-color sky-300          #7dd3fc;  /* sky-300 */
+@define-color sky-400          #38bdf8;  /* sky-400 */
+@define-color sky-500          #0ea5e9;  /* sky-500 */
+@define-color sky-600          #0284c7;  /* sky-600 */
+@define-color sky-700          #0369a1;  /* sky-700 */
+@define-color sky-800          #075985;  /* sky-800 */
+@define-color sky-900          #0c4a6e;  /* sky-900 */
+@define-color sky-950          #082f49;  /* sky-950 */
+
+@define-color blue-50          #eff6ff;  /* blue-50 */
+@define-color blue-100         #dbeafe;  /* blue-100 */
+@define-color blue-200         #bfdbfe;  /* blue-200 */
+@define-color blue-300         #93c5fd;  /* depth-6, syn-function, syn-link */
+@define-color blue-400         #60a5fa;  /* syn-todo */
+@define-color blue-500         #3b82f6;  /* blue-500 */
+@define-color blue-600         #2563eb;  /* info */
+@define-color blue-700         #1d4ed8;  /* blue-700 */
+@define-color blue-800         #1e40af;  /* blue-800 */
+@define-color blue-900         #1e3a8a;  /* blue-900 */
+@define-color blue-950         #172554;  /* blue-950 */
+
+@define-color indigo-50        #eef2ff;  /* indigo-50 */
+@define-color indigo-100       #e0e7ff;  /* indigo-100 */
+@define-color indigo-200       #c7d2fe;  /* indigo-200 */
+@define-color indigo-300       #a5b4fc;  /* indigo-300 */
+@define-color indigo-400       #818cf8;  /* indigo-400 */
+@define-color indigo-500       #6366f1;  /* indigo-500 */
+@define-color indigo-600       #4f46e5;  /* indigo-600 */
+@define-color indigo-700       #4338ca;  /* indigo-700 */
+@define-color indigo-800       #3730a3;  /* indigo-800 */
+@define-color indigo-900       #312e81;  /* indigo-900 */
+@define-color indigo-950       #1e1b4b;  /* indigo-950 */
+
+@define-color violet-50        #f5f3ff;  /* violet-50 */
+@define-color violet-100       #ede9fe;  /* violet-100 */
+@define-color violet-200       #ddd6fe;  /* violet-200 */
+@define-color violet-300       #c4b5fd;  /* violet-300 */
+@define-color violet-400       #a78bfa;  /* depth-2, syn-keyword */
+@define-color violet-500       #8b5cf6;  /* violet-500 */
+@define-color violet-600       #7c3aed;  /* violet-600 */
+@define-color violet-700       #6d28d9;  /* violet-700 */
+@define-color violet-800       #5b21b6;  /* violet-800 */
+@define-color violet-900       #4c1d95;  /* violet-900 */
+@define-color violet-950       #2e1065;  /* violet-950 */
+
+@define-color purple-50        #faf5ff;  /* purple-50 */
+@define-color purple-100       #f3e8ff;  /* purple-100 */
+@define-color purple-200       #e9d5ff;  /* purple-200 */
+@define-color purple-300       #d8b4fe;  /* purple-300 */
+@define-color purple-400       #c084fc;  /* depth-3, syn-storage */
+@define-color purple-500       #a855f7;  /* purple-500 */
+@define-color purple-600       #9333ea;  /* purple-600 */
+@define-color purple-700       #7e22ce;  /* purple-700 */
+@define-color purple-800       #6b21a8;  /* purple-800 */
+@define-color purple-900       #581c87;  /* purple-900 */
+@define-color purple-950       #3b0764;  /* purple-950 */
+
+@define-color fuchsia-50       #fdf4ff;  /* fuchsia-50 */
+@define-color fuchsia-100      #fae8ff;  /* fuchsia-100 */
+@define-color fuchsia-200      #f5d0fe;  /* fuchsia-200 */
+@define-color fuchsia-300      #f0abfc;  /* depth-4, syn-property */
+@define-color fuchsia-400      #e879f9;  /* fuchsia-400 */
+@define-color fuchsia-500      #d946ef;  /* fuchsia-500 */
+@define-color fuchsia-600      #c026d3;  /* fuchsia-600 */
+@define-color fuchsia-700      #a21caf;  /* fuchsia-700 */
+@define-color fuchsia-800      #86198f;  /* fuchsia-800 */
+@define-color fuchsia-900      #701a75;  /* fuchsia-900 */
+@define-color fuchsia-950      #4a044e;  /* fuchsia-950 */
+
+@define-color pink-50          #fdf2f8;  /* pink-50 */
+@define-color pink-100         #fce7f3;  /* pink-100 */
+@define-color pink-200         #fbcfe8;  /* pink-200 */
+@define-color pink-300         #f9a8d4;  /* depth-5, syn-tag */
+@define-color pink-400         #f472b6;  /* pink-400 */
+@define-color pink-500         #ec4899;  /* pink-500 */
+@define-color pink-600         #db2777;  /* pink-600 */
+@define-color pink-700         #be185d;  /* pink-700 */
+@define-color pink-800         #9d174d;  /* pink-800 */
+@define-color pink-900         #831843;  /* pink-900 */
+@define-color pink-950         #500724;  /* pink-950 */
+
+@define-color rose-50          #fff1f2;  /* rose-50 */
+@define-color rose-100         #ffe4e6;  /* rose-100 */
+@define-color rose-200         #fecdd3;  /* rose-200 */
+@define-color rose-300         #fda4af;  /* rose-300 */
+@define-color rose-400         #fb7185;  /* rose-400 */
+@define-color rose-500         #f43f5e;  /* rose-500 */
+@define-color rose-600         #e11d48;  /* rose-600 */
+@define-color rose-700         #be123c;  /* rose-700 */
+@define-color rose-800         #9f1239;  /* rose-800 */
+@define-color rose-900         #881337;  /* rose-900 */
+@define-color rose-950         #4c0519;  /* rose-950 */
+
+/* THE NAMES
+ *
+ * What the colours above are *for*. Style the interface in these and it stays in
+ * step when a stop moves: each one points at a stop rather than repeating its
+ * value. */
+
+/* Accent — the one thing that is lit. Every one of these comes from the same
+ * purple ramp, and nothing else in the interface may be purple. */
+@define-color accent           @brand-500;            /* accent */
+@define-color on-accent        @black;                /* on-accent */
+@define-color accent-bright    @brand-300;            /* deprecated — accent text takes `accent` */
+@define-color accent-lit       @brand-400;            /* accent-lit */
+@define-color accent-dim       @brand-600;            /* accent-dim */
+@define-color accent-peak      @brand-200;            /* accent-peak */
+@define-color accent-surface   @brand-800;            /* accent-surface */
+
+/* Neutral — the greys that carry everything else, stacked darkest to lightest.
+ * A surface that has to differ from its neighbour moves along this ramp. */
+@define-color bg               @zinc-950;             /* bg */
+@define-color bg-tinted        @brand-950;            /* bg-tinted */
+@define-color bg-alt           @zinc-900;             /* bg-alt */
+@define-color surface          @zinc-800;             /* surface */
+@define-color border           @zinc-700;             /* border */
+@define-color selection-muted  @zinc-700;             /* selection-muted */
+@define-color fg-faint         @zinc-600;             /* fg-faint */
+@define-color fg-muted         @zinc-500;             /* fg-muted */
+@define-color fg               @zinc-300;             /* fg */
+@define-color fg-strong        @zinc-100;             /* fg-strong */
+@define-color on-cursor        @zinc-900;             /* on-cursor */
+
+/* Status — a state the interface has to report: an error, a warning, a job
+ * that finished. Move up the same hue to the 300 stop where one of these
+ * has to be readable running text. */
+@define-color error            @red-600;              /* error */
+@define-color warning          @yellow-600;           /* warning */
+@define-color success          @green-600;            /* success */
+@define-color info             @blue-600;             /* info */
+@define-color hint             @zinc-500;             /* hint */
+@define-color error-underline  @red-900;              /* error-underline */
+
+/* Depth — one gradient for nesting that has to stay legible. Take the stops in
+ * order and stop when the layout runs out of levels. */
+@define-color depth-1          @brand-300;            /* depth-1 */
+@define-color depth-2          @violet-400;           /* depth-2 */
+@define-color depth-3          @purple-400;           /* depth-3 */
+@define-color depth-4          @fuchsia-300;          /* depth-4 */
+@define-color depth-5          @pink-300;             /* depth-5 */
+@define-color depth-6          @blue-300;             /* depth-6 */
+
+/* Syntax — for anything that renders code or markup. These hues
+ * are not accents. */
+@define-color syn-comment      @zinc-500;             /* syn-comment */
+@define-color syn-string       @green-300;            /* syn-string */
+@define-color syn-function     @blue-300;             /* syn-function */
+@define-color syn-keyword      @violet-400;           /* syn-keyword */
+@define-color syn-type         @cyan-200;             /* syn-type */
+@define-color syn-storage      @purple-400;           /* syn-storage */
+@define-color syn-property     @fuchsia-300;          /* syn-property */
+@define-color syn-text         @zinc-300;             /* syn-text */
+@define-color syn-tag          @pink-300;             /* syn-tag */
+@define-color syn-todo         @blue-400;             /* syn-todo */
+@define-color syn-link         @blue-300;             /* syn-link */
+
+/* Overlay — the translucent names, for a hover, a pressed button and the
+ * backing under a tooltip or a menu, all of which sit over the interface. Each one is a name above at an opacity rather than a
+ * colour of its own. */
+@define-color overlay-hover    alpha(@accent, 0.14);  /* overlay-hover — accent at 14% */
+@define-color overlay-active   alpha(@accent, 0.24);  /* overlay-active — accent at 24% */
+@define-color scrim            alpha(@bg, 0.55);      /* scrim — bg at 55% */
+@define-color scrim-strong     alpha(@bg, 0.8);       /* scrim-strong — bg at 80% */
+@define-color bg-translucent   alpha(@bg, 0.85);      /* bg-translucent — bg at 85% */
