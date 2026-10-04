@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/simonkovtyk/dotfiles/compare/v1.5.0...v1.5.1) (2026-10-04)
+
+
+### Bug Fixes
+
+* **hypr:** ignore dead keys ([311c28a](https://github.com/simonkovtyk/dotfiles/commit/311c28ab7a95c3efacff7005d4f1ac8e52e832a4))
+
 ## [1.5.0](https://github.com/simonkovtyk/dotfiles/compare/v1.4.0...v1.5.0) (2026-09-27)
 
 
